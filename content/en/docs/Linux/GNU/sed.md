@@ -1,3 +1,10 @@
+---
+title: "Sed"
+linkTitle: "Sed"
+weight: 100
+description: >-
+     GNU Sed
+---
 
 
 # GNU `sed`
@@ -3785,21 +3792,21 @@ similarly with GNU `sed`:
     $ cat two-cities-dup1.txt
     It was the best of times,
     it was the worst of times,
-    it was the the age of wisdom,
+    it was the the age of wisdom,
     it was the age of foolishness,
 
     $ grep -E '\b(\w+)\s+\1\b' two-cities-dup1.txt
-    it was the the age of wisdom,
+    it was the the age of wisdom,
 
     $ grep -n -E '\b(\w+)\s+\1\b' two-cities-dup1.txt
-    3:it was the the age of wisdom,
+    3:it was the the age of wisdom,
 
     $ sed -En '/\b(\w+)\s+\1\b/p' two-cities-dup1.txt
-    it was the the age of wisdom,
+    it was the the age of wisdom,
 
     $ sed -En '/\b(\w+)\s+\1\b/{=;p}' two-cities-dup1.txt
     3
-    it was the the age of wisdom,
+    it was the the age of wisdom,
 
 -   The regular expression ‘`\b\w+\s+`’ searches for word-boundary
     (‘`\b`’), followed by one-or-more word-characters (‘`\w+`’),
