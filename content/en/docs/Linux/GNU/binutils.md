@@ -131,7 +131,7 @@ id="index-collections-of-files"></span>
 
 <div class="example">
 
-``` example
+```bash
 ar [-]p[mod] [--plugin name] [--target bfdname] [--output dirname] [--record-libdeps libdeps] [relpos] [count] archive [member…]
 ar -M [ <mri-script ]
 ```
@@ -234,7 +234,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Binutils-Index" rel="index" 
 
 <div class="example">
 
-``` example
+```bash
 ar [-X32_64] [-]p[mod] [--plugin name] [--target bfdname] [--output dirname] [--record-libdeps libdeps] [--thin] [relpos] [count] archive [member…]
 ```
 
@@ -468,7 +468,7 @@ the path when choosing which element to replace. Thus
 
 <div class="example">
 
-``` example
+```bash
 ar rcST archive.a subdir/file1 subdir/file2 file1
 ```
 
@@ -612,7 +612,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Binutils-Index" rel="index" 
 
 <div class="example">
 
-``` example
+```bash
 ar -M [ <script ]
 ```
 
@@ -768,7 +768,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Binutils-Index" rel="index" 
 
 <div class="example">
 
-``` example
+```bash
 nm [-A|-o|--print-file-name]
    [-a|--debug-syms]
    [-B|--format=bsd]
@@ -1209,7 +1209,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Binutils-Index" rel="index" 
 
 <div class="example">
 
-``` example
+```bash
 objcopy [-F bfdname|--target=bfdname]
         [-I bfdname|--input-target=bfdname]
         [-O bfdname|--output-target=bfdname]
@@ -1403,7 +1403,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
   --only-section=.text.* --only-section=!.text.foo
 ```
 
@@ -1429,7 +1429,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
   --remove-section=.text.* --remove-section=!.text.foo
 ```
 
@@ -1455,7 +1455,7 @@ accepted in `sectionpattern`. For example:
 
 <div class="example">
 
-``` example
+```bash
   --remove-relocations=.text.*
 ```
 
@@ -1471,7 +1471,7 @@ otherwise cause the relocations to be removed. For example:
 
 <div class="example">
 
-``` example
+```bash
   --remove-relocations=.text.* --remove-relocations=!.text.foo
 ```
 
@@ -1565,7 +1565,7 @@ the sense of the switch is reversed for that symbol. For example:
 
 <div class="example">
 
-``` example
+```bash
   -w -W !foo -W fo*
 ```
 
@@ -1852,7 +1852,7 @@ data you could use the following command line to achieve it:
 
 <div class="example">
 
-``` example
+```bash
   objcopy -I binary -O <output_format> -B <architecture> \
    --rename-section .data=.rodata,alloc,load,readonly,data,contents \
    <input_binary_file> <output_object_file>
@@ -2062,7 +2062,7 @@ this:
 
 <div class="example">
 
-``` example
+```bash
  objcopy --add-gnu-debuglink=foo.debug
 ```
 
@@ -2315,7 +2315,7 @@ id="index-objdump"></span>
 
 <div class="example">
 
-``` example
+```bash
 objdump [-a|--archive-headers]
         [-b bfdname|--target=bfdname]
         [-C|--demangle[=style] ]
@@ -2426,7 +2426,7 @@ For example,
 
 <div class="example">
 
-``` example
+```bash
 objdump -b oasys -m vax -h fu.o
 ```
 
@@ -3198,7 +3198,7 @@ file being dumped, but there are two main types. One looks like this:
 
 <div class="example">
 
-``` example
+```bash
 [  4](sec  3)(fl 0x00)(ty   0)(scl   3) (nx 1) 0x00000000 .bss
 [  6](sec  1)(fl 0x00)(ty   0)(scl   2) (nx 0) 0x00000000 fred
 ```
@@ -3217,7 +3217,7 @@ like this:
 
 <div class="example">
 
-``` example
+```bash
 00000000 l    d  .bss   00000000 .bss
 00000000 g       .text  00000000 fred
 ```
@@ -3377,7 +3377,7 @@ id="index-symbol-index-1"></span>
 
 <div class="example">
 
-``` example
+```bash
 ranlib [--plugin name] [-DhHvVt] archive
 ```
 
@@ -3455,7 +3455,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Binutils-Index" rel="index" 
 
 <div class="example">
 
-``` example
+```bash
 size [-A|-B|-G|--format=compatibility]
      [--help]
      [-d|-o|-x|--radix=number]
@@ -3496,7 +3496,7 @@ Here is an example of the Berkeley (default) format of output from
 
 <div class="example">
 
-``` example
+```bash
 $ size --format=Berkeley ranlib size
    text    data     bss     dec     hex filename
  294880   81920   11592  388392   5ed28 ranlib
@@ -3518,7 +3518,7 @@ displayed with GNU conventions:
 
 <div class="example">
 
-``` example
+```bash
 $ size --format=GNU ranlib size
       text       data        bss      total filename
     279880      96920      11592     388392 ranlib
@@ -3531,7 +3531,7 @@ This is the same data, but displayed closer to System V conventions:
 
 <div class="example">
 
-``` example
+```bash
 $ size --format=SysV ranlib size
 ranlib  :
 section         size         addr
@@ -3613,7 +3613,7 @@ id="index-strings_002c-printing"></span>
 
 <div class="example">
 
-``` example
+```bash
 strings [-afovV] [-min-len]
         [-n min-len] [--bytes=min-len]
         [-t radix] [--radix=radix]
@@ -3777,7 +3777,7 @@ id="index-symbols_002c-discarding"></span>
 
 <div class="example">
 
-``` example
+```bash
 strip [-F bfdname |--target=bfdname]
       [-I bfdname |--input-target=bfdname]
       [-O bfdname |--output-target=bfdname]
@@ -3851,7 +3851,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
   --remove-section=.text.* --remove-section=!.text.foo
 ```
 
@@ -3872,7 +3872,7 @@ Wildcard characters are accepted in `sectionpattern`. For example:
 
 <div class="example">
 
-``` example
+```bash
   --remove-relocations=.text.*
 ```
 
@@ -3888,7 +3888,7 @@ otherwise cause the relocations to be removed. For example:
 
 <div class="example">
 
-``` example
+```bash
   --remove-relocations=.text.* --remove-relocations=!.text.foo
 ```
 
@@ -3978,7 +3978,7 @@ the sense of the switch is reversed for that symbol. For example:
 
 <div class="example">
 
-``` example
+```bash
   -w -K !foo -K fo*
 ```
 
@@ -4084,7 +4084,7 @@ id="index-demangling-C_002b_002b-symbols"></span>
 
 <div class="example">
 
-``` example
+```bash
 c++filt [-_|--strip-underscore]
         [-n|--no-strip-underscore]
         [-p|--no-params]
@@ -4123,7 +4123,7 @@ them on the command line:
 
 <div class="example">
 
-``` example
+```bash
 c++filt symbol
 ```
 
@@ -4138,7 +4138,7 @@ performed to separate them from surrounding text. Thus for example:
 
 <div class="example">
 
-``` example
+```bash
 c++filt -n _Z1fv
 ```
 
@@ -4148,7 +4148,7 @@ will work and demangle the name to “f()” whereas:
 
 <div class="example">
 
-``` example
+```bash
 c++filt -n _Z1fv,
 ```
 
@@ -4159,7 +4159,7 @@ which makes it invalid). This command however will work:
 
 <div class="example">
 
-``` example
+```bash
 echo _Z1fv, | c++filt -n
 ```
 
@@ -4173,7 +4173,7 @@ after a mangled name. For example:
 
 <div class="example">
 
-``` example
+```bash
     .type   _Z1fv, @function
 ```
 
@@ -4274,7 +4274,7 @@ Print the version number of `c++filt` and exit.
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > c++filt symbol
 > ```
 >
@@ -4284,7 +4284,7 @@ Print the version number of `c++filt` and exit.
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > c++filt option symbol
 > ```
 >
@@ -4313,7 +4313,7 @@ id="index-address-to-file-name-and-line-number"></span>
 
 <div class="example">
 
-``` example
+```bash
 addr2line [-a|--addresses]
           [-b bfdname|--target=bfdname]
           [-C|--demangle[=style]]
@@ -4487,7 +4487,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Binutils-Index" rel="index" 
 
 <div class="example">
 
-``` example
+```bash
 windmc [options] input-file
 ```
 
@@ -4640,7 +4640,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Binutils-Index" rel="index" 
 
 <div class="example">
 
-``` example
+```bash
 windres [options] [input-file] [output-file]
 ```
 
@@ -4837,7 +4837,7 @@ export information.
 
 <div class="example">
 
-``` example
+```bash
 dlltool [-d|--input-def def-file-name]
         [-b|--base-file base-file-name]
         [-e|--output-exp exports-file-name]
@@ -4892,7 +4892,7 @@ of the object file. This can be done in C by using the asm() operator:
 
 <div class="example">
 
-``` example
+```bash
   asm (".section .drectve");
   asm (".ascii \"-export:my_func\"");
 
@@ -4935,7 +4935,7 @@ uses that DLL:
 
 <div class="example">
 
-``` example
+```bash
   gcc -c dll.c
   dlltool -e exports.o -l dll.lib dll.o
   gcc dll.o exports.o -o dll.dll
@@ -5232,7 +5232,7 @@ id="index-readelf"></span>
 
 <div class="example">
 
-``` example
+```bash
 readelf [-a|--all]
         [-h|--file-header]
         [-l|--program-headers|--segments]
@@ -5771,7 +5771,7 @@ id="index-elfedit"></span>
 
 <div class="example">
 
-``` example
+```bash
 elfedit [--input-mach=machine]
         [--input-type=type]
         [--input-osabi=osabi]
@@ -6811,7 +6811,7 @@ notices just after the title page:
 
 <div class="example">
 
-``` example
+```bash
   Copyright (C)  year  your name.
   Permission is granted to copy, distribute and/or modify this document
   under the terms of the GNU Free Documentation License, Version 1.3
@@ -6828,7 +6828,7 @@ replace the “with…Texts.” line with this:
 
 <div class="example">
 
-``` example
+```bash
     with the Invariant Sections being list their titles, with
     the Front-Cover Texts being list, and with the Back-Cover Texts
     being list.

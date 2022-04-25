@@ -724,7 +724,6 @@ description: >-
 <div class="header">
 
 Next: <a href="#Introduction" accesskey="n" rel="next">Introduction</a>,
-Up: <a href="/manual" accesskey="u" rel="up">(dir)</a>  
 \[<a href="#SEC_Contents" rel="contents"
 title="Table of contents">Contents</a>\]\[<a href="#Concept-index" rel="index" title="Index">Index</a>\]
 
@@ -3253,7 +3252,7 @@ interpretation as an integer:
 
 <div class="example">
 
-``` example
+```bash
 chown +42 F
 chgrp +$numeric_group_id another-file
 chown +0:+0 /
@@ -3319,7 +3318,7 @@ seed value, using for example:
 
 <div class="example">
 
-``` example
+```bash
 get_seeded_random()
 {
   seed="$1"
@@ -3410,7 +3409,7 @@ can move the files from the current directory to a sibling directory,
 
 <div class="example">
 
-``` example
+```bash
 ls | xargs mv -t ../d --
 ```
 
@@ -3422,7 +3421,7 @@ command:
 
 <div class="example">
 
-``` example
+```bash
 find . -mindepth 1 -maxdepth 1 \
   | xargs mv -t ../d
 ```
@@ -3436,7 +3435,7 @@ limitations and requires both GNU `find` and GNU `xargs`:
 
 <div class="example">
 
-``` example
+```bash
 find . -mindepth 1 -maxdepth 1 -print0 \
   | xargs --null --no-run-if-empty \
       mv -t ../d
@@ -3705,7 +3704,7 @@ or explicitly with the `--coreutils-prog` option. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 coreutils --coreutils-prog=PROGRAM …
 ```
 
@@ -3777,7 +3776,7 @@ if none are given, to standard output. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 cat [option] [file]…
 ```
 
@@ -3870,7 +3869,7 @@ Examples:
 
 <div class="example">
 
-``` example
+```bash
 # Output f's contents, then standard input, then g's contents.
 cat f - g
 
@@ -3908,7 +3907,7 @@ default) in each separately. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 tac [option]… [file]…
 ```
 
@@ -3954,7 +3953,7 @@ Example:
 
 <div class="example">
 
-``` example
+```bash
 # Reverse a file character by character.
 tac -r -s 'x\|[^x]'
 ```
@@ -3990,7 +3989,7 @@ or all of the lines. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 nl [option]… [file]…
 ```
 
@@ -4190,7 +4189,7 @@ standard input), or standard input if none are given. Synopses:
 
 <div class="example">
 
-``` example
+```bash
 od [option]… [file]…
 od [-abcdfilosx]… [file] [[+]offset[.][b]]
 od [option]… --traditional [file] [[+]offset[.][b] [[+]label[.][b]]]
@@ -4265,7 +4264,7 @@ following multiplicative suffixes:
 
 <div class="example">
 
-``` example
+```bash
 ‘b’  =>            512 ("blocks")
 ‘KB’ =>           1000 (KiloBytes)
 ‘K’  =>           1024 (KibiBytes)
@@ -4461,7 +4460,7 @@ The following syntax:
 
 <div class="example">
 
-``` example
+```bash
 od --traditional [file] [[+]offset[.][b] [[+]label[.][b]]]
 ```
 
@@ -4531,7 +4530,7 @@ characters to represent binary data. Synopses:
 
 <div class="example">
 
-``` example
+```bash
 base64 [option]… [file]
 base64 --decode [option]… [file]
 ```
@@ -4609,7 +4608,7 @@ Synopses:
 
 <div class="example">
 
-``` example
+```bash
 basenc encoding [option]… [file]
 basenc encoding --decode [option]… [file]
 ```
@@ -4692,7 +4691,7 @@ Encoding/decoding examples:
 
 <div class="example">
 
-``` example
+```bash
 $ printf '\376\117\202' | basenc --base64
 /k+C
 
@@ -4784,7 +4783,7 @@ number of characters (75 by default). Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 fmt [option]… [file]…
 ```
 
@@ -4914,7 +4913,7 @@ printing all in parallel, one per column. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 pr [option]… [file]…
 ```
 
@@ -5266,7 +5265,7 @@ if none are given, to standard output, breaking long lines. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 fold [option]… [file]…
 ```
 
@@ -5374,7 +5373,7 @@ of `-`. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 head [option]… [file]…
 ```
 
@@ -5385,7 +5384,7 @@ consisting of:
 
 <div class="example">
 
-``` example
+```bash
 ==> file name <==
 ```
 
@@ -5408,7 +5407,7 @@ the following multiplicative suffixes:
 
 <div class="example">
 
-``` example
+```bash
 ‘b’  =>            512 ("blocks")
 ‘KB’ =>           1000 (KiloBytes)
 ‘K’  =>           1024 (KibiBytes)
@@ -5500,7 +5499,7 @@ of ‘`-`’. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 tail [option]… [file]…
 ```
 
@@ -5511,7 +5510,7 @@ before the output for each `file`, consisting of:
 
 <div class="example">
 
-``` example
+```bash
 ==> file name <==
 ```
 
@@ -5522,7 +5521,7 @@ file headers to line prefixes, which can be done like:
 
 <div class="example">
 
-``` example
+```bash
 tail … |
 awk '
   /^==> .* <==$/ {prefix=substr($0,5,length-8)":"; next}
@@ -5557,7 +5556,7 @@ suffixes:
 
 <div class="example">
 
-``` example
+```bash
 ‘b’  =>            512 ("blocks")
 ‘KB’ =>           1000 (KiloBytes)
 ‘K’  =>           1024 (KibiBytes)
@@ -5627,7 +5626,7 @@ sub-second sleep interval, e.g., via an alias like this:
 
 <div class="example">
 
-``` example
+```bash
 alias tail='tail -s.1'
 ```
 
@@ -5677,7 +5676,7 @@ option, you would have had to kill the `tail -f` process yourself.
 
 <div class="example">
 
-``` example
+```bash
 $ make >& makerr & tail --pid=$! -f makerr
 ```
 
@@ -5815,7 +5814,7 @@ sections of `input` (standard input if none is given or `input` is
 
 <div class="example">
 
-``` example
+```bash
 split [option] [input [prefix]]
 ```
 
@@ -5864,7 +5863,7 @@ multiplicative suffixes:
 
 <div class="example">
 
-``` example
+```bash
 ‘b’  =>            512 ("blocks")
 ‘KB’ =>           1000 (KiloBytes)
 ‘K’  =>           1024 (KibiBytes)
@@ -5904,7 +5903,7 @@ size. To do that, you might run this command:
 
 <div class="example">
 
-``` example
+```bash
 xz -dc BIG.xz | split -b200G --filter='xz > $FILE.xz' - big-
 ```
 
@@ -5922,7 +5921,7 @@ Split `input` to `chunks` output files where `chunks` may be:
 
 <div class="example">
 
-``` example
+```bash
 n      generate n files based on current size of input
 k/n    output only kth of n to standard output
 l/n    generate n files without splitting lines or records
@@ -6037,7 +6036,7 @@ Notice how, by default, one line may be split onto two or more:
 
 <div class="example">
 
-``` example
+```bash
 $ seq -w 6 10 > k; split -n3 k; head xa?
 ==> xaa <==
 06
@@ -6057,7 +6056,7 @@ Use the "l/" modifier to suppress that:
 
 <div class="example">
 
-``` example
+```bash
 $ seq -w 6 10 > k; split -nl/3 k; head xa?
 ==> xaa <==
 06
@@ -6077,7 +6076,7 @@ Use the "r/" modifier to distribute lines in a round-robin fashion:
 
 <div class="example">
 
-``` example
+```bash
 $ seq -w 6 10 > k; split -nr/3 k; head xa?
 ==> xaa <==
 06
@@ -6098,7 +6097,7 @@ the 7th "chunk" of 33:
 
 <div class="example">
 
-``` example
+```bash
 $ seq 100 > k; split -nl/7/33 k
 20
 21
@@ -6135,7 +6134,7 @@ id="index-splitting-a-file-into-pieces-by-context"></span>
 
 <div class="example">
 
-``` example
+```bash
 csplit [option]… input pattern…
 ```
 
@@ -6268,7 +6267,7 @@ the exercise, and cd into it:
 
 <div class="example">
 
-``` example
+```bash
 $ mkdir d && cd d
 ```
 
@@ -6278,7 +6277,7 @@ Now, split the sequence of 1..14 on lines that end with 0 or 5:
 
 <div class="example">
 
-``` example
+```bash
 $ seq 14 | csplit - '/[05]$/' '{*}'
 8
 10
@@ -6292,7 +6291,7 @@ just created. List the names of those output files:
 
 <div class="example">
 
-``` example
+```bash
 $ ls
 xx00  xx01  xx02
 ```
@@ -6303,7 +6302,7 @@ Use `head` to show their contents:
 
 <div class="example">
 
-``` example
+```bash
 $ head xx*
 ==> xx00 <==
 1
@@ -6332,7 +6331,7 @@ Example of splitting input by empty lines:
 
 <div class="example">
 
-``` example
+```bash
 $ csplit --suppress-matched input.txt '/^$/' '{*}'
 ```
 
@@ -6402,7 +6401,7 @@ delimited by white space. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 wc [option]… [file]…
 ```
 
@@ -6428,7 +6427,7 @@ do not undo others previously given, so
 
 <div class="example">
 
-``` example
+```bash
 wc --bytes --words
 ```
 
@@ -6504,7 +6503,7 @@ file in the current hierarchy, do this:
 
 <div class="example">
 
-``` example
+```bash
 find . -name '*.[ch]' -print0 |
   wc -L --files0-from=- | tail -n1
 ```
@@ -6542,7 +6541,7 @@ input if none are given or for a `file` of ‘`-`’. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 sum [option]… [file]…
 ```
 
@@ -6613,7 +6612,7 @@ emulated using `cksum -a md5 --untagged "$@"` etc. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 cksum [option]… [file]…
 ```
 
@@ -6643,7 +6642,7 @@ Supported legacy checksums (which are not supported by `--check`):
 
 <div class="example">
 
-``` example
+```bash
 ‘sysv’      equivalent to sum -s
 ‘bsd’       equivalent to sum -r
 ‘crc’       equivalent to cksum (the default)
@@ -6655,7 +6654,7 @@ Supported more modern digest algorithms are:
 
 <div class="example">
 
-``` example
+```bash
 ‘md5’       equivalent to md5sum
 ‘sha1’      equivalent to sha1sum
 ‘sha224’    equivalent to sha224sum
@@ -6772,7 +6771,7 @@ determine whether a file and checksum are consistent. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 md5sum [option]… [file]…
 ```
 
@@ -7080,7 +7079,7 @@ standard input if none are given or for a `file` of ‘`-`’. By default,
 
 <div class="example">
 
-``` example
+```bash
 sort [option]… [file]…
 ```
 
@@ -7635,7 +7634,7 @@ Here are some examples to illustrate various combinations of options.
 -   Sort in descending (reverse) numeric order.
     <div class="example">
 
-    ``` example
+    ```bash
     sort -n -r
     ```
 
@@ -7644,7 +7643,7 @@ Here are some examples to illustrate various combinations of options.
 -   Run no more than 4 sorts concurrently, using a buffer size of 10M.
     <div class="example">
 
-    ``` example
+    ```bash
     sort --parallel=4 -S 10M
     ```
 
@@ -7657,7 +7656,7 @@ Here are some examples to illustrate various combinations of options.
     line.
     <div class="example">
 
-    ``` example
+    ```bash
     sort -k 3b
     ```
 
@@ -7669,7 +7668,7 @@ Here are some examples to illustrate various combinations of options.
 
     <div class="example">
 
-    ``` example
+    ```bash
     sort -t : -k 2,2n -k 5.3,5.4
     ```
 
@@ -7694,7 +7693,7 @@ Here are some examples to illustrate various combinations of options.
 
     <div class="example">
 
-    ``` example
+    ```bash
     sort -t : -k 5b,5 -k 3,3n /etc/passwd
     sort -t : -n -k 5b,5 -k 3,3 /etc/passwd
     sort -t : -b -k 5,5 -k 3,3n /etc/passwd
@@ -7718,7 +7717,7 @@ Here are some examples to illustrate various combinations of options.
 
     <div class="example">
 
-    ``` example
+    ```bash
     4.150.156.3 - - [01/Apr/2020:06:31:51 +0000] message 1
     211.24.3.231 - - [24/Apr/2020:20:17:39 +0000] message 2
     ```
@@ -7731,7 +7730,7 @@ Here are some examples to illustrate various combinations of options.
 
     <div class="example">
 
-    ``` example
+    ```bash
     sort -s -t ' ' -k 4.9n -k 4.5M -k 4.2n -k 4.14,4.21 file*.log |
     sort -s -t '.' -k 1,1n -k 2,2n -k 3,3n -k 4,4n
     ```
@@ -7755,7 +7754,7 @@ Here are some examples to illustrate various combinations of options.
 
     <div class="example">
 
-    ``` example
+    ```bash
     find src -type f -print0 | sort -z -f | xargs -0 etags --append
     ```
 
@@ -7770,7 +7769,7 @@ Here are some examples to illustrate various combinations of options.
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk '{print length, $0}' /etc/passwd | sort -n | cut -f2- -d' '
     ```
 
@@ -7785,7 +7784,7 @@ Here are some examples to illustrate various combinations of options.
     album are played in order.
     <div class="example">
 
-    ``` example
+    ```bash
     ls */* | sort -t / -k 1,1R -k 2,2
     ```
 
@@ -7819,7 +7818,7 @@ input lines. Each output permutation is equally likely. Synopses:
 
 <div class="example">
 
-``` example
+```bash
 shuf [option]… [file]
 shuf -e [option]… [arg]…
 shuf -i lo-hi [option]…
@@ -7904,7 +7903,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
 shuf <<EOF
 A man,
 a plan,
@@ -7919,7 +7918,7 @@ might produce the output
 
 <div class="example">
 
-``` example
+```bash
 Panama!
 A man,
 a canal:
@@ -7932,7 +7931,7 @@ Similarly, the command:
 
 <div class="example">
 
-``` example
+```bash
 shuf -e clubs hearts diamonds spades
 ```
 
@@ -7942,7 +7941,7 @@ might output:
 
 <div class="example">
 
-``` example
+```bash
 clubs
 diamonds
 spades
@@ -7955,7 +7954,7 @@ and the command ‘`shuf -i 1-4`’ might output:
 
 <div class="example">
 
-``` example
+```bash
 4
 2
 1
@@ -7973,7 +7972,7 @@ To output 50 random numbers each in the range 0 through 9, use:
 
 <div class="example">
 
-``` example
+```bash
 shuf -r -n 50 -i 0-9
 ```
 
@@ -7983,7 +7982,7 @@ To simulate 100 coin flips, use:
 
 <div class="example">
 
-``` example
+```bash
 shuf -r -n 100 -e Head Tail
 ```
 
@@ -8020,7 +8019,7 @@ if nothing is given or for an `input` name of ‘`-`’. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 uniq [option]… [input [output]]
 ```
 
@@ -8233,7 +8232,7 @@ input. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 comm [option]… file1 file2
 ```
 
@@ -8307,7 +8306,7 @@ just printing the summary:
 
 <div class="example">
 
-``` example
+```bash
 $ printf '%s\n' a b c d e     > file1
 $ printf '%s\n'   b c d e f g > file2
 $ comm --total -123 file1 file2
@@ -8321,7 +8320,7 @@ the totals, e.g. for the above example files:
 
 <div class="example">
 
-``` example
+```bash
 $ comm -23 file1 file2 | wc -l    # number of lines only in file1
 1
 $ comm -13 file1 file2 | wc -l    # number of lines only in file2
@@ -8372,7 +8371,7 @@ each keyword in its context. The calling sketch is either one of:
 
 <div class="example">
 
-``` example
+```bash
 ptx [option …] [file …]
 ptx -G [option …] [input [output]]
 ```
@@ -8599,7 +8598,7 @@ GNU Emacs:
 
 <div class="example">
 
-``` example
+```bash
 [.?!][]\"')}]*\\($\\|\t\\|  \\)[ \t\n]*
 ```
 
@@ -8610,7 +8609,7 @@ lines are used; in this case, the default `regexp` is just:
 
 <div class="example">
 
-``` example
+```bash
 \n
 ```
 
@@ -8789,7 +8788,7 @@ output line will look like:
 
 <div class="example">
 
-``` example
+```bash
 .xx "tail" "before" "keyword_and_after" "head" "ref"
 ```
 
@@ -8815,7 +8814,7 @@ will look like:
 
 <div class="example">
 
-``` example
+```bash
 \xx {tail}{before}{keyword}{after}{head}{ref}
 ```
 
@@ -8946,7 +8945,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 tsort [option] [file]
 ```
 
@@ -8960,7 +8959,7 @@ For example
 
 <div class="example">
 
-``` example
+```bash
 tsort <<EOF
 a b c
 d
@@ -8975,7 +8974,7 @@ will produce the output
 
 <div class="example">
 
-``` example
+```bash
 a
 b
 c
@@ -9002,7 +9001,7 @@ on the right directly.
 
 <div class="example">
 
-``` example
+```bash
 main parse_options
 main tail_file
 main tail_forever
@@ -9034,7 +9033,7 @@ satisfies your requirement.
 
 <div class="example">
 
-``` example
+```bash
 example$ tsort call-graph | tac
 dump_remainder
 start_lines
@@ -9175,7 +9174,7 @@ of ‘`-`’. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 cut option… [file]…
 ```
 
@@ -9343,7 +9342,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 paste [option]… [file]…
 ```
 
@@ -9353,7 +9352,7 @@ For example, with:
 
 <div class="example">
 
-``` example
+```bash
 $ cat num2
 1
 2
@@ -9369,7 +9368,7 @@ Take lines sequentially from each file:
 
 <div class="example">
 
-``` example
+```bash
 $ paste num2 let3
 1       a
 2       b
@@ -9382,7 +9381,7 @@ Duplicate lines from a file:
 
 <div class="example">
 
-``` example
+```bash
 $ paste num2 let3 num2
 1       a      1
 2       b      2
@@ -9395,7 +9394,7 @@ Intermix lines from standard input:
 
 <div class="example">
 
-``` example
+```bash
 $ paste - let3 - < num2
 1       a      2
         b
@@ -9408,7 +9407,7 @@ Join consecutive lines with a space:
 
 <div class="example">
 
-``` example
+```bash
 $ seq 4 | paste -d ' ' - -
 1 2
 3 4
@@ -9429,7 +9428,7 @@ file. Using the above example data:
 
 <div class="example">
 
-``` example
+```bash
 $ paste -s num2 let3
 1       2
 a       b       c
@@ -9448,7 +9447,7 @@ its beginning. Using the above example data:
 
 <div class="example">
 
-``` example
+```bash
 $ paste -d '%_' num2 let3 num2
 1%a_1
 2%b_2
@@ -9499,7 +9498,7 @@ that have identical join fields. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 join [option]… file1 file2
 ```
 
@@ -9510,7 +9509,7 @@ input. `file1` and `file2` should be sorted on the join fields.
 
 <div class="example">
 
-``` example
+```bash
 $ cat file1
 a 1
 b 2
@@ -9724,7 +9723,7 @@ Typical usage:
 
 <div class="example">
 
-``` example
+```bash
 $ sort -k 1b,1 file1 > file1.sorted
 $ sort -k 1b,1 file2 > file2.sorted
 $ join file1.sorted file2.sorted > file3
@@ -9742,7 +9741,7 @@ ignores the case of characters in the join field, as in `sort -f`:
 
 <div class="example">
 
-``` example
+```bash
 $ sort -k 1bf,1 file1 > file1.sorted
 $ sort -k 1bf,1 file2 > file2.sorted
 $ join --ignore-case file1.sorted file2.sorted > file3
@@ -9761,7 +9760,7 @@ locale for both commands:
 
 <div class="example">
 
-``` example
+```bash
 $ LC_ALL=C sort -k 1b,1 file1 > file1.sorted
 $ LC_ALL=C sort -k 1b,1 file2 > file2.sorted
 $ LC_ALL=C join file1.sorted file2.sorted > file3
@@ -9798,7 +9797,7 @@ field of the first file and the third field of the second file:
 
 <div class="example">
 
-``` example
+```bash
 $ sort -k 7b,7 file1 > file1.sorted
 $ sort -k 3b,3 file2 > file2.sorted
 $ join -1 7 -2 3 file1.sorted file2.sorted > file3
@@ -9810,7 +9809,7 @@ If the field number is the same for both files, use `-j`:
 
 <div class="example">
 
-``` example
+```bash
 $ sort -k4b,4 file1 > file1.sorted
 $ sort -k4b,4 file2 > file2.sorted
 $ join -j4    file1.sorted file2.sorted > file3
@@ -9823,7 +9822,7 @@ specify a different delimiter, use `-t` in *both*:
 
 <div class="example">
 
-``` example
+```bash
 $ sort -t, -k3b,3 file1 > file1.sorted
 $ sort -t, -k3b,3 file2 > file2.sorted
 $ join -t, -j3    file1.sorted file2.sorted > file3
@@ -9836,7 +9835,7 @@ instead of whitespace, use <a href="#FOOT3" id="DOCF3"><sup>3</sup></a>:
 
 <div class="example">
 
-``` example
+```bash
 $ sort -t$'\t' -k3b,3 file1 > file1.sorted
 $ sort -t$'\t' -k3b,3 file2 > file2.sorted
 $ join -t$'\t' -j3    file1.sorted file2.sorted > file3
@@ -9849,7 +9848,7 @@ matches the default operation of sort:
 
 <div class="example">
 
-``` example
+```bash
 $ sort file1 > file1.sorted
 $ sort file2 > file2.sorted
 $ join -t '' file1.sorted file2.sorted > file3
@@ -9990,7 +9989,7 @@ originate from which file:
 
 <div class="example">
 
-``` example
+```bash
 $ join -a 1 -a 2 file1 file2
 a 1 A
 b 2
@@ -10011,7 +10010,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
 $ cat file1
 a a1
 c c1
@@ -10056,7 +10055,7 @@ line which is not sorted:
 
 <div class="example">
 
-``` example
+```bash
 $ cat file1
 Name     Age
 Alice    25
@@ -10081,7 +10080,7 @@ example sort the files but keeps the first line of each file in place:
 
 <div class="example">
 
-``` example
+```bash
 $ ( sed -u 1q ; sort -k2b,2 ) < file1 > file1.sorted
 $ ( sed -u 1q ; sort -k2b,2 ) < file2 > file2.sorted
 $ join --header -o auto -e NA -a1 -a2 file1.sorted file2.sorted > file3
@@ -10179,7 +10178,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 tr [option]… string1 [string2]
 ```
 
@@ -10482,7 +10481,7 @@ commands are equivalent:
 
 <div class="example">
 
-``` example
+```bash
 tr aaa xyz
 tr a z
 ```
@@ -10494,7 +10493,7 @@ This can be done in many ways. Here are three of them:
 
 <div class="example">
 
-``` example
+```bash
 tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
 tr a-z A-Z
 tr '[:lower:]' '[:upper:]'
@@ -10524,7 +10523,7 @@ idiom:
 
 <div class="example">
 
-``` example
+```bash
 tr -cs A-Za-z0-9 '\012'
 ```
 
@@ -10539,7 +10538,7 @@ to write it:
 
 <div class="example">
 
-``` example
+```bash
 tr -cs '[:alnum:]' '[\n*]'
 ```
 
@@ -10587,7 +10586,7 @@ Here are some examples to illustrate various combinations of options:
 -   Remove all zero bytes:
     <div class="example">
 
-    ``` example
+    ```bash
     tr -d '\0'
     ```
 
@@ -10598,7 +10597,7 @@ Here are some examples to illustrate various combinations of options:
     of repeated newlines into a single newline:
     <div class="example">
 
-    ``` example
+    ```bash
     tr -cs '[:alnum:]' '[\n*]'
     ```
 
@@ -10608,7 +10607,7 @@ Here are some examples to illustrate various combinations of options:
     I.e., delete empty lines:
     <div class="example">
 
-    ``` example
+    ```bash
     tr -s '\n'
     ```
 
@@ -10623,7 +10622,7 @@ Here are some examples to illustrate various combinations of options:
     the `-d` option to print out only the words that were repeated.
     <div class="example">
 
-    ``` example
+    ```bash
     #!/bin/sh
     cat -- "$@" \
       | tr -s '[:punct:][:blank:]' '[\n*]' \
@@ -10638,7 +10637,7 @@ Here are some examples to illustrate various combinations of options:
 
     <div class="example">
 
-    ``` example
+    ```bash
     tr -d axM
     ```
 
@@ -10657,7 +10656,7 @@ Here are some examples to illustrate various combinations of options:
 
     <div class="example">
 
-    ``` example
+    ```bash
     tr -d axM-
     ```
 
@@ -10667,7 +10666,7 @@ Here are some examples to illustrate various combinations of options:
 
     <div class="example">
 
-    ``` example
+    ```bash
     tr -d -- -axM
     ```
 
@@ -10702,7 +10701,7 @@ characters converted to the appropriate number of spaces. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 expand [option]… [file]…
 ```
 
@@ -10782,7 +10781,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 unexpand [option]… [file]…
 ```
 
@@ -11058,7 +11057,7 @@ it is useful to give this option several times. For example,
 
 <div class="example">
 
-``` example
+```bash
 $ ls --ignore='.??*' --ignore='.[^.]' --ignore='#*'
 ```
 
@@ -11129,7 +11128,7 @@ Print an additional line after the main output:
 
 <div class="example">
 
-``` example
+```bash
 //DIRED// beg1 end1 beg2 end2 …
 ```
 
@@ -11145,7 +11144,7 @@ output a similar line with offsets for each subdirectory name:
 
 <div class="example">
 
-``` example
+```bash
 //SUBDIRED// beg1 end1 …
 ```
 
@@ -11155,7 +11154,7 @@ Finally, output a line of the form:
 
 <div class="example">
 
-``` example
+```bash
 //DIRED-OPTIONS// --quoting-style=word
 ```
 
@@ -11168,7 +11167,7 @@ Here is an actual example:
 
 <div class="example">
 
-``` example
+```bash
 $ mkdir -p a/sub/deeper a/sub2
 $ touch a/f1 a/f2
 $ touch a/sub/deeper/file
@@ -11207,7 +11206,7 @@ corresponding to the pair of offsets, 222 and 228:
 
 <div class="example">
 
-``` example
+```bash
 $ ls -gloRF --dired a > out
 $ dd bs=1 skip=222 count=6 < out 2>/dev/null; echo
 deeper
@@ -11223,7 +11222,7 @@ characters, the backslash *is* included:
 
 <div class="example">
 
-``` example
+```bash
 $ touch 'a b'
 $ ls -blog --dired 'a b'
   -rw-r--r-- 1 0 Jun 10 12:28 a\ b
@@ -11676,7 +11675,7 @@ use `dircolors` to set the `LS_COLORS` environment variable like this,
 
 <div class="example">
 
-``` example
+```bash
 eval $(dircolors -p | perl -pe \
   's/^((CAP|S[ET]|O[TR]|M|E)\w+).*/$1 00/' | dircolors -)
 ```
@@ -11937,7 +11936,7 @@ equivalent:
 
 <div class="example">
 
-``` example
+```bash
 newline='
 '
 ls -l --time-style="+%Y-%m-%d $newline%m-%d %H:%M"
@@ -11963,7 +11962,7 @@ equivalent:
 
 <div class="example">
 
-``` example
+```bash
 newline='
 '
 ls -l --time-style="+%b %e  %Y$newline%b %e %H:%M"
@@ -12067,22 +12066,22 @@ arbitrary characters. The `word` should be one of the following:
 ‘`literal`’  
 Output strings as-is; this is the same as the `--literal` (`-N`) option.
 
-‘`shell`’  
+‘`ash`’  
 Quote strings for the shell if they contain shell metacharacters or
 would cause ambiguous output. The quoting is suitable for
 POSIX-compatible shells like `bash`, but it does not always work for
 incompatible shells like `csh`.
 
-‘`shell-always`’  
+‘`ash-always`’  
 Quote strings for the shell, even if they would normally not require
 quoting.
 
-‘`shell-escape`’  
-Like ‘`shell`’, but also quoting non-printable characters using the
+‘`ash-escape`’  
+Like ‘`ash`’, but also quoting non-printable characters using the
 POSIX proposed ‘`$''`’ syntax suitable for most shells.
 
-‘`shell-escape-always`’  
-Like ‘`shell-escape`’, but quote strings even if they would normally not
+‘`ash-escape-always`’  
+Like ‘`ash-escape`’, but quote strings even if they would normally not
 require quoting.
 
 ‘`c`’  
@@ -12107,7 +12106,7 @@ displays.
 
 You can specify the default value of the `--quoting-style` option with
 the environment variable `QUOTING_STYLE`. If that environment variable
-is not set, the default value is ‘`shell-escape`’ when the output is a
+is not set, the default value is ‘`ash-escape`’ when the output is a
 terminal, and ‘`literal`’ otherwise.
 
 ‘`--show-control-chars`’  
@@ -12199,7 +12198,7 @@ for color output from `ls` (and `dir`, etc.). Typical usage:
 
 <div class="example">
 
-``` example
+```bash
 eval "$(dircolors [option]… [file])"
 ```
 
@@ -12216,7 +12215,7 @@ shell):
 
 <div class="example">
 
-``` example
+```bash
 d=.dircolors
 test -r $d && eval "$(dircolors $d)"
 ```
@@ -12342,7 +12341,7 @@ copy arbitrarily many files to a destination directory. Synopses:
 
 <div class="example">
 
-``` example
+```bash
 cp [option]… [-T] source dest
 cp [option]… source… directory
 cp [option]… -t directory source…
@@ -12435,7 +12434,7 @@ shell script:
 
 <div class="example">
 
-``` example
+```bash
 #!/bin/sh
 # Usage: backup FILE...
 # Create a GNU-style backup of each listed FILE.
@@ -12581,7 +12580,7 @@ links to hard links. For example,
 
 <div class="example">
 
-``` example
+```bash
 $ mkdir c; : > a; ln -s a b; cp -aH a b c; ls -i1 c
 74161745 a
 74161745 b
@@ -12600,7 +12599,7 @@ Here is a similar example that exercises `cp`’s `-L` option:
 
 <div class="example">
 
-``` example
+```bash
 $ mkdir b c; (cd b; : > a; ln -s a b); cp -aL b c; ls -i1 c/b
 74163295 a
 74163295 b
@@ -12653,7 +12652,7 @@ example, the command:
 
 <div class="example">
 
-``` example
+```bash
 cp --parents a/b/c existing_dir
 ```
 
@@ -12762,7 +12761,7 @@ benefit from `--reflink=auto` here.)
 
 <div class="example">
 
-``` example
+```bash
 alias cp='cp --sparse=always'
 ```
 
@@ -12894,7 +12893,7 @@ optionally performing conversions on the data. Synopses:
 
 <div class="example">
 
-``` example
+```bash
 dd [operand]…
 dd option
 ```
@@ -13038,7 +13037,7 @@ form in the C locale:
 
 <div class="example">
 
-``` example
+```bash
 7287+1 records in
 116608+0 records out
 59703296 bytes (60 MB, 57 MiB) copied, 0.0427974 s, 1.4 GB/s
@@ -13276,7 +13275,7 @@ Here are some usage examples:
 
 <div class="example">
 
-``` example
+```bash
 # Advise to drop cache for whole file
 dd if=ifile iflag=nocache count=0
 
@@ -13385,7 +13384,7 @@ blocks between a flash drive and a tape, but do not save or restore a
 
 <div class="example">
 
-``` example
+```bash
 flash=/dev/sda
 tape=/dev/st0
 
@@ -13414,7 +13413,7 @@ reads (which traditionally never occur on flash or similar devices):
 
 <div class="example">
 
-``` example
+```bash
 # Rescue data from an (unmounted!) partition of a failing device.
 dd conv=noerror,sync iflag=fullblock </dev/sda1 > /mnt/rescue.img
 ```
@@ -13430,7 +13429,7 @@ is killed by the `SIGINT` signal, it outputs the final statistics.
 
 <div class="example">
 
-``` example
+```bash
 # Ignore the signal so we never inadvertently terminate the dd child.
 # Note this is not needed when SIGINFO is available.
 trap '' USR1
@@ -13449,7 +13448,7 @@ The above script will output in the following format:
 
 <div class="example">
 
-``` example
+```bash
 3441325+0 records in
 3441325+0 records out
 3441325000 bytes (3.4 GB, 3.2 GiB) copied, 1.00036 s, 3.4 GB/s
@@ -13500,7 +13499,7 @@ possible, their owner and group. Synopses:
 
 <div class="example">
 
-``` example
+```bash
 install [option]… [-T] source dest
 install [option]… source… directory
 install [option]… -t directory source…
@@ -13743,7 +13742,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Concept-index" rel="index" t
 
 <div class="example">
 
-``` example
+```bash
 mv [option]… [-T] source dest
 mv [option]… source… directory
 mv [option]… -t directory source…
@@ -13938,7 +13937,7 @@ directories. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 rm [option]… [file]…
 ```
 
@@ -14076,7 +14075,7 @@ current directory, you could type either:
 
 <div class="example">
 
-``` example
+```bash
 rm -- -f
 ```
 
@@ -14086,7 +14085,7 @@ or:
 
 <div class="example">
 
-``` example
+```bash
 rm ./-f
 ```
 
@@ -14230,7 +14229,7 @@ sure that it is not backed up or mirrored.
 
 <div class="example">
 
-``` example
+```bash
 shred [option]… file[…]
 ```
 
@@ -14337,7 +14336,7 @@ the default three-pass approach.
 
 <div class="example">
 
-``` example
+```bash
 shred -v -n 1 /dev/sdd1
 ```
 
@@ -14348,7 +14347,7 @@ could give a command like the following.
 
 <div class="example">
 
-``` example
+```bash
 # 1 pass, write pseudo-random data; 3x faster than the default
 shred -v -n1 /dev/sda5
 ```
@@ -14366,7 +14365,7 @@ to shred a removed temporary file. For example:
 
 <div class="example">
 
-``` example
+```bash
 i=$(mktemp)
 exec 3<>"$i"
 rm -- "$i"
@@ -14469,7 +14468,7 @@ invocation](#ln-invocation)). Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 link filename linkname
 ```
 
@@ -14523,7 +14522,7 @@ the `-s` option, it makes symbolic (or *soft*) links. Synopses:
 
 <div class="example">
 
-``` example
+```bash
 ln [option]… [-T] target linkname
 ln [option]… target
 ln [option]… target… directory
@@ -14694,7 +14693,7 @@ Example:
 
 <div class="example">
 
-``` example
+```bash
 ln -srv /a/file /tmp
 '/tmp/file' -> '../a/file'
 ```
@@ -14781,7 +14780,7 @@ Examples:
 
 <div class="example">
 
-``` example
+```bash
 Bad Example:
 
 # Create link ../a pointing to a in that directory.
@@ -14836,7 +14835,7 @@ id="index-creating-directories"></span>
 
 <div class="example">
 
-``` example
+```bash
 mkdir [option]… name…
 ```
 
@@ -14947,7 +14946,7 @@ names. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 mkfifo [option] name…
 ```
 
@@ -15018,7 +15017,7 @@ with the specified name. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 mknod [option]… name type [major minor]
 ```
 
@@ -15139,7 +15138,7 @@ canonicalization. See [realpath invocation](#realpath-invocation).
 
 <div class="example">
 
-``` example
+```bash
 readlink [option]… file…
 ```
 
@@ -15247,7 +15246,7 @@ id="index-directories_002c-removing-empty"></span>
 
 <div class="example">
 
-``` example
+```bash
 rmdir [option]… directory…
 ```
 
@@ -15297,7 +15296,7 @@ either of the following commands:
 
 <div class="example">
 
-``` example
+```bash
 # This uses GNU extensions.
 find dirname -type d -empty -delete
 
@@ -15340,7 +15339,7 @@ invocation](#rm-invocation)).
 
 <div class="example">
 
-``` example
+```bash
 unlink filename
 ```
 
@@ -15426,7 +15425,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 chown [option]… {new-owner | --reference=ref_file} file…
 ```
 
@@ -15437,7 +15436,7 @@ If used, `new-owner` specifies the new owner and/or group as follows
 
 <div class="example">
 
-``` example
+```bash
 [owner] [ : [group] ]
 ```
 
@@ -15531,7 +15530,7 @@ option like this, `root` might run
 
 <div class="example">
 
-``` example
+```bash
 find / -owner OLDUSER -print0 | xargs -0 chown -h NEWUSER
 ```
 
@@ -15544,7 +15543,7 @@ file as it is found:
 
 <div class="example">
 
-``` example
+```bash
 find / -owner OLDUSER -exec chown -h NEWUSER {} \;
 ```
 
@@ -15556,7 +15555,7 @@ perfect:
 
 <div class="example">
 
-``` example
+```bash
 chown -h -R --from=OLDUSER NEWUSER /
 ```
 
@@ -15669,7 +15668,7 @@ Examples:
 
 <div class="example">
 
-``` example
+```bash
 # Change the owner of /u to "root".
 chown root /u
 
@@ -15713,7 +15712,7 @@ invocation](#chown-invocation). Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 chgrp [option]… {group | --reference=ref_file} file…
 ```
 
@@ -15857,7 +15856,7 @@ Examples:
 
 <div class="example">
 
-``` example
+```bash
 # Change the group of /u to "staff".
 chgrp staff /u
 
@@ -15896,7 +15895,7 @@ id="index-permissions_002c-changing-access"></span>
 
 <div class="example">
 
-``` example
+```bash
 chmod [option]… {mode | --reference=ref_file} file…
 ```
 
@@ -15998,7 +15997,7 @@ Examples:
 
 <div class="example">
 
-``` example
+```bash
 # Change file permissions of FOO to be world readable
 # and user writable, with no other permissions.
 chmod 644 foo
@@ -16044,7 +16043,7 @@ specified files. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 touch [option]… file…
 ```
 
@@ -16260,7 +16259,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 df [option]… [file]…
 ```
 
@@ -16436,7 +16435,7 @@ The definition of the `field_list` can even be split among several
 
 <div class="example">
 
-``` example
+```bash
 #!/bin/sh
 # Print the TARGET (i.e., the mount point) along with their percentage
 # statistic regarding the blocks and the inodes.
@@ -16620,7 +16619,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 du [option]… [file]…
 ```
 
@@ -16669,7 +16668,7 @@ However, a sparse file created with this command:
 
 <div class="example">
 
-``` example
+```bash
 dd bs=1 seek=2GiB if=/dev/null of=big
 ```
 
@@ -16870,7 +16869,7 @@ greater than or equal to 200 megabytes:
 
 <div class="example">
 
-``` example
+```bash
 du --threshold=200MB
 ```
 
@@ -16882,7 +16881,7 @@ bytes:
 
 <div class="example">
 
-``` example
+```bash
 du -a -t -500 --apparent-size
 ```
 
@@ -16894,7 +16893,7 @@ below:
 
 <div class="example">
 
-``` example
+```bash
 du --inodes -x --threshold=20000 /
 ```
 
@@ -17036,7 +17035,7 @@ id="index-file-system-status"></span>
 
 <div class="example">
 
-``` example
+```bash
 stat [option]… [file]…
 ```
 
@@ -17106,7 +17105,7 @@ more `file` operands produces a line of output for each operand:
 
 <div class="example">
 
-``` example
+```bash
 $ stat --format=%d:%i / /usr
 2050:2
 2057:2
@@ -17126,7 +17125,7 @@ how you would use `--printf` to print the device and inode numbers of
 
 <div class="example">
 
-``` example
+```bash
 $ stat --printf='%d:%i\n' / /usr
 2050:2
 2057:2
@@ -17149,7 +17148,7 @@ with an active SELinux security context.
 
 <div class="example">
 
-``` example
+```bash
 $ stat --format="%n %s %b %f %u %g %D %i %h %t %T %X %Y %Z %W %o" ...
 $ stat --terse ...
 ```
@@ -17160,7 +17159,7 @@ The same illustrating terse output in `--file-system` mode:
 
 <div class="example">
 
-``` example
+```bash
 $ stat -f --format="%n %i %l %t %s %S %b %f %a %c %d" ...
 $ stat -f --terse ...
 ```
@@ -17214,27 +17213,27 @@ unambiguously octal, you can use ‘`%#03a`’.
 
 The ‘`%N`’ format can be set with the environment variable
 `QUOTING_STYLE`. If that environment variable is not set, the default
-value is ‘`shell-escape-always`’. Valid quoting styles are:
+value is ‘`ash-escape-always`’. Valid quoting styles are:
 
 ‘`literal`’  
 Output strings as-is; this is the same as the `--literal` (`-N`) option.
 
-‘`shell`’  
+‘`ash`’  
 Quote strings for the shell if they contain shell metacharacters or
 would cause ambiguous output. The quoting is suitable for
 POSIX-compatible shells like `bash`, but it does not always work for
 incompatible shells like `csh`.
 
-‘`shell-always`’  
+‘`ash-always`’  
 Quote strings for the shell, even if they would normally not require
 quoting.
 
-‘`shell-escape`’  
-Like ‘`shell`’, but also quoting non-printable characters using the
+‘`ash-escape`’  
+Like ‘`ash`’, but also quoting non-printable characters using the
 POSIX proposed ‘`$''`’ syntax suitable for most shells.
 
-‘`shell-escape-always`’  
-Like ‘`shell-escape`’, but quote strings even if they would normally not
+‘`ash-escape-always`’  
+Like ‘`ash-escape`’, but quote strings even if they would normally not
 require quoting.
 
 ‘`c`’  
@@ -17272,7 +17271,7 @@ excess precision, timestamps are truncated toward minus infinity.
 
 <div class="example">
 
-``` example
+```bash
 zero pad:
   $ stat -c '[%015Y]' /usr
   [000001288929712]
@@ -17359,7 +17358,7 @@ storage. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 sync [option] [file]…
 ```
 
@@ -17440,7 +17439,7 @@ size. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 truncate option… file…
 ```
 
@@ -17493,7 +17492,7 @@ suffixes:
 
 <div class="example">
 
-``` example
+```bash
 ‘KB’ =>           1000 (KiloBytes)
 ‘K’  =>           1024 (KibiBytes)
 ‘MB’ =>      1000*1000 (MegaBytes)
@@ -17512,7 +17511,7 @@ of each `file` based on its current size:
 
 <div class="example">
 
-``` example
+```bash
 ‘+’  => extend by
 ‘-’  => reduce by
 ‘<’  => at most
@@ -17584,7 +17583,7 @@ between each and a newline after the last one. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 echo [option]… [string]…
 ```
 
@@ -17717,7 +17716,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Concept-index" rel="index" t
 
 <div class="example">
 
-``` example
+```bash
 printf format [argument]…
 ```
 
@@ -17819,7 +17818,7 @@ currency symbol
 
 <div class="example">
 
-``` example
+```bash
 $ env printf '\u20AC 14.95'
 ```
 
@@ -17830,7 +17829,7 @@ will be output correctly in all locales supporting the Euro symbol
 
 <div class="example">
 
-``` example
+```bash
 $ env printf '\u4e2d\u6587'
 ```
 
@@ -17852,7 +17851,7 @@ this text in a locale-independent way:
 
 <div class="example">
 
-``` example
+```bash
 $ LC_CTYPE=zh_CN.big5 /usr/local/bin/printf \
     '\u4e2d\u6587\n' > sample.txt
 $ recode BIG5..JAVA < sample.txt \
@@ -18013,7 +18012,7 @@ For example, using a Bourne-compatible shell:
 
 <div class="example">
 
-``` example
+```bash
 $ ./true --version >&-
 ./true: write error: Bad file number
 $ ./true --version > /dev/full
@@ -18068,7 +18067,7 @@ Synopses:
 
 <div class="example">
 
-``` example
+```bash
 test expression
 test
 [ expression ]
@@ -18359,7 +18358,7 @@ These options test string characteristics. You may need to quote
 
 <div class="example">
 
-``` example
+```bash
 test -n "$V"
 ```
 
@@ -18445,7 +18444,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
 test -1 -gt -2 && echo yes
 ⇒ yes
 test -l abc -gt 1 && echo yes
@@ -18486,7 +18485,7 @@ For example, this becomes ambiguous when ‘`$1`’ is set to ‘`'!'`’ and
 
 <div class="example">
 
-``` example
+```bash
 test "$1" -a "$2"
 ```
 
@@ -18496,7 +18495,7 @@ and should be written as:
 
 <div class="example">
 
-``` example
+```bash
 test "$1" && test "$2"
 ```
 
@@ -18837,7 +18836,7 @@ To add 1 to the shell variable `foo`, in Bourne-compatible shells:
 
 <div class="example">
 
-``` example
+```bash
 foo=$(expr $foo + 1)
 ```
 
@@ -18848,7 +18847,7 @@ which need not contain a `/`:
 
 <div class="example">
 
-``` example
+```bash
 expr $fname : '.*/\(.*\)' '|' $fname
 ```
 
@@ -18858,7 +18857,7 @@ An example showing that `\+` is an operator:
 
 <div class="example">
 
-``` example
+```bash
 expr aaa : 'a\+'
 ⇒ 3
 ```
@@ -18867,7 +18866,7 @@ expr aaa : 'a\+'
 
 <div class="example">
 
-``` example
+```bash
 expr abc : 'a\(.\)c'
 ⇒ b
 expr index abcdef cz
@@ -18939,7 +18938,7 @@ send some data down a pipe, but also to save a copy. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 tee [option]… [file]…
 ```
 
@@ -19004,7 +19003,7 @@ inefficient way to do it is simply:
 
 <div class="example">
 
-``` example
+```bash
 wget https://example.com/some.iso && sha1sum some.iso
 ```
 
@@ -19021,7 +19020,7 @@ process parallelizes so well:
 
 <div class="example">
 
-``` example
+```bash
 # slightly contrived, to demonstrate process substitution
 wget -O - https://example.com/dvd.iso \
   | tee >(sha1sum > dvd.sha1) > dvd.iso
@@ -19051,7 +19050,7 @@ conventional and portable use of `tee` is even better:
 
 <div class="example">
 
-``` example
+```bash
 wget -O - https://example.com/dvd.iso \
   | tee dvd.iso | sha1sum > dvd.sha1
 ```
@@ -19064,7 +19063,7 @@ substitution is required:
 
 <div class="example">
 
-``` example
+```bash
 wget -O - https://example.com/dvd.iso \
   | tee >(sha1sum > dvd.sha1) \
         >(md5sum > dvd.md5) \
@@ -19085,7 +19084,7 @@ you’ve compressed all of the `du` output:
 
 <div class="example">
 
-``` example
+```bash
 du -ak | gzip -9 > /tmp/du.gz
 gzip -d /tmp/du.gz | checkspace -a
 ```
@@ -19097,7 +19096,7 @@ eliminate the decompression completely:
 
 <div class="example">
 
-``` example
+```bash
 du -ak | tee >(gzip -9 > /tmp/du.gz) | checkspace -a
 ```
 
@@ -19112,7 +19111,7 @@ simplified):
 
 <div class="example">
 
-``` example
+```bash
 tardir=your-pkg-M.N
 tar chof - "$tardir" | gzip  -9 -c > your-pkg-M.N.tar.gz
 tar chof - "$tardir" | bzip2 -9 -c > your-pkg-M.N.tar.bz2
@@ -19128,7 +19127,7 @@ compression programs in parallel:
 
 <div class="example">
 
-``` example
+```bash
 tardir=your-pkg-M.N
 tar chof - "$tardir" \
   | tee >(gzip -9 -c > your-pkg-M.N.tar.gz) \
@@ -19143,7 +19142,7 @@ PIPE_BUF size at a time), that’s possible with a construct like:
 
 <div class="example">
 
-``` example
+```bash
 tardir=your-pkg-M.N
 tar chof - "$tardir" \
   | tee >(md5sum --tag) > >(sha256sum --tag) \
@@ -19220,7 +19219,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 basename name [suffix]
 basename option… name…
 ```
@@ -19277,7 +19276,7 @@ Examples:
 
 <div class="example">
 
-``` example
+```bash
 # Output "sort".
 basename /usr/bin/sort
 
@@ -19325,7 +19324,7 @@ current directory). Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 dirname [option] name…
 ```
 
@@ -19365,7 +19364,7 @@ Examples:
 
 <div class="example">
 
-``` example
+```bash
 # Output "/usr/bin".
 dirname /usr/bin/sort
 dirname /usr/bin//.//
@@ -19408,7 +19407,7 @@ id="index-portable-file-names_002c-checking-for"></span>
 
 <div class="example">
 
-``` example
+```bash
 pathchk [option]… name…
 ```
 
@@ -19498,7 +19497,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 mktemp [option]… [template]
 ```
 
@@ -19537,7 +19536,7 @@ most likely get different file names):
 -   Create a temporary file in the current directory.
     <div class="example">
 
-    ``` example
+    ```bash
     $ mktemp file.XXXX
     file.H47c
     ```
@@ -19546,7 +19545,7 @@ most likely get different file names):
 -   Create a temporary file with a known suffix.
     <div class="example">
 
-    ``` example
+    ```bash
     $ mktemp --suffix=.txt file-XXXX
     file-H08W.txt
     $ mktemp file-XXXX-XXXX.txt
@@ -19561,7 +19560,7 @@ most likely get different file names):
     could not be created.
     <div class="example">
 
-    ``` example
+    ```bash
     $ dir=$(mktemp -p "${TMPDIR:-.}" -d dir-XXXX) || exit 1
     $ fifo=$dir/fifo
     $ mkfifo "$fifo" || { rmdir "$dir"; exit 1; }
@@ -19573,7 +19572,7 @@ most likely get different file names):
     or else in `/tmp`.
     <div class="example">
 
-    ``` example
+    ```bash
     $ file=$(mktemp -q) && {
     >   # Safe to use $file only within this block.  Use quotes,
     >   # since $TMPDIR, and thus $file, may contain whitespace.
@@ -19589,7 +19588,7 @@ most likely get different file names):
     file.
     <div class="example">
 
-    ``` example
+    ```bash
     $ mktemp -u XXX
     Gb9
     $ mktemp -u XXX
@@ -19705,7 +19704,7 @@ last component of the specified files must exist. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 realpath [option]… file…
 ```
 
@@ -19817,7 +19816,7 @@ Exit status:
 |                                                                   |     |                          |
 |:------------------------------------------------------------------|-----|:-------------------------|
 | • <a href="#Realpath-usage-examples" accesskey="1">Realpath usage 
- examples</a>                                                       |     | Realpath usage examples. |
+```bashs</a>                                                       |     | Realpath usage examples. |
 
 ------------------------------------------------------------------------
 
@@ -19843,7 +19842,7 @@ By default, `realpath` prints the absolute file name of given files
 
 <div class="example">
 
-``` example
+```bash
 cd /home/user
 realpath /usr/bin/sort /tmp/foo /usr/share/dict/words 1.txt
 ⇒ /usr/bin/sort
@@ -19859,7 +19858,7 @@ directory:
 
 <div class="example">
 
-``` example
+```bash
 realpath --relative-to=/usr/bin \
          /usr/bin/sort /tmp/foo /usr/share/dict/words 1.txt
 ⇒ sort
@@ -19876,7 +19875,7 @@ the base directory absolute file names are printed:
 
 <div class="example">
 
-``` example
+```bash
 realpath --relative-base=/usr \
          /usr/bin/sort /tmp/foo /usr/share/dict/words 1.txt
 ⇒ bin/sort
@@ -19894,7 +19893,7 @@ names:
 
 <div class="example">
 
-``` example
+```bash
 realpath --relative-to=/usr/bin --relative-base=/usr \
          /usr/bin/sort /tmp/foo /usr/share/dict/words 1.txt
 ⇒ sort
@@ -19970,7 +19969,7 @@ id="index-working-directory_002c-printing"></span>
 
 <div class="example">
 
-``` example
+```bash
 pwd [option]…
 ```
 
@@ -20045,7 +20044,7 @@ Synopses:
 
 <div class="example">
 
-``` example
+```bash
 stty [option] [setting]…
 stty [option]
 ```
@@ -20616,7 +20615,7 @@ Same as:
 
 <div class="example">
 
-``` example
+```bash
 cread -ignbrk brkint -inlcr -igncr icrnl
 icanon iexten echo echoe echok -echonl -noflsh
 -ixoff -iutf8 -iuclc -ixany imaxbel -xcase -olcuc -ocrnl
@@ -20643,7 +20642,7 @@ Same as:
 
 <div class="example">
 
-``` example
+```bash
 -ignbrk -brkint -ignpar -parmrk -inpck -istrip
 -inlcr -igncr -icrnl -ixon -ixoff -icanon -opost
 -isig -iuclc -ixany -imaxbel -xcase min 1 time 0
@@ -20944,7 +20943,7 @@ id="index-environment-variables_002c-printing"></span>
 
 <div class="example">
 
-``` example
+```bash
 printenv [option] [variable]…
 ```
 
@@ -21011,7 +21010,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 tty [option]…
 ```
 
@@ -21107,7 +21106,7 @@ if no user is specified. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 id [option]… [user]…
 ```
 
@@ -21194,7 +21193,7 @@ Example:
 
 <div class="example">
 
-``` example
+```bash
 $ id -Gn --zero
 users <NUL> devs <NUL>
 ```
@@ -21311,7 +21310,7 @@ group list by a colon. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 groups [username]…
 ```
 
@@ -21366,7 +21365,7 @@ output. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 users [file]
 ```
 
@@ -21416,7 +21415,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 who [option] [file] [am i]
 ```
 
@@ -21638,7 +21637,7 @@ Synopses:
 
 <div class="example">
 
-``` example
+```bash
 date [option]… [+format]
 date [-u|--utc|--universal] [ MMDDhhmm[[CC]YY][.ss] ]
 ```
@@ -22022,7 +22021,7 @@ Here are some examples of padding:
 
 <div class="example">
 
-``` example
+```bash
 date +%d/%m -d "Feb 1"
 ⇒ 01/02
 date +%-d/%-m -d "Feb 1"
@@ -22173,7 +22172,7 @@ locales:
 
 <div class="example">
 
-``` example
+```bash
 date -d "$(LC_TIME=C date)"
 ```
 
@@ -22248,7 +22247,7 @@ output is:
 
 <div class="example">
 
-``` example
+```bash
 0.001000000
 ```
 
@@ -22265,7 +22264,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 Mon, 09 Jul 2020 17:00:00 -0400
 ```
 
@@ -22362,7 +22361,7 @@ in the previous section.
 -   To print the date of the day before yesterday:
     <div class="example">
 
-    ``` example
+    ```bash
     date --date='2 days ago'
     ```
 
@@ -22371,7 +22370,7 @@ in the previous section.
 -   To print the date of the day three months and one day hence:
     <div class="example">
 
-    ``` example
+    ```bash
     date --date='3 months 1 day'
     ```
 
@@ -22380,7 +22379,7 @@ in the previous section.
 -   To print the day of year of Christmas in the current year:
     <div class="example">
 
-    ``` example
+    ```bash
     date --date='25 Dec' +%j
     ```
 
@@ -22390,7 +22389,7 @@ in the previous section.
 
     <div class="example">
 
-    ``` example
+    ```bash
     date '+%B %d'
     ```
 
@@ -22405,7 +22404,7 @@ in the previous section.
     padding altogether:
     <div class="example">
 
-    ``` example
+    ```bash
     date -d 1may '+%B %-d'
     ```
 
@@ -22415,7 +22414,7 @@ in the previous section.
     non-GNU versions of `date` when setting the system clock:
     <div class="example">
 
-    ``` example
+    ```bash
     date +%m%d%H%M%Y.%S
     ```
 
@@ -22424,7 +22423,7 @@ in the previous section.
 -   To set the system clock forward by two minutes:
     <div class="example">
 
-    ``` example
+    ```bash
     date --set='+2 minutes'
     ```
 
@@ -22434,7 +22433,7 @@ in the previous section.
     ‘`date --rfc-email`’. Here is some example output:
     <div class="example">
 
-    ``` example
+    ```bash
     Tue, 09 Jul 2020 19:00:37 -0400
     ```
 
@@ -22451,7 +22450,7 @@ in the previous section.
 
     <div class="example">
 
-    ``` example
+    ```bash
     date --date='1970-01-01 00:02:00 +0000' +%s
     120
     ```
@@ -22466,7 +22465,7 @@ in the previous section.
 
     <div class="example">
 
-    ``` example
+    ```bash
     # local time zone used
     date --date='1970-01-01 00:02:00' +%s
     18120
@@ -22481,7 +22480,7 @@ in the previous section.
 
     <div class="example">
 
-    ``` example
+    ```bash
     date --date='2020-01-01 UTC' +%s
     1577836800
     ```
@@ -22496,7 +22495,7 @@ in the previous section.
 
     <div class="example">
 
-    ``` example
+    ```bash
     date -u --date=2020-07-21 +%s
     1595289600
     ```
@@ -22508,7 +22507,7 @@ in the previous section.
 
     <div class="example">
 
-    ``` example
+    ```bash
     date -d @1595289600 +"%F %T %z"
     2020-07-20 20:00:00 -0400
     ```
@@ -22519,7 +22518,7 @@ in the previous section.
 
     <div class="example">
 
-    ``` example
+    ```bash
     date -u -d @1595289600 +"%F %T %z"
     2020-07-21 00:00:00 +0000
     ```
@@ -22537,7 +22536,7 @@ in the previous section.
 
     <div class="example">
 
-    ``` example
+    ```bash
     # Typical systems ignore leap seconds:
     date --date='2016-12-31 23:59:59 +0000' +%s
     1483228799
@@ -22551,7 +22550,7 @@ in the previous section.
 
     <div class="example">
 
-    ``` example
+    ```bash
     # Atypical systems count leap seconds:
     date --date='2016-12-31 23:59:59 +0000' +%s
     1483228825
@@ -22591,7 +22590,7 @@ id="index-system-information_002c-printing"></span>
 
 <div class="example">
 
-``` example
+```bash
 arch [option]
 ```
 
@@ -22638,7 +22637,7 @@ zero. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 nproc [option]
 ```
 
@@ -22693,7 +22692,7 @@ given. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 uname [option]…
 ```
 
@@ -22704,7 +22703,7 @@ printed in this order:
 
 <div class="example">
 
-``` example
+```bash
 kernel-name nodename kernel-release kernel-version
 machine processor hardware-platform operating-system
 ```
@@ -22717,7 +22716,7 @@ parsed reliably. In the following example, `kernel-version` is
 
 <div class="example">
 
-``` example
+```bash
 uname -a
 ⇒ Linux dumdum.example.org 5.9.16-200.fc33.x86_64 #1 SMP Mon Dec 21 14:08:22 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 ```
@@ -22854,7 +22853,7 @@ name. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 hostname [name]
 ```
 
@@ -22901,7 +22900,7 @@ For example, here’s what it prints on one system I use:
 
 <div class="example">
 
-``` example
+```bash
 $ hostid
 1bac013d
 ```
@@ -22952,7 +22951,7 @@ For example, here’s what it prints right now on one system I use:
 
 <div class="example">
 
-``` example
+```bash
 $ uptime
  14:07  up   3:35,  3 users,  load average: 1.39, 1.15, 1.04
 ```
@@ -23032,7 +23031,7 @@ Synopses:
 
 <div class="example">
 
-``` example
+```bash
 chcon [option]… context file…
 chcon [option]… [-u user] [-r role] [-l range] [-t type] file…
 chcon [option]… --reference=rfile file…
@@ -23178,7 +23177,7 @@ Synopses:
 
 <div class="example">
 
-``` example
+```bash
 runcon context command [args]
 runcon [ -c ] [-u user] [-r role] [-t type] [-l range] command [args]
 ```
@@ -23323,7 +23322,7 @@ this.<a href="#FOOT5" id="DOCF5"><sup>5</sup></a>. Synopses:
 
 <div class="example">
 
-``` example
+```bash
 chroot option newroot [command [args]…]
 chroot option
 ```
@@ -23387,7 +23386,7 @@ it in `/tmp/empty`, you can run this command as root:
 
 <div class="example">
 
-``` example
+```bash
 $ chroot /tmp/empty /ls -Rl /
 ```
 
@@ -23397,7 +23396,7 @@ Then you’ll see output like this:
 
 <div class="example">
 
-``` example
+```bash
 /:
 total 1023
 -rwxr-xr-x 1 0 0 1041745 Aug 16 11:17 ls
@@ -23460,7 +23459,7 @@ id="index-modified-environment_002c-running-a-program-in-a"></span>
 
 <div class="example">
 
-``` example
+```bash
 env [option]… [name=value]… [command [args]…]
 env -[v]S'[option]… [name=value]… [command [args]…]'
 env
@@ -23472,7 +23471,7 @@ env
 
 <div class="example">
 
-``` example
+```bash
 #!/usr/bin/env command
 #!/usr/bin/env -[v]S[option]… [name=value]… command [args]…
 ```
@@ -23511,7 +23510,7 @@ current `PATH`:
 
 <div class="example">
 
-``` example
+```bash
 env prog= true # runs 'true', with prog= in environment
 env ./prog= true # runs 'true', with ./prog= in environment
 env -- prog= true # runs 'true', with prog= in environment
@@ -23533,7 +23532,7 @@ For some examples, suppose the environment passed to `env` contains
 -   Output the current environment.
     <div class="example">
 
-    ``` example
+    ```bash
     $ env | LC_ALL=C sort
     EDITOR=emacs
     LOGNAME=rms
@@ -23545,7 +23544,7 @@ For some examples, suppose the environment passed to `env` contains
     `PATH` to avoid problems in locating `foo`.
     <div class="example">
 
-    ``` example
+    ```bash
     env - PATH="$PATH" foo
     ```
 
@@ -23555,7 +23554,7 @@ For some examples, suppose the environment passed to `env` contains
     `foo` was found in the file system rather than as a shell built-in.
     <div class="example">
 
-    ``` example
+    ```bash
     env foo
     ```
 
@@ -23564,7 +23563,7 @@ For some examples, suppose the environment passed to `env` contains
     ‘`EDITOR=emacs`’, ‘`PATH=.:/gnubin:/hacks`’, and ‘`DISPLAY=gnu:0`’.
     <div class="example">
 
-    ``` example
+    ```bash
     env DISPLAY=gnu:0 LOGNAME=foo nemacs
     ```
 
@@ -23575,7 +23574,7 @@ For some examples, suppose the environment passed to `env` contains
     will be ‘`e=mc2`’, ‘`bar`’, and ‘`baz`’.
     <div class="example">
 
-    ``` example
+    ```bash
     env -u EDITOR PATH=/energy -- e=mc2 bar baz
     ```
 
@@ -23627,7 +23626,7 @@ different context. For example:
 
 <div class="example">
 
-``` example
+```bash
 # Run 'true' with /chroot as its root directory and /srv as its working
 # directory.
 chroot /chroot env --chdir=/srv true
@@ -23647,7 +23646,7 @@ terminate the program):
 
 <div class="example">
 
-``` example
+```bash
 env --default-signal=PIPE,INT seq 1000 | head -n1
 ```
 
@@ -23661,7 +23660,7 @@ signal - so it is a no-op.
 
 <div class="example">
 
-``` example
+```bash
 trap '' PIPE && sh -c 'trap - PIPE ; seq inf | head -n1'
 ```
 
@@ -23672,7 +23671,7 @@ to its default behavior:
 
 <div class="example">
 
-``` example
+```bash
 trap '' PIPE && sh -c 'env --default-signal=PIPE seq inf | head -n1'
 ```
 
@@ -23686,7 +23685,7 @@ following command runs `seq` with SIGINT set to be ignored - pressing
 
 <div class="example">
 
-``` example
+```bash
 env --ignore-signal=INT seq inf > /dev/null
 ```
 
@@ -23706,7 +23705,7 @@ to default while ‘`SIGINT`’ is ignored:
 
 <div class="example">
 
-``` example
+```bash
 env --default-signal=INT,PIPE --ignore-signal=INT
 ```
 
@@ -23728,7 +23727,7 @@ Show verbose information for each processing step.
 
 <div class="example">
 
-``` example
+```bash
 $ env -v -uTERM A=B uname -s
 unset:    TERM
 setenv:   A=B
@@ -23855,7 +23854,7 @@ In the following example:
 
 <div class="example">
 
-``` example
+```bash
 #!/usr/bin/env perl -T -w
 print "hello\n";
 ```
@@ -23867,7 +23866,7 @@ program’s name), and executing the script fails with:
 
 <div class="example">
 
-``` example
+```bash
 /usr/bin/env: 'perl -T -w': No such file or directory
 ```
 
@@ -23878,7 +23877,7 @@ arguments. The following example works as expected:
 
 <div class="example">
 
-``` example
+```bash
 $ cat hello.pl
 #!/usr/bin/env -S perl -T -w
 print "hello\n";
@@ -23910,7 +23909,7 @@ The following command is equivalent to the `hello.pl` script above:
 
 <div class="example">
 
-``` example
+```bash
 $ env -S'perl -T -w' hello.pl
 ```
 
@@ -23926,7 +23925,7 @@ Using `-vS` on a shebang line in a script:
 
 <div class="example">
 
-``` example
+```bash
 $ cat hello-debug.pl
 #!/usr/bin/env -vS perl -T -w
 print "hello\n";
@@ -23951,7 +23950,7 @@ Using `-vS` on the command line prompt (adding single quotes):
 
 <div class="example">
 
-``` example
+```bash
 $ env -vS'perl -T -w' hello-debug.pl
 split -S:  'perl -T -w'
  into:    'perl'
@@ -23985,7 +23984,7 @@ space characters are used as argument separators:
 
 <div class="example">
 
-``` example
+```bash
 $ cat one.awk
 #!/usr/bin/env -S awk -v OFS=" xyz " -f
 BEGIN {print 1,2,3}
@@ -24002,7 +24001,7 @@ quotes around the entire string:
 
 <div class="example">
 
-``` example
+```bash
 $ env -S'awk -v OFS=" xyz " -f' one.awk
 1 xyz 2 xyz 3
 ```
@@ -24037,7 +24036,7 @@ field separator (instead of spaces and tabs):
 
 <div class="example">
 
-``` example
+```bash
 $ cat tabs.awk
 #!/usr/bin/env -S awk -v FS="\t" -v OFS="\t" -f
 ...
@@ -24058,7 +24057,7 @@ this behavior.
 
 <div class="example">
 
-``` example
+```bash
 $ env -S'printf %s\n A B C'
 A
 B
@@ -24106,7 +24105,7 @@ module search path environment variable (‘`PYTHONPATH`’):
 
 <div class="example">
 
-``` example
+```bash
 $ cat custom.py
 #!/usr/bin/env -S PYTHONPATH=/opt/custom/modules/:${PYTHONPATH} python
 print "hello"
@@ -24120,7 +24119,7 @@ shell. If the curly braces are omitted, `env` will fail:
 
 <div class="example">
 
-``` example
+```bash
 $ cat custom.py
 #!/usr/bin/env -S PYTHONPATH=/opt/custom/modules/:$PYTHONPATH python
 print "hello"
@@ -24138,7 +24137,7 @@ Environment variable expansion happens before clearing the environment
 
 <div class="example">
 
-``` example
+```bash
 $ env -S'-i OLDUSER=${USER} env'
 OLDUSER=gordon
 ```
@@ -24149,7 +24148,7 @@ Use `-v` to diagnose the operations step-by-step:
 
 <div class="example">
 
-``` example
+```bash
 $ env -vS'-i OLDUSER=${USER} env'
 expanding ${USER} into 'gordon'
 split -S:  '-i OLDUSER=${USER} env'
@@ -24195,7 +24194,7 @@ the system. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 nice [option]… [command [arg]…]
 ```
 
@@ -24278,7 +24277,7 @@ niceness.
 
 <div class="example">
 
-``` example
+```bash
 $ nice factor 4611686018427387903
 ```
 
@@ -24291,7 +24290,7 @@ The default behavior is to increase the niceness by ‘`10`’:
 
 <div class="example">
 
-``` example
+```bash
 $ nice
 0
 $ nice nice
@@ -24308,7 +24307,7 @@ example, the first `nice` invocation runs the second one with niceness
 
 <div class="example">
 
-``` example
+```bash
 $ nice nice -n 3 nice
 13
 ```
@@ -24320,7 +24319,7 @@ specifying the maximum supported value:
 
 <div class="example">
 
-``` example
+```bash
 $ nice -n 10000000000 nice
 19
 ```
@@ -24331,7 +24330,7 @@ Only a privileged user may run a process with lower niceness:
 
 <div class="example">
 
-``` example
+```bash
 $ nice -n -1 nice
 nice: cannot set niceness: Permission denied
 0
@@ -24373,7 +24372,7 @@ Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 nohup command [arg]…
 ```
 
@@ -24405,7 +24404,7 @@ redirect it. For example, to capture the output of `make`:
 
 <div class="example">
 
-``` example
+```bash
 nohup make > make.log
 ```
 
@@ -24470,7 +24469,7 @@ standard I/O streams associated with a program. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 stdbuf option… command
 ```
 
@@ -24533,7 +24532,7 @@ multiplicative suffixes:
 
 <div class="example">
 
-``` example
+```bash
 ‘KB’ =>           1000 (KiloBytes)
 ‘K’  =>           1024 (KibiBytes)
 ‘MB’ =>      1000*1000 (MegaBytes)
@@ -24592,7 +24591,7 @@ after the specified time interval. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 timeout [option] duration command [arg]…
 ```
 
@@ -24714,7 +24713,7 @@ Examples:
 
 <div class="example">
 
-``` example
+```bash
 # Send the default TERM signal after 20s to a short-living 'sleep 1'.
 # As that terminates long before the given duration, 'timeout' returns
 # with the same exit status as the command, 0 in this case.
@@ -24790,7 +24789,7 @@ Alternatively, it lists information about signals. Synopses:
 
 <div class="example">
 
-``` example
+```bash
 kill [-s signal | --signal signal | -signal] pid…
 kill [-l | --list | -t | --table] [signal]…
 ```
@@ -24828,7 +24827,7 @@ equivalent:
 
 <div class="example">
 
-``` example
+```bash
 kill -15 -1
 kill -TERM -1
 kill -s TERM -- -1
@@ -24911,7 +24910,7 @@ of the command line arguments. Synopsis:
 
 <div class="example">
 
-``` example
+```bash
 sleep number[smhd]…
 ```
 
@@ -24944,7 +24943,7 @@ milli-, 567 micro- and 890 nanoseconds:
 
 <div class="example">
 
-``` example
+```bash
 sleep 1234e-3 567.89e-6
 ```
 
@@ -24954,7 +24953,7 @@ Also one could sleep indefinitely like:
 
 <div class="example">
 
-``` example
+```bash
 sleep inf
 ```
 
@@ -25027,7 +25026,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Concept-index" rel="index" t
 
 <div class="example">
 
-``` example
+```bash
 factor [number]…
 factor option
 ```
@@ -25055,7 +25054,7 @@ CPU time:
 
 <div class="example">
 
-``` example
+```bash
 $ M8=$(echo 2^31-1 | bc)
 $ M9=$(echo 2^61-1 | bc)
 $ n=$(echo "$M8 * $M9" | bc)
@@ -25112,7 +25111,7 @@ representation (e.g. ‘`4G`’ → ‘`4,000,000,000`’).
 
 <div class="example">
 
-``` example
+```bash
 numfmt [option]… [number]
 ```
 
@@ -25157,7 +25156,7 @@ supports `cut` style field ranges:
 
 <div class="example">
 
-``` example
+```bash
 N    N'th field, counted from 1
 N-   from N'th field, to end of line
 N-M  from N'th to M'th field (inclusive)
@@ -25293,7 +25292,7 @@ with one of the following suffixes:
 
 <div class="example">
 
-``` example
+```bash
 ‘K’  =>  1000^1 = 10^3 (Kilo)
 ‘M’  =>  1000^2 = 10^6 (Mega)
 ‘G’  =>  1000^3 = 10^9 (Giga)
@@ -25314,7 +25313,7 @@ rounded, and printed with one of the following suffixes:
 
 <div class="example">
 
-``` example
+```bash
 ‘K’  =>  1024^1 = 2^{10} (Kibi)
 ‘M’  =>  1024^2 = 2^{20} (Mebi)
 ‘G’  =>  1024^3 = 2^{30} (Gibi)
@@ -25340,7 +25339,7 @@ rounded, and printed with one of the following suffixes:
 
 <div class="example">
 
-``` example
+```bash
 ‘Ki’  =>  1024^1 = 2^{10} (Kibi)
 ‘Mi’  =>  1024^2 = 2^{20} (Mebi)
 ‘Gi’  =>  1024^3 = 2^{30} (Gibi)
@@ -25372,7 +25371,7 @@ Converting a single number from/to *human* representation:
 
 <div class="example">
 
-``` example
+```bash
 $ numfmt --to=si 500000
 500K
 
@@ -25403,7 +25402,7 @@ lower values):
 
 <div class="example">
 
-``` example
+```bash
 $ numfmt --from=si --to=iec 1T
 932G
 ```
@@ -25417,7 +25416,7 @@ human-readable format):
 
 <div class="example">
 
-``` example
+```bash
 # Third field (file size) will be shown in SI representation
 $ ls -log | numfmt --field 3 --header --to=si | head -n4
 -rw-r--r--  1     94K Aug 23  2011 ABOUT-NLS
@@ -25439,7 +25438,7 @@ Output can be tweaked using `--padding` or `--format`:
 
 <div class="example">
 
-``` example
+```bash
 # Pad to 10 characters, right-aligned
 $ du -s * | numfmt --to=si --padding=10
       2.5K config.log
@@ -25477,7 +25476,7 @@ ignored:
 
 <div class="example">
 
-``` example
+```bash
 $ LC_ALL=C numfmt --from=iec --grouping 2G
 2147483648
 
@@ -25527,7 +25526,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Concept-index" rel="index" t
 
 <div class="example">
 
-``` example
+```bash
 seq [option]… last
 seq [option]… first last
 seq [option]… first increment last
@@ -25592,7 +25591,7 @@ You can get finer-grained control over output with `-f`:
 
 <div class="example">
 
-``` example
+```bash
 $ seq -f '(%9.2E)' -9e5 1.1e6 1.3e6
 (-9.00E+05)
 ( 2.00E+05)
@@ -25606,7 +25605,7 @@ the conversion:
 
 <div class="example">
 
-``` example
+```bash
 $ printf '%x\n' $(seq 1048575 1024 1050623)
 fffff
 1003ff
@@ -25620,7 +25619,7 @@ the length of an argument list:
 
 <div class="example">
 
-``` example
+```bash
 $ seq 1000000 | xargs printf '%x\n' | tail -n 3
 f423e
 f423f
@@ -25639,7 +25638,7 @@ through *2^{64}*, and larger integers may not be numerically correct:
 
 <div class="example">
 
-``` example
+```bash
 $ seq 50000000000000000000 2 50000000000000000004
 50000000000000000000
 50000000000000000000
@@ -25660,7 +25659,7 @@ example, on the x86 platform, where the internal representation uses a
 
 <div class="example">
 
-``` example
+```bash
 seq 1 0.0000000000000000001 1.0000000000000000009
 ```
 
@@ -25848,7 +25847,7 @@ The format of symbolic modes is:
 
 <div class="example">
 
-``` example
+```bash
 [ugoa…][-+=]perms…[,…]
 ```
 
@@ -25896,7 +25895,7 @@ following format:
 
 <div class="example">
 
-``` example
+```bash
 users operation permissions
 ```
 
@@ -25979,7 +25978,7 @@ file, but not to execute it, use:
 
 <div class="example">
 
-``` example
+```bash
 a=rw
 ```
 
@@ -25990,7 +25989,7 @@ use:
 
 <div class="example">
 
-``` example
+```bash
 go-w
 ```
 
@@ -26006,7 +26005,7 @@ if they have write permission on the directory it is in.
 
 <div class="example">
 
-``` example
+```bash
 go=
 ```
 
@@ -26016,7 +26015,7 @@ Another way to specify the same thing is:
 
 <div class="example">
 
-``` example
+```bash
 og-rwx
 ```
 
@@ -26053,7 +26052,7 @@ the mode
 
 <div class="example">
 
-``` example
+```bash
 o+g
 ```
 
@@ -26112,7 +26111,7 @@ the mode:
 
 <div class="example">
 
-``` example
+```bash
 u+s
 ```
 
@@ -26123,7 +26122,7 @@ use the mode:
 
 <div class="example">
 
-``` example
+```bash
 a-s
 ```
 
@@ -26133,7 +26132,7 @@ To set the restricted deletion flag or sticky bit, you can use the mode:
 
 <div class="example">
 
-``` example
+```bash
 +t
 ```
 
@@ -26147,7 +26146,7 @@ example, the mode:
 
 <div class="example">
 
-``` example
+```bash
 o=t
 ```
 
@@ -26191,7 +26190,7 @@ For example, this mode:
 
 <div class="example">
 
-``` example
+```bash
 a+X
 ```
 
@@ -26233,7 +26232,7 @@ For example, the mode:
 
 <div class="example">
 
-``` example
+```bash
 og+rX-w
 ```
 
@@ -26247,7 +26246,7 @@ file has for it. The above mode is equivalent to the two modes:
 
 <div class="example">
 
-``` example
+```bash
 og+rX
 og-w
 ```
@@ -26259,7 +26258,7 @@ simple symbolic mode, separated by commas. For example, the mode:
 
 <div class="example">
 
-``` example
+```bash
 a+r,go-w
 ```
 
@@ -26270,7 +26269,7 @@ on it for all users except its owner. Another example:
 
 <div class="example">
 
-``` example
+```bash
 u=rwx,g=rx,o=
 ```
 
@@ -26283,7 +26282,7 @@ The two methods can be combined. The mode:
 
 <div class="example">
 
-``` example
+```bash
 a+r,g+x-w
 ```
 
@@ -26296,7 +26295,7 @@ different ways; another is:
 
 <div class="example">
 
-``` example
+```bash
 u+r,g+rx,o+r,g-w
 ```
 
@@ -26341,7 +26340,7 @@ permission for users who are not in the file’s group, then the mode:
 
 <div class="example">
 
-``` example
+```bash
 +w
 ```
 
@@ -26353,7 +26352,7 @@ mode:
 
 <div class="example">
 
-``` example
+```bash
 a+w
 ```
 
@@ -26401,7 +26400,7 @@ is how the bits are arranged, starting with the highest valued bit:
 
 <div class="example">
 
-``` example
+```bash
 Value in  Corresponding
 Mode      Mode Bit
 
@@ -26525,7 +26524,7 @@ inheritance:
 
 <div class="example">
 
-``` example
+```bash
 # These commands leave the set-user-ID and
 # set-group-ID bits of the subdirectories alone,
 # so that they retain their default values.
@@ -26545,7 +26544,7 @@ in the symbolic or numeric modes, e.g.:
 
 <div class="example">
 
-``` example
+```bash
 # These commands try to set the set-user-ID
 # and set-group-ID bits of the subdirectories.
 mkdir G
@@ -26565,7 +26564,7 @@ numeric mode with five or more octal digits, e.g.:
 
 <div class="example">
 
-``` example
+```bash
 # These commands try to clear the set-user-ID
 # and set-group-ID bits of the directory D.
 chmod a-s D
@@ -26811,7 +26810,7 @@ zone items other than ‘`UTC`’ and ‘`Z`’. Here are some ways to do this:
 
 <div class="example">
 
-``` example
+```bash
 $ LC_ALL=C TZ=UTC0 date
 Tue Jul 21 23:00:37 UTC 2020
 $ TZ=UTC0 date +'%Y-%m-%d %H:%M:%SZ'
@@ -26871,7 +26870,7 @@ literally. All these strings specify the same calendar date:
 
 <div class="example">
 
-``` example
+```bash
 2020-07-20     # ISO 8601.
 20-7-20        # Assume 19xx for 69 through 99,
                # 20xx for 00 through 68 (not recommended).
@@ -26890,7 +26889,7 @@ used, or the current year if none. For example:
 
 <div class="example">
 
-``` example
+```bash
 7/20
 jul 20
 ```
@@ -26925,7 +26924,7 @@ of the following:
 
 <div class="example">
 
-``` example
+```bash
 day month year
 day month
 month day year
@@ -26938,7 +26937,7 @@ Or, omitting the year:
 
 <div class="example">
 
-``` example
+```bash
 month day
 ```
 
@@ -26972,7 +26971,7 @@ Here are some examples, all of which represent the same time:
 
 <div class="example">
 
-``` example
+```bash
 20:02:00.000000
 20:02
 8:02pm
@@ -27104,7 +27103,7 @@ Here are some examples:
 
 <div class="example">
 
-``` example
+```bash
 2012-09-24T20:02:00.052-05:00
 2012-12-31T23:59:59,999999999+11:00
 1970-01-01 00:00Z
@@ -27184,7 +27183,7 @@ examples:
 
 <div class="example">
 
-``` example
+```bash
 1 year
 1 year ago
 3 years
@@ -27248,7 +27247,7 @@ can ask for the month before the 15th of the current month. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ date -R
 Thu, 31 Jul 2020 13:02:39 -0400
 $ date --date='-1 month' +'Last month was %B?'
@@ -27395,7 +27394,7 @@ in the following shell transcript:
 
 <div class="example">
 
-``` example
+```bash
 $ export TZ="America/New_York"
 $ date --date='TZ="Europe/Paris" 2019-10-31 06:30'
 Sun Oct 31 01:30:00 EDT 2019
@@ -27535,7 +27534,7 @@ Compare the sorting of the following items:
 
 <div class="example">
 
-``` example
+```bash
 Lexicographic sort:          Version Sort:
 
 a1                           a1
@@ -27584,7 +27583,7 @@ To list files in version sort order, use `ls` with the `-v` or
 
 <div class="example">
 
-``` example
+```bash
 default sort:              version sort:
 
 $ ls -1                    $ ls -1 -v
@@ -27603,7 +27602,7 @@ To sort text files in version sort order, use `sort` with the `-V` or
 
 <div class="example">
 
-``` example
+```bash
 $ cat input
 b3
 b11
@@ -27628,7 +27627,7 @@ the field:
 
 <div class="example">
 
-``` example
+```bash
 $ cat input2
 100   b3   apples
 2000  b11  oranges
@@ -27805,7 +27804,7 @@ and the parts compared respectively from each string:
 
 <div class="example">
 
-``` example
+```bash
 foo  vs  foo   (rule 2, non-digits)
 07   vs  7     (rule 3, digits)
 .    vs  a.    (rule 2)
@@ -27832,7 +27831,7 @@ Result when using sort:
 
 <div class="example">
 
-``` example
+```bash
 $ cat input3
 foo07.7z
 foo7a.7z
@@ -27872,7 +27871,7 @@ Consider the following text file:
 
 <div class="example">
 
-``` example
+```bash
 $ cat input4
 8.10
 8.5
@@ -27945,7 +27944,7 @@ Punctuation is sorted by ASCII order (rule 2.B).
 
 <div class="example">
 
-``` example
+```bash
 $ touch 1.0.5_src.tar.gz 1.0_src.tar.gz
 $ ls -v -1
 1.0.5_src.tar.gz
@@ -27961,7 +27960,7 @@ into the following parts:
 
 <div class="example">
 
-``` example
+```bash
           1   vs  1               (rule 3, all digits)
           .   vs  .               (rule 2, all non-digits)
           0   vs  0               (rule 3)
@@ -27984,7 +27983,7 @@ of 46), that file will be listed first:
 
 <div class="example">
 
-``` example
+```bash
 $ touch   1.0.5_src.tar.gz     1.0%zzzzz.gz
 1.0%zzzzz.gz
 1.0.5_src.tar.gz
@@ -27997,7 +27996,7 @@ value 46 is less than ‘`/`’ with ASCII value 47:
 
 <div class="example">
 
-``` example
+```bash
 $ cat input5
 3.0/
 3.0.5
@@ -28033,7 +28032,7 @@ string to digit and non-digit parts).
 
 <div class="example">
 
-``` example
+```bash
 $ cat input6
 a%
 az
@@ -28080,7 +28079,7 @@ and before an empty string.
 
 <div class="example">
 
-``` example
+```bash
 $ cat input7
 1
 1%
@@ -28148,7 +28147,7 @@ e.g., first ‘`0xCE`’ (decimal value 206) then ‘`0xB1`’ (decimal value
 
 <div class="example">
 
-``` example
+```bash
 $ touch aa az "a%" "aα"
 $ ls -1 -v
 aa
@@ -28227,7 +28226,7 @@ In Debian’s version string syntax the version consists of three parts:
 
 <div class="example">
 
-``` example
+```bash
 [epoch:]upstream_version[-debian_revision]
 ```
 
@@ -28239,7 +28238,7 @@ Example of such version strings:
 
 <div class="example">
 
-``` example
+```bash
 60.7.2esr-1~deb9u1
 52.9.0esr-1~deb9u1
 1:2.3.4-1+b2
@@ -28271,7 +28270,7 @@ Compare:
 
 <div class="example">
 
-``` example
+```bash
 $ touch 1ab-cd 1abb
 $ ls -v -1
 1abb
@@ -28323,7 +28322,7 @@ Example:
 
 <div class="example">
 
-``` example
+```bash
 $ printf '%s\n' a "" b "." c  ".."  ".d20" ".d3"  | sort -V
 .
 ..
@@ -28437,7 +28436,7 @@ the following parts:
 
 <div class="example">
 
-``` example
+```bash
 hello-  vs  hello-  (rule 2, all non-digits)
 8       vs  8       (rule 3, all digits)
 .txt    vs  .       (rule 2)
@@ -28461,7 +28460,7 @@ broken down into the following parts:
 
 <div class="example">
 
-``` example
+```bash
 hello-  vs  hello-  (rule 2, all non-digits)
 8       vs  8       (rule 3, all digits)
 empty   vs  .       (rule 2)
@@ -28513,7 +28512,7 @@ following snippet to your shell command-prompt):
 
 <div class="example">
 
-``` example
+```bash
 compver() {
   if dpkg --compare-versions "$1" lt "$2"
   then printf '%s\n' "$1" "$2"
@@ -28528,7 +28527,7 @@ Then compare two strings by calling `compver`:
 
 <div class="example">
 
-``` example
+```bash
 $ compver 8.49 8.5
 8.5
 8.49
@@ -28540,7 +28539,7 @@ Note that `dpkg` will warn if the strings have invalid syntax:
 
 <div class="example">
 
-``` example
+```bash
 $ compver "foo07.7z" "foo7a.7z"
 dpkg: warning: version 'foo07.7z' has bad syntax:
                version number does not start with digit
@@ -28563,7 +28562,7 @@ colon](#Hyphen_002dminus-and-colon)):
 
 <div class="example">
 
-``` example
+```bash
 $ compver abb ab-cd 2>/dev/null     $ printf 'abb\nab-cd\n' | sort -V
 ab-cd                               abb
 abb                                 ab-cd
@@ -28576,7 +28575,7 @@ handling of file extensions](#Special-handling-of-file-extensions)):
 
 <div class="example">
 
-``` example
+```bash
 $ compver hello-8.txt hello-8.2.txt 2>/dev/null
 hello-8.2.txt
 hello-8.txt
@@ -28873,7 +28872,7 @@ With the Unix shell, it’s very easy to set up data pipelines:
 
 <div class="example">
 
-``` example
+```bash
 program_to_create_data | filter1 | ... | filterN > final.pretty.data
 ```
 
@@ -28938,7 +28937,7 @@ single-user system, we’ll pretend that several people are logged in:
 
 <div class="example">
 
-``` example
+```bash
 $ who
 -| arnold   console Jan 22 19:57
 -| miriam   ttyp0   Jan 23 14:19(:0.0)
@@ -28981,7 +28980,7 @@ print just the login name and full name from the `/etc/passwd` file. The
 
 <div class="example">
 
-``` example
+```bash
 arnold:xyzzy:2076:10:Arnold D. Robbins:/home/arnold:/bin/bash
 ```
 
@@ -28991,7 +28990,7 @@ To get the first and fifth fields, we would use `cut` like this:
 
 <div class="example">
 
-``` example
+```bash
 $ cut -d: -f1,5 /etc/passwd
 -| root:Operator
 …
@@ -29009,7 +29008,7 @@ list the Monday dates for the current month:
 
 <div class="example">
 
-``` example
+```bash
 $ cal | cut -c 3-5
 -|Mo
 -|
@@ -29113,7 +29112,7 @@ start out by generating just a list of logged on users:
 
 <div class="example">
 
-``` example
+```bash
 $ who | cut -c1-8
 -| arnold
 -| miriam
@@ -29127,7 +29126,7 @@ Next, sort the list:
 
 <div class="example">
 
-``` example
+```bash
 $ who | cut -c1-8 | sort
 -| arnold
 -| arnold
@@ -29141,7 +29140,7 @@ Finally, run the sorted list through `uniq`, to weed out duplicates:
 
 <div class="example">
 
-``` example
+```bash
 $ who | cut -c1-8 | sort | uniq
 -| arnold
 -| bill
@@ -29160,7 +29159,7 @@ administrator, or `root`, prompt):
 
 <div class="example">
 
-``` example
+```bash
 # cat > /usr/local/bin/listusers
 who | cut -c1-8 | sort | uniq
 ^D
@@ -29202,7 +29201,7 @@ lower case:
 
 <div class="example">
 
-``` example
+```bash
 $ echo ThIs ExAmPlE HaS MIXED case! | tr '[:upper:]' '[:lower:]'
 -| this example has mixed case!
 ```
@@ -29233,7 +29232,7 @@ getting used to.) For example:
 
 <div class="example">
 
-``` example
+```bash
 $ cat f1
 -| 11111
 -| 22222
@@ -29267,7 +29266,7 @@ file to one case. “The” and “the” are the same word when doing counting.
 
 <div class="example">
 
-``` example
+```bash
 $ tr '[:upper:]' '[:lower:]' < whats.gnu | ...
 ```
 
@@ -29279,7 +29278,7 @@ punctuation out of the way.
 
 <div class="example">
 
-``` example
+```bash
 $ tr '[:upper:]' '[:lower:]' < whats.gnu | tr -cd '[:alnum:]_ \n' | ...
 ```
 
@@ -29299,7 +29298,7 @@ see shortly.
 
 <div class="example">
 
-``` example
+```bash
 $ tr '[:upper:]' '[:lower:]' < whats.gnu | tr -cd '[:alnum:]_ \n' |
 > tr -s ' ' '\n' | ...
 ```
@@ -29317,7 +29316,7 @@ one case. We’re ready to count each word:
 
 <div class="example">
 
-``` example
+```bash
 $ tr '[:upper:]' '[:lower:]' < whats.gnu | tr -cd '[:alnum:]_ \n' |
 > tr -s ' ' '\n' | sort | uniq -c | ...
 ```
@@ -29328,7 +29327,7 @@ At this point, the data might look something like this:
 
 <div class="example">
 
-``` example
+```bash
      60 a
       2 able
       6 about
@@ -29355,7 +29354,7 @@ The final pipeline looks like this:
 
 <div class="example">
 
-``` example
+```bash
 $ tr '[:upper:]' '[:lower:]' < whats.gnu | tr -cd '[:alnum:]_ \n' |
 > tr -s ' ' '\n' | sort | uniq -c | sort -n -r
 -|    156 the
@@ -29385,7 +29384,7 @@ a sorted list of words, one per line:
 
 <div class="example">
 
-``` example
+```bash
 $ tr '[:upper:]' '[:lower:]' < whats.gnu | tr -cd '[:alnum:]_ \n' |
 > tr -s ' ' '\n' | sort -u | ...
 ```
@@ -29400,7 +29399,7 @@ copy of the dictionary and then run a pipeline that uses the copy.
 
 <div class="example">
 
-``` example
+```bash
 $ sort /usr/share/dict/words > sorted-words
 $ tr '[:upper:]' '[:lower:]' < whats.gnu | tr -cd '[:alnum:]_ \n' |
 > tr -s ' ' '\n' | sort -u |
@@ -29957,7 +29956,7 @@ notices just after the title page:
 
 <div class="example">
 
-``` example
+```bash
   Copyright (C)  year  your name.
   Permission is granted to copy, distribute and/or modify this document
   under the terms of the GNU Free Documentation License, Version 1.3
@@ -29974,7 +29973,7 @@ replace the “with…Texts.” line with this:
 
 <div class="example">
 
-``` example
+```bash
     with the Invariant Sections being list their titles, with
     the Front-Cover Texts being list, and with the Back-Cover Texts
     being list.

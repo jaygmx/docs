@@ -889,7 +889,7 @@ directory:
 
 <div class="example">
 
-``` example
+```bash
 $ cpio -i -D /usr/local < archive
 ```
 
@@ -899,7 +899,7 @@ or to copy-pass files from one directory to another:
 
 <div class="example">
 
-``` example
+```bash
 $ cpio -D /usr/bin -p /usr/local/bin < filelist
 ```
 
@@ -911,7 +911,7 @@ following invocation:
 
 <div class="example">
 
-``` example
+```bash
 cpio -D /tmp/foo -d -i -F arc
 ```
 

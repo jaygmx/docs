@@ -13,7 +13,6 @@ description: >-
 <div class="header">
 
 Next: <a href="#Foreword3" accesskey="n" rel="next">Foreword3</a>, Up:
-<a href="/manual" accesskey="u" rel="up">(dir)</a>  
 \[<a href="#SEC_Contents" rel="contents"
 title="Table of contents">Contents</a>\]\[<a href="#Index" rel="index" title="Index">Index</a>\]
 
@@ -4818,7 +4817,7 @@ this if you try the following test program:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 1 /dev/null
 error→ awk: syntax error near line 1
 error→ awk: bailing out near line 1
@@ -5030,7 +5029,7 @@ output on the command’s standard error are preceded by the glyph
 
 <div class="example">
 
-``` example
+```bash
 $ echo hi on stdout
 -| hi on stdout
 $ echo hello on stderr 1>&2
@@ -5457,7 +5456,7 @@ this:
 
 <div class="example">
 
-``` example
+```bash
 pattern { action }
 pattern { action }
 …
@@ -5502,7 +5501,7 @@ it is easiest to include it in the command that runs `awk`, like this:
 
 <div class="example">
 
-``` example
+```bash
 awk 'program' input-file1 input-file2 …
 ```
 
@@ -5515,7 +5514,7 @@ file and run it with a command like this:
 
 <div class="example">
 
-``` example
+```bash
 awk -f program-file input-file1 input-file2 …
 ```
 
@@ -5557,7 +5556,7 @@ first argument of the `awk` command, like this:
 
 <div class="example">
 
-``` example
+```bash
 awk 'program' input-file1 input-file2 …
 ```
 
@@ -5612,7 +5611,7 @@ following command line:
 
 <div class="example">
 
-``` example
+```bash
 awk 'program'
 ```
 
@@ -5632,7 +5631,7 @@ from worrying about the complexities of computer programming:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { print "Don\47t Panic!" }'
 -| Don't Panic!
 ```
@@ -5658,7 +5657,7 @@ is explained shortly):
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ print }'
 Now is the time for all good men
 -| Now is the time for all good men
@@ -5701,7 +5700,7 @@ convenient to put the program into a separate file. In order to tell
 
 <div class="example">
 
-``` example
+```bash
 awk -f source-file input-file1 input-file2 …
 ```
 
@@ -5717,7 +5716,7 @@ program:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN { print "Don't Panic!" }
 ```
 
@@ -5727,7 +5726,7 @@ into the file `advice`. Then this command:
 
 <div class="example">
 
-``` example
+```bash
 awk -f advice
 ```
 
@@ -5737,7 +5736,7 @@ does the same thing as this one:
 
 <div class="example">
 
-``` example
+```bash
 awk 'BEGIN { print "Don\47t Panic!" }'
 ```
 
@@ -5791,7 +5790,7 @@ could update the file `advice` to look like this:
 
 <div class="example">
 
-``` example
+```bash
 #! /bin/awk -f
 
 BEGIN { print "Don't Panic!" }
@@ -5805,7 +5804,7 @@ you had typed ‘`awk -f advice`’:
 
 <div class="example">
 
-``` example
+```bash
 $ chmod +x advice
 $ ./advice
 -| Don't Panic!
@@ -5902,7 +5901,7 @@ following into `advice`:
 
 <div class="example">
 
-``` example
+```bash
 # This program prints a nice, friendly message.  It helps
 # keep novice users from being afraid of the computer.
 BEGIN    { print "Don't Panic!" }
@@ -5932,7 +5931,7 @@ id="index-_0027-_0028single-quote_0029-2"></span>
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > $ awk 'BEGIN { print "hello" } # let's be cute'
 > >
 > ```
@@ -5946,7 +5945,7 @@ id="index-_0027-_0028single-quote_0029-2"></span>
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > $ awk '{ print "hello" } # let's be cute'
 > > '
 > error→ awk: can't open file be
@@ -5993,7 +5992,7 @@ it as part of a larger shell script:
 
 <div class="example">
 
-``` example
+```bash
 awk 'program text' input-file1 input-file2 …
 ```
 
@@ -6018,7 +6017,7 @@ consider this command:
 
 <div class="example">
 
-``` example
+```bash
 $ echo ""
 ```
 
@@ -6064,7 +6063,7 @@ the quoting rules:
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk 'BEGIN { print "Don\47t Panic!" }'
     ```
 
@@ -6074,7 +6073,7 @@ the quoting rules:
 
     <div class="example">
 
-    ``` example
+    ```bash
     $ awk "BEGIN { print \"Don't Panic!\" }"
     -| Don't Panic!
     ```
@@ -6093,7 +6092,7 @@ the quoting rules:
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk -F "" 'program' files # correct
     ```
 
@@ -6103,7 +6102,7 @@ the quoting rules:
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk -F"" 'program' files  # wrong!
     ```
 
@@ -6121,7 +6120,7 @@ shell quoting tricks, like this:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { print "Here is a single quote <'"'"'>" }'
 -| Here is a single quote <'>
 ```
@@ -6135,7 +6134,7 @@ This can be “simplified” to:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { print "Here is a single quote <'\''>" }'
 -| Here is a single quote <'>
 ```
@@ -6149,7 +6148,7 @@ Another option is to use double quotes, escaping the embedded,
 
 <div class="example">
 
-``` example
+```bash
 $ awk "BEGIN { print \"Here is a single quote <'>\" }"
 -| Here is a single quote <'>
 ```
@@ -6165,7 +6164,7 @@ double-quote characters, like so:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { print "Here is a single quote <\47>" }'
 -| Here is a single quote <'>
 $ awk 'BEGIN { print "Here is a double quote <\42>" }'
@@ -6181,7 +6180,7 @@ A fourth option is to use command-line variable assignment, like this:
 
 <div class="example">
 
-``` example
+```bash
 $ awk -v sq="'" 'BEGIN { print "Here is a single quote <" sq ">" }'
 -| Here is a single quote <'>
 ```
@@ -6226,7 +6225,7 @@ double quotes:
 
 <div class="example">
 
-``` example
+```bash
 { print "\"" $0 "\"" }
 ```
 
@@ -6237,7 +6236,7 @@ as follows:
 
 <div class="example">
 
-``` example
+```bash
 gawk "{ print \"\042\" $0 \"\042\" }" file
 ```
 
@@ -6266,7 +6265,7 @@ the previous example you would do it this way:
 
 <div class="example">
 
-``` example
+```bash
 gawk "{ print \"\\\"\" $0 \"\\\"\" }" file
 ```
 
@@ -6314,7 +6313,7 @@ the person is a relative:
 
 <div class="example">
 
-``` example
+```bash
 Amelia       555-5553     amelia.zodiacusque@gmail.com    F
 Anthony      555-3412     anthony.asserturo@hotmail.com   A
 Becky        555-7685     becky.algebrarum@gmail.com      A
@@ -6342,7 +6341,7 @@ the two years:
 
 <div class="example">
 
-``` example
+```bash
 Jan  13  25  15 115
 Feb  15  32  24 226
 Mar  15  24  34 228
@@ -6395,7 +6394,7 @@ cars in a train”):
 
 <div class="example">
 
-``` example
+```bash
 awk '/li/ { print $0 }' mail-list
 ```
 
@@ -6417,7 +6416,7 @@ Here is what this program prints:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '/li/ { print $0 }' mail-list
 -| Amelia       555-5553     amelia.zodiacusque@gmail.com    F
 -| Broderick    555-0542     broderick.aliquotiens@yahoo.com R
@@ -6462,7 +6461,7 @@ and the date the file was last modified. Its output looks like this:
 
 <div class="example">
 
-``` example
+```bash
 -rw-r--r--  1 arnold   user   1933 Nov  7 13:05 Makefile
 -rw-r--r--  1 arnold   user  10809 Nov  7 13:03 awk.h
 -rw-r--r--  1 arnold   user    983 Apr 13 12:14 awk.tab.h
@@ -6491,7 +6490,7 @@ things shown here:
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk 'length($0) > 80' data
     ```
 
@@ -6504,7 +6503,7 @@ things shown here:
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk '{ if (length($0) > max) max = length($0) }
          END { print max }' data
     ```
@@ -6519,7 +6518,7 @@ things shown here:
 
     <div class="example">
 
-    ``` example
+    ```bash
     expand data | awk '{ if (x < length($0)) x = length($0) }
                        END { print "maximum line length is " x }'
     ```
@@ -6535,7 +6534,7 @@ things shown here:
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk 'NF > 0' data
     ```
 
@@ -6548,7 +6547,7 @@ things shown here:
 -   Print seven random numbers from 0 to 100, inclusive:
     <div class="example">
 
-    ``` example
+    ```bash
     awk 'BEGIN { for (i = 1; i <= 7; i++)
                      print int(101 * rand()) }'
     ```
@@ -6558,7 +6557,7 @@ things shown here:
 -   Print the total number of bytes used by `files`:
     <div class="example">
 
-    ``` example
+    ```bash
     ls -l files | awk '{ x += $5 }
                        END { print "total bytes: " x }'
     ```
@@ -6568,7 +6567,7 @@ things shown here:
 -   Print the total number of kilobytes used by `files`:
     <div class="example">
 
-    ``` example
+    ```bash
     ls -l files | awk '{ x += $5 }
        END { print "total K-bytes:", x / 1024 }'
     ```
@@ -6578,7 +6577,7 @@ things shown here:
 -   Print a sorted list of the login names of all users:
     <div class="example">
 
-    ``` example
+    ```bash
     awk -F: '{ print $1 }' /etc/passwd | sort
     ```
 
@@ -6587,7 +6586,7 @@ things shown here:
 -   Count the lines in a file:
     <div class="example">
 
-    ``` example
+    ```bash
     awk 'END { print NR }' data
     ```
 
@@ -6597,7 +6596,7 @@ things shown here:
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk 'NR % 2 == 0' data
     ```
 
@@ -6641,7 +6640,7 @@ contains two rules:
 
 <div class="example">
 
-``` example
+```bash
 /12/  { print $0 }
 /21/  { print $0 }
 ```
@@ -6662,7 +6661,7 @@ files, `mail-list` and `inventory-shipped`:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '/12/ { print $0 }
 >      /21/ { print $0 }' mail-list inventory-shipped
 -| Anthony      555-3412     anthony.asserturo@hotmail.com   A
@@ -6706,7 +6705,7 @@ understand all the details:
 
 <div class="example">
 
-``` example
+```bash
 ls -l | awk '$6 == "Nov" { sum += $5 }
              END { print sum }'
 ```
@@ -6777,7 +6776,7 @@ separate rule, like this:
 
 <div class="example">
 
-``` example
+```bash
 awk '/12/  { print $0 }
      /21/  { print $0 }' mail-list inventory-shipped
 ```
@@ -6791,7 +6790,7 @@ keywords:
 
 <div class="example">
 
-``` example
+```bash
 ,    {    ?    :    ||    &&    do    else
 ```
 
@@ -6813,7 +6812,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 awk '/This regular expression is too long, so continue it\
  on the next line/ { print $1 }'
 ```
@@ -6850,7 +6849,7 @@ id="index-_005c-_0028backslash_0029-3"></span>
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > % awk 'BEGIN { \
 > ?   print \\
 > ?       "hello, world" \
@@ -6868,7 +6867,7 @@ id="index-_005c-_0028backslash_0029-3"></span>
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > $ awk 'BEGIN {
 > >   print \
 > >       "hello, world"
@@ -6892,7 +6891,7 @@ comment, it ignores *everything* on the rest of the line. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { print "dont panic" # a friendly \
 >                                    BEGIN rule
 > }'
@@ -6921,7 +6920,7 @@ also be written this way:
 
 <div class="example">
 
-``` example
+```bash
 /12/ { print $0 } ; /21/ { print $0 }
 ```
 
@@ -7148,7 +7147,7 @@ It is possible to invoke `awk` with an empty program:
 
 <div class="example">
 
-``` example
+```bash
 awk '' datafile1 datafile2
 ```
 
@@ -7367,7 +7366,7 @@ easier.
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > $ gawk -e 'BEGIN { a = 5 ;' -e 'print a }'
 > -| 5
 > ```
@@ -7406,7 +7405,7 @@ Programs](#Executable-Scripts)), like so:
 
 <div class="example">
 
-``` example
+```bash
 #! /usr/local/bin/gawk -E
 
 awk program here …
@@ -7747,7 +7746,7 @@ Bourne-compatible shell (such as Bash), you would add these lines to the
 
 <div class="example">
 
-``` example
+```bash
 POSIXLY_CORRECT=true
 export POSIXLY_CORRECT
 ```
@@ -7762,7 +7761,7 @@ line to the `.login` file in your home directory:
 
 <div class="example">
 
-``` example
+```bash
 setenv POSIXLY_CORRECT true
 ```
 
@@ -7804,7 +7803,7 @@ the Command Line](#Assignment-Options).) In the following example,
 
 <div class="example">
 
-``` example
+```bash
 awk -f program.awk file1 count=1 file2
 ```
 
@@ -7816,7 +7815,7 @@ assignment), precede the file name with ‘`./`’, like so:
 
 <div class="example">
 
-``` example
+```bash
 awk -f program.awk file1 ./count=1 file2
 ```
 
@@ -7881,7 +7880,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 awk 'pass == 1  { pass 1 stuff }
      pass == 2  { pass 2 stuff }' pass=1 mydata pass=2 mydata
 ```
@@ -7960,7 +7959,7 @@ use a single, standalone minus sign or dash, ‘`-`’. For example:
 
 <div class="example">
 
-``` example
+```bash
 some_command | awk -f myprog.awk file1 - file2
 ```
 
@@ -8335,7 +8334,7 @@ namely `test1` and `test2`. Here is the `test1` script:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     print "This is script test1."
 }
@@ -8347,7 +8346,7 @@ and here is `test2`:
 
 <div class="example">
 
-``` example
+```bash
 @include "test1"
 BEGIN {
     print "This is script test2."
@@ -8360,7 +8359,7 @@ Running `gawk` with `test2` produces the following result:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f test2
 -| This is script test1.
 -| This is script test2.
@@ -8382,7 +8381,7 @@ namely `test3`:
 
 <div class="example">
 
-``` example
+```bash
 @include "test2"
 BEGIN {
     print "This is script test3."
@@ -8395,7 +8394,7 @@ Running `gawk` with the `test3` script produces the following results:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f test3
 -| This is script test1.
 -| This is script test2.
@@ -8408,7 +8407,7 @@ The file name can, of course, be a pathname. For example:
 
 <div class="example">
 
-``` example
+```bash
 @include "../io_funcs"
 ```
 
@@ -8418,7 +8417,7 @@ and:
 
 <div class="example">
 
-``` example
+```bash
 @include "/usr/awklib/network"
 ```
 
@@ -8495,7 +8494,7 @@ suffix to the file name. For example, on GNU/Linux systems, the suffix
 
 <div class="example">
 
-``` example
+```bash
 $ gawk '@load "ordchr"; BEGIN {print chr(65)}'
 -| A
 ```
@@ -8506,7 +8505,7 @@ This is equivalent to the following example:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -lordchr 'BEGIN {print chr(65)}'
 -| A
 ```
@@ -8742,7 +8741,7 @@ of each record where the string ‘`li`’ appears anywhere in the record:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '/li/ { print $2 }' mail-list
 -| 555-5553
 -| 555-0542
@@ -8773,7 +8772,7 @@ string) matches `regexp`:
 
 <div class="example">
 
-``` example
+```bash
 exp ~ /regexp/
 ```
 
@@ -8784,7 +8783,7 @@ letter ‘`J`’ somewhere in the first field:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '$1 ~ /J/' inventory-shipped
 -| Jan  13  25  15 115
 -| Jun  31  42  75 492
@@ -8798,7 +8797,7 @@ So does this:
 
 <div class="example">
 
-``` example
+```bash
 awk '{ if ($1 ~ /J/) print }' inventory-shipped
 ```
 
@@ -8809,7 +8808,7 @@ string) does *not* match `regexp`:
 
 <div class="example">
 
-``` example
+```bash
 exp !~ /regexp/
 ```
 
@@ -8820,7 +8819,7 @@ field *does not* contain the uppercase letter ‘`J`’:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '$1 !~ /J/' inventory-shipped
 -| Feb  15  32  24 226
 -| Mar  15  24  34 228
@@ -8871,7 +8870,7 @@ double-quote character as a part of the string. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { print "He said \"hi!\" to her." }'
 -| He said "hi!" to her.
 ```
@@ -9179,7 +9178,7 @@ string. The condition is not true in the following example:
 
 <div class="example">
 
-``` example
+```bash
 if ("line1\nLINE 2" ~ /^L/) …
 ```
 
@@ -9198,7 +9197,7 @@ in the following example is not true:
 
 <div class="example">
 
-``` example
+```bash
 if ("line1\nLINE 2" ~ /1$/) …
 ```
 
@@ -9532,7 +9531,7 @@ bracket expression, put a ‘`\`’ in front of it. For example:
 
 <div class="example">
 
-``` example
+```bash
 [d\]]
 ```
 
@@ -9684,7 +9683,7 @@ Consider the following:
 
 <div class="example">
 
-``` example
+```bash
 echo aaaabcd | awk '{ sub(/a+/, "<A>"); print }'
 ```
 
@@ -9704,7 +9703,7 @@ with ‘`<A>`’ in this example:
 
 <div class="example">
 
-``` example
+```bash
 $ echo aaaabcd | awk '{ sub(/a+/, "<A>"); print }'
 -| <A>bcd
 ```
@@ -9755,7 +9754,7 @@ regexp*:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN { digits_regexp = "[[:digit:]]+" }
 $0 ~ digits_regexp    { print }
 ```
@@ -10057,7 +10056,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
 tolower($1) ~ /foo/  { … }
 ```
 
@@ -10086,7 +10085,7 @@ because `IGNORECASE` (like most variables) is initialized to zero:
 
 <div class="example">
 
-``` example
+```bash
 x = "aB"
 if (x ~ /ab/) …   # this test will fail
 
@@ -10311,7 +10310,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
 awk 'BEGIN { RS = "u" }
      { print $0 }' mail-list
 ```
@@ -10329,12 +10328,12 @@ changed to a newline. Here are the results of running the program on
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { RS = "u" }
 >      { print $0 }' mail-list
 ```
 
-``` example
+```bash
 -| Amelia       555-5553     amelia.zodiac
 -| sq
 -| e@gmail.com    F
@@ -10383,7 +10382,7 @@ Examples](#Sample-Data-Files)), the line looks like this:
 
 <div class="example">
 
-``` example
+```bash
 Bill         555-1675     bill.drowning@hotmail.com       A
 ```
 
@@ -10404,7 +10403,7 @@ Arguments](#Other-Arguments)):
 
 <div class="example">
 
-``` example
+```bash
 awk '{ print $0 }' RS="u" mail-list
 ```
 
@@ -10500,13 +10499,13 @@ whitespace:
 
 <div class="example">
 
-``` example
+```bash
 $ echo record 1 AAAA record 2 BBBB record 3 |
 > gawk 'BEGIN { RS = "\n|( *[[:upper:]]+ *)" }
 >             { print "Record =", $0,"and RT = [" RT "]" }'
 ```
 
-``` example
+```bash
 -| Record = record 1 and RT = [ AAAA ]
 -| Record = record 2 and RT = [ BBBB ]
 -| Record = record 3 and RT = [
@@ -10675,7 +10674,7 @@ input:
 
 <div class="example">
 
-``` example
+```bash
 This seems like a pretty nice example.
 ```
 
@@ -10702,7 +10701,7 @@ are not interested in specific fields. Here are some more examples:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '$1 ~ /li/ { print $0 }' mail-list
 -| Amelia       555-5553     amelia.zodiacusque@gmail.com    F
 -| Julie        555-6699     julie.perscrutabor@skeeve.com   F
@@ -10719,7 +10718,7 @@ record:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '/li/ { print $1, $NF }' mail-list
 -| Amelia F
 -| Broderick R
@@ -10757,7 +10756,7 @@ than a number, it is converted to a number. Consider this example:
 
 <div class="example">
 
-``` example
+```bash
 awk '{ print $NR }'
 ```
 
@@ -10772,7 +10771,7 @@ is another example of using expressions as field numbers:
 
 <div class="example">
 
-``` example
+```bash
 awk '{ print $(2*2) }' mail-list
 ```
 
@@ -10831,7 +10830,7 @@ file.) Consider the following example and its output:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ nboxes = $3 ; $3 = $3 - 10
 >        print nboxes, $3 }' inventory-shipped
 -| 25 15
@@ -10864,7 +10863,7 @@ from the second field of each line:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ $2 = $2 - 10; print $0 }' inventory-shipped
 -| Jan 3 25 15 115
 -| Feb 5 32 24 226
@@ -10879,7 +10878,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ $6 = ($5 + $4 + $3 + $2)
 >        print $6 }' inventory-shipped
 -| 168
@@ -10920,7 +10919,7 @@ out-of-range field only produces an empty string. For example:
 
 <div class="example">
 
-``` example
+```bash
 if ($(NF+1) != "")
     print "can't happen"
 else
@@ -10941,7 +10940,7 @@ when you assign the empty string to a field. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ echo a b c d | awk '{ OFS = ":"; $2 = ""
 >                       print $0; print NF }'
 -| a::c:d
@@ -10956,7 +10955,7 @@ you create a new field:
 
 <div class="example">
 
-``` example
+```bash
 $ echo a b c d | awk '{ OFS = ":"; $2 = ""; $6 = "new"
 >                       print $0; print NF }'
 -| a::c:d::new
@@ -10977,7 +10976,7 @@ value of `NF` and recomputes `$0`. (d.c.) Here is an example:
 
 <div class="example">
 
-``` example
+```bash
 $ echo a b c d e f | awk '{ print "NF =", NF;
 >                           NF = 3; print $0 }'
 -| NF = 6
@@ -10998,7 +10997,7 @@ do this, use the seemingly innocuous assignment:
 
 <div class="example">
 
-``` example
+```bash
 $1 = $1   # force record to be reconstituted
 print $0  # or whatever else with $0
 ```
@@ -11090,7 +11089,7 @@ following line:
 
 <div class="example">
 
-``` example
+```bash
 moo goo gai pan
 ```
 
@@ -11119,7 +11118,7 @@ to the string `","`:
 
 <div class="example">
 
-``` example
+```bash
 awk 'BEGIN { FS = "," } ; { print $2 }'
 ```
 
@@ -11131,7 +11130,7 @@ Given the input line:
 
 <div class="example">
 
-``` example
+```bash
 John Q. Smith, 29 Oak St., Walamazoo, MI 42139
 ```
 
@@ -11150,7 +11149,7 @@ attached, such as:
 
 <div class="example">
 
-``` example
+```bash
 John Q. Smith, LXIX, 29 Oak St., Walamazoo, MI 42139
 ```
 
@@ -11234,7 +11233,7 @@ assignment:
 
 <div class="example">
 
-``` example
+```bash
 FS = ", \t"
 ```
 
@@ -11259,7 +11258,7 @@ where the fields are. For example, the following pipeline prints ‘`b`’:
 
 <div class="example">
 
-``` example
+```bash
 $ echo ' a b c d ' | awk '{ print $2 }'
 -| b
 ```
@@ -11271,7 +11270,7 @@ letter):
 
 <div class="example">
 
-``` example
+```bash
 $ echo ' a  b  c  d ' | awk 'BEGIN { FS = "[ \t\n]+" }
 >                                  { print $2 }'
 -| a
@@ -11288,7 +11287,7 @@ whenever `$0` is recomputed. For instance, study this pipeline:
 
 <div class="example">
 
-``` example
+```bash
 $ echo '   a b c d' | awk '{ print; $2 = $2; print }'
 -|    a b c d
 -| a b c d
@@ -11322,7 +11321,7 @@ beginning of the record. `gawk` also works this way. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ echo 'xxAA  xxBxx  C' |
 > gawk -F '(^x+)|( +)' '{ for (i = 1; i <= NF; i++)
 >                             printf "-->%s<--\n", $i }'
@@ -11375,7 +11374,7 @@ the record becomes a separate field. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ echo a b | gawk 'BEGIN { FS = "" }
 >                  {
 >                      for (i = 1; i <= NF; i = i + 1)
@@ -11426,7 +11425,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 awk -F, 'program' input-files
 ```
 
@@ -11444,7 +11443,7 @@ would have to type:
 
 <div class="example">
 
-``` example
+```bash
 # same as FS = "\\"
 awk -F\\\\ '…' files …
 ```
@@ -11473,7 +11472,7 @@ contains the pattern `/edu/` and the action ‘`print $1`’:
 
 <div class="example">
 
-``` example
+```bash
 /edu/   { print $1 }
 ```
 
@@ -11486,7 +11485,7 @@ digits of their phone numbers:
 
 <div class="example">
 
-``` example
+```bash
 $ awk -F- -f edu.awk mail-list
 -| Fabius       555
 -| Samuel       555
@@ -11500,7 +11499,7 @@ looked like this:
 
 <div class="example">
 
-``` example
+```bash
 Jean-Paul    555-2127     jeanpaul.campanorum@nyu.edu     R
 ```
 
@@ -11526,7 +11525,7 @@ entry might look like this:
 
 <div class="example">
 
-``` example
+```bash
 arnold:x:2076:10:Arnold Robbins:/home/arnold:/bin/bash
 ```
 
@@ -11537,7 +11536,7 @@ entries for users whose full name is not indicated:
 
 <div class="example">
 
-``` example
+```bash
 awk -F: '$5 == ""' /etc/passwd
 ```
 
@@ -11569,7 +11568,7 @@ field. This can be done easily and portably simply by setting `FS` to
 
 <div class="example">
 
-``` example
+```bash
 awk -F'\n' 'program' files …
 ```
 
@@ -11790,7 +11789,7 @@ to illustrate the use of `FIELDWIDTHS`:
 
 <div class="example">
 
-``` example
+```bash
  10:06pm  up 21 days, 14:04,  23 users
 User     tty       login  idle   JCPU   PCPU  what
 hzuo     ttyV0     8:58pm            9      5  vi p24.tex
@@ -11811,7 +11810,7 @@ time:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN  { FIELDWIDTHS = "9 6 10 6 7 7 35" }
 NR > 2 {
     idle = $4
@@ -11838,7 +11837,7 @@ Running the program on the data produces the following results:
 
 <div class="example">
 
-``` example
+```bash
 hzuo      ttyV0  0
 hzang     ttyV3  50
 eklye     ttyV5  0
@@ -11889,7 +11888,7 @@ to specify `FIELDWIDTHS` like so:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN  { FIELDWIDTHS = "8 1:5 4:7 6 1:6 1:6 2:33" }
 ```
 
@@ -11900,7 +11899,7 @@ such a change, the program produces the following results:
 
 <div class="example">
 
-``` example
+```bash
 hzang    ttyV3 50
 eklye    ttyV5 0
 dportein ttyV6 107
@@ -11945,7 +11944,7 @@ one such character, and it must be the final non-whitespace character in
 
 <div class="example">
 
-``` example
+```bash
 $ cat fw.awk                         Show the program
 -| BEGIN { FIELDWIDTHS = "2 2 *" }
 -| { print NF, $1, $2, $3 }
@@ -12055,7 +12054,7 @@ might have data like this:
 
 <div class="example">
 
-``` example
+```bash
 Robbins,Arnold,"1234 A Pretty Street, NE",MyTown,MyState,12345-6789,USA
 ```
 
@@ -12077,7 +12076,7 @@ to escape the double quotes, leading to:
 
 <div class="example">
 
-``` example
+```bash
 FPAT = "([^,]+)|(\"[^\"]+\")"
 ```
 
@@ -12087,16 +12086,16 @@ Putting this to use, here is a simple program to parse the data:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     FPAT = "([^,]+)|(\"[^\"]+\")"
 }
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
 {
     print "NF = ", NF
     for (i = 1; i <= NF; i++) {
@@ -12111,7 +12110,7 @@ When run, we get the following:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f simple-csv.awk addresses.csv
 NF =  7
 $1 = <Robbins>
@@ -12132,7 +12131,7 @@ would be to remove the quotes when they occur, with something like this:
 
 <div class="example">
 
-``` example
+```bash
 if (substr($i, 1, 1) == "\"") {
     len = length($i)
     $i = substr($i, 2, len - 2)    # Get text within the two quotes
@@ -12154,7 +12153,7 @@ first ‘`+`’ to ‘`*`’) allows fields to be empty:
 
 <div class="example">
 
-``` example
+```bash
 FPAT = "([^,]*)|(\"[^\"]+\")"
 ```
 
@@ -12201,7 +12200,7 @@ these variants:
 
 <div class="example">
 
-``` example
+```bash
 p,"q,r",s
 p,"q""r",s
 p,"q,""r",s
@@ -12215,7 +12214,7 @@ And here is his test program:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
      fp[0] = "([^,]+)|(\"[^\"]+\")"
      fp[1] = "([^,]*)|(\"[^\"]+\")"
@@ -12224,10 +12223,10 @@ BEGIN {
 }
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
 {
      print "<" $0 ">"
      printf("NF = %s ", NF)
@@ -12244,7 +12243,7 @@ When run on the third variant, it produces:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -v fpat=2 -f test-csv.awk sample.csv
 -| <p,"q,r",s>
 -| NF = 3 <p><"q,r"><s>
@@ -12352,7 +12351,7 @@ used:
 
 <div class="example">
 
-``` example
+```bash
 if (PROCINFO["FS"] == "FS")
     regular field splitting …
 else if (PROCINFO["FS"] == "FIELDWIDTHS")
@@ -12478,7 +12477,7 @@ named `addresses`, which looks like this:
 
 <div class="example">
 
-``` example
+```bash
 Jane Doe
 123 Main Street
 Anywhere, SE 12345-6789
@@ -12495,7 +12494,7 @@ A simple program to process this file is as follows:
 
 <div class="example">
 
-``` example
+```bash
 # addrs.awk --- simple mailing list program
 
 # Records are separated by blank lines.
@@ -12516,7 +12515,7 @@ Running the program produces the following output:
 
 <div class="example">
 
-``` example
+```bash
 $ awk -f addrs.awk addresses
 -| Name is: Jane Doe
 -| Address is: 123 Main Street
@@ -12664,7 +12663,7 @@ the next record *right now*. For example:
 
 <div class="example">
 
-``` example
+```bash
 # Remove text between /* and */, inclusive
 {
     while ((start = index($0, "/*")) != 0) {
@@ -12703,7 +12702,7 @@ Here is some sample input:
 
 <div class="example">
 
-``` example
+```bash
 mon/*comment*/key
 rab/*commen
 t*/bit
@@ -12718,7 +12717,7 @@ When run, the output is:
 
 <div class="example">
 
-``` example
+```bash
 $ awk -f strip_comments.awk example_text
 -| monkey
 -| rabbit
@@ -12772,7 +12771,7 @@ following example swaps every two lines of input:
 
 <div class="example">
 
-``` example
+```bash
 {
      if ((getline tmp) > 0) {
           print tmp
@@ -12788,7 +12787,7 @@ It takes the following list:
 
 <div class="example">
 
-``` example
+```bash
 wan
 tew
 free
@@ -12801,7 +12800,7 @@ and produces these results:
 
 <div class="example">
 
-``` example
+```bash
 tew
 wan
 phore
@@ -12851,7 +12850,7 @@ with a value equal to 10 in the current input file:
 
 <div class="example">
 
-``` example
+```bash
 {
     if ($1 == 10) {
          getline < "secondary.input"
@@ -12913,7 +12912,7 @@ replaced by the contents of the file `filename`:
 
 <div class="example">
 
-``` example
+```bash
 {
      if (NF == 2 && $1 == "@include") {
           while ((getline line < $2) > 0)
@@ -12987,7 +12986,7 @@ produced by running the rest of the line as a shell command:
 
 <div class="example">
 
-``` example
+```bash
 {
      if ($1 == "@execute") {
           tmp = substr($0, 10)        # Remove "@execute"
@@ -13008,7 +13007,7 @@ Redirections](#Close-Files-And-Pipes). Given the input:
 
 <div class="example">
 
-``` example
+```bash
 foo
 bar
 baz
@@ -13025,7 +13024,7 @@ the program might produce:
 
 <div class="example">
 
-``` example
+```bash
 foo
 bar
 baz
@@ -13093,7 +13092,7 @@ the following program reads the current date and time into the variable
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
      "date" | getline current_time
      close("date")
@@ -13146,7 +13145,7 @@ following:
 
 <div class="example">
 
-``` example
+```bash
 print "some query" |& "db_server"
 "db_server" |& getline
 ```
@@ -13267,7 +13266,7 @@ in mind:
 
     <div class="example">
 
-    ``` example
+    ```bash
     BEGIN {
         system("echo 1 > f")
         while ((getline a[++c] < "f") > 0) { }
@@ -13365,7 +13364,7 @@ by setting a special element in the `PROCINFO` array (see section
 
 <div class="example">
 
-``` example
+```bash
 PROCINFO["input_name", "READ_TIMEOUT"] = timeout in milliseconds
 ```
 
@@ -13378,7 +13377,7 @@ server after a certain amount of time:
 
 <div class="example">
 
-``` example
+```bash
 Service = "/inet/tcp/0/localhost/daytime"
 PROCINFO[Service, "READ_TIMEOUT"] = 100
 if ((Service |& getline) > 0)
@@ -13395,7 +13394,7 @@ more than five seconds:
 
 <div class="example">
 
-``` example
+```bash
 PROCINFO["/dev/stdin", "READ_TIMEOUT"] = 5000
 while ((getline < "/dev/stdin") > 0)
     print $0
@@ -13414,7 +13413,7 @@ so:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { PROCINFO["-", "READ_TIMEOUT"] = 5000 }
 > { print "You entered: " $0 }'
 gawk
@@ -13428,7 +13427,7 @@ following error message:
 
 <div class="example">
 
-``` example
+```bash
 error→ gawk: cmd. line:2: (FILENAME=- FNR=1) fatal: error reading input file `-': Connection timed out
 ```
 
@@ -13442,7 +13441,7 @@ input to arrive:
 
 <div class="example">
 
-``` example
+```bash
 PROCINFO[Service, "READ_TIMEOUT"] = 1000
 while ((Service |& getline) > 0) {
     print $0
@@ -13514,7 +13513,7 @@ section [Built-in Variables That Convey Information](#Auto_002dset)):
 
 <div class="example">
 
-``` example
+```bash
 PROCINFO["input_name", "RETRY"] = 1
 ```
 
@@ -13563,7 +13562,7 @@ wildcards with your `awk` program:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f whizprog.awk *        Directories could kill this program
 ```
 
@@ -13742,7 +13741,7 @@ followed by a newline. The statement looks like this:
 
 <div class="example">
 
-``` example
+```bash
 print item1, item2, …
 ```
 
@@ -13805,7 +13804,7 @@ newline character; see section [Escape Sequences](#Escape-Sequences)):
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { print "line one\nline two\nline three" }'
 -| line one
 -| line two
@@ -13821,7 +13820,7 @@ the first two fields of each input record, with a space between them:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ print $1, $2 }' inventory-shipped
 -| Jan 13
 -| Feb 15
@@ -13842,7 +13841,7 @@ Here is the same program, without the comma:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ print $1 $2 }' inventory-shipped
 -| Jan13
 -| Feb15
@@ -13863,7 +13862,7 @@ that the headings are only printed once:
 
 <div class="example">
 
-``` example
+```bash
 awk 'BEGIN {  print "Month Crates"
               print "----- ------" }
            {  print $1, $2 }' inventory-shipped
@@ -13875,7 +13874,7 @@ When run, the program prints the following:
 
 <div class="example">
 
-``` example
+```bash
 Month Crates
 ----- ------
 Jan 13
@@ -13891,7 +13890,7 @@ line up! We can fix this by printing some spaces between the two fields:
 
 <div class="example">
 
-``` example
+```bash
 awk 'BEGIN { print "Month Crates"
              print "----- ------" }
            { print $1, "     ", $2 }' inventory-shipped
@@ -13966,7 +13965,7 @@ separated by a semicolon, with a blank line added after each newline:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { OFS = ";"; ORS = "\n\n" }
 >            { print $1, $2 }' mail-list
 -| Amelia;555-5553
@@ -14042,7 +14041,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN {
 >   OFMT = "%.0f"  # print numbers as integers (rounds)
 >   print 17.23, 17.54 }'
@@ -14114,7 +14113,7 @@ A simple `printf` statement looks like this:
 
 <div class="example">
 
-``` example
+```bash
 printf format, item1, item2, …
 ```
 
@@ -14146,7 +14145,7 @@ statements. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN {
 >    ORS = "\nOUCH!\n"; OFS = "+"
 >    msg = "Don\47t Panic!"
@@ -14232,7 +14231,7 @@ Print a number in scientific (exponential) notation. For example:
 
 <div class="example">
 
-``` example
+```bash
 printf "%4.3e\n", 1950
 ```
 
@@ -14248,7 +14247,7 @@ Print a number in floating-point notation. For example:
 
 <div class="example">
 
-``` example
+```bash
 printf "%4.3f", 1950
 ```
 
@@ -14360,7 +14359,7 @@ with one. Thus:
 
 <div class="example">
 
-``` example
+```bash
 printf "%s %s\n", "don't", "panic"
 printf "%2$s %1$s\n", "panic", "don't"
 ```
@@ -14384,7 +14383,7 @@ width. Thus:
 
 <div class="example">
 
-``` example
+```bash
 printf "%-4s", "foo"
 ```
 
@@ -14428,7 +14427,7 @@ characters. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ cat thousands.awk          Show source program
 -| BEGIN { printf "%'d\n", 1234567 }
 $ LC_ALL=C gawk -f thousands.awk
@@ -14456,7 +14455,7 @@ do this is to pad with spaces on the left. For example:
 
 <div class="example">
 
-``` example
+```bash
 printf "%4s", "foo"
 ```
 
@@ -14470,7 +14469,7 @@ necessary. Thus, the following:
 
 <div class="example">
 
-``` example
+```bash
 printf "%4s", "foobar"
 ```
 
@@ -14502,7 +14501,7 @@ Thus, the following:
 
 <div class="example">
 
-``` example
+```bash
 printf "%.4s", "foobar"
 ```
 
@@ -14517,7 +14516,7 @@ list. For example:
 
 <div class="example">
 
-``` example
+```bash
 w = 5
 p = 3
 s = "abcdefg"
@@ -14530,7 +14529,7 @@ is exactly equivalent to:
 
 <div class="example">
 
-``` example
+```bash
 s = "abcdefg"
 printf "%5.3s\n", s
 ```
@@ -14544,7 +14543,7 @@ string, like so:
 
 <div class="example">
 
-``` example
+```bash
 w = 5
 p = 3
 s = "abcdefg"
@@ -14587,7 +14586,7 @@ aligned table:
 
 <div class="example">
 
-``` example
+```bash
 awk '{ printf "%-10s %s\n", $1, $2 }' mail-list
 ```
 
@@ -14600,7 +14599,7 @@ aligned two-column table of names and phone numbers, as shown here:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ printf "%-10s %s\n", $1, $2 }' mail-list
 -| Amelia     555-5553
 -| Anthony    555-3412
@@ -14632,7 +14631,7 @@ are only printed once, at the beginning of the `awk` program:
 
 <div class="example">
 
-``` example
+```bash
 awk 'BEGIN { print "Name      Number"
              print "----      ------" }
            { printf "%-10s %s\n", $1, $2 }' mail-list
@@ -14645,7 +14644,7 @@ program. Using just `printf` statements can produce the same results:
 
 <div class="example">
 
-``` example
+```bash
 awk 'BEGIN { printf "%-10s %s\n", "Name", "Number"
              printf "%-10s %s\n", "----", "------" }
            { printf "%-10s %s\n", $1, $2 }' mail-list
@@ -14662,7 +14661,7 @@ emphasized by storing it in a variable, like this:
 
 <div class="example">
 
-``` example
+```bash
 awk 'BEGIN { format = "%-10s %s\n"
              printf format, "Name", "Number"
              printf format, "----", "------" }
@@ -14732,7 +14731,7 @@ different from how you use redirections in shell scripts.) If
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ print $2 > "phone-list"
 >        print $1 > "name-list" }' mail-list
 $ cat phone-list
@@ -14777,7 +14776,7 @@ of peoples’ names, and one list sorted in reverse alphabetical order:
 
 <div class="example">
 
-``` example
+```bash
 awk '{ print $1 > "names.unsorted"
        command = "sort -r > names.sorted"
        print $1 | command }' mail-list
@@ -14794,7 +14793,7 @@ The next example uses redirection to mail a message to the mailing list
 
 <div class="example">
 
-``` example
+```bash
 report = "mail bug-system"
 print("Awk script failed:", $0) | report
 print("at record number", FNR, "of", FILENAME) | report
@@ -14844,7 +14843,7 @@ file, and then to use ‘`>>`’ for subsequent output:
 
 <div class="example">
 
-``` example
+```bash
 # clear the file
 print "Don't panic" > "guide.txt"
 …
@@ -14954,7 +14953,7 @@ message to standard error in an `awk` program is as follows:
 
 <div class="example">
 
-``` example
+```bash
 print "Serious error detected!" | "cat 1>&2"
 ```
 
@@ -14968,7 +14967,7 @@ messages to the screen, like this:
 
 <div class="example">
 
-``` example
+```bash
 print "Serious error detected!" > "/dev/tty"
 ```
 
@@ -15015,7 +15014,7 @@ becomes:
 
 <div class="example">
 
-``` example
+```bash
 print "Serious error detected!" > "/dev/stderr"
 ```
 
@@ -15128,7 +15127,7 @@ client or a server. This is done using a special file name of the form:
 
 <div class="example">
 
-``` example
+```bash
 /net-type/protocol/local-port/remote-host/remote-port
 ```
 
@@ -15225,7 +15224,7 @@ these things possible:
 
 <div class="example">
 
-``` example
+```bash
 close(filename)
 ```
 
@@ -15235,7 +15234,7 @@ or:
 
 <div class="example">
 
-``` example
+```bash
 close(command)
 ```
 
@@ -15248,7 +15247,7 @@ example, if you open a pipe with this:
 
 <div class="example">
 
-``` example
+```bash
 "sort -r names" | getline foo
 ```
 
@@ -15258,7 +15257,7 @@ then you must close it with this:
 
 <div class="example">
 
-``` example
+```bash
 close("sort -r names")
 ```
 
@@ -15274,12 +15273,12 @@ the following:
 
 <div class="example">
 
-``` example
+```bash
 sortcom = "sort -r names"
 sortcom | getline foo
 ```
 
-``` example
+```bash
 …
 close(sortcom)
 ```
@@ -15329,7 +15328,7 @@ consider something like this:
 
 <div class="example">
 
-``` example
+```bash
 {
     …
     command = ("grep " $1 " /some/file | my_prog -q " $3)
@@ -15490,7 +15489,7 @@ error.
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { print "hi" > "/no/such/file" }'
 error→ gawk: cmd. line:1: fatal: can't redirect to `/no/such/file' (No
 error→ such file or directory)
@@ -15516,7 +15515,7 @@ attempting the output. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk '
 > BEGIN {
 >     PROCINFO["NONFATAL"] = 1
@@ -15611,7 +15610,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Index" rel="index" title="In
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk 'BEGIN { print "Month Crates"
                  print "----- ------" }
                { print $1, "     ", $2 }' inventory-shipped
@@ -15630,7 +15629,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Index" rel="index" title="In
     output, as follows:
     <div class="example">
 
-    ``` example
+    ```bash
     BEGIN { print "Serious error detected!" > /dev/stderr }
     ```
 
@@ -15771,7 +15770,7 @@ examples of numeric constants that all have the same value:
 
 <div class="example">
 
-``` example
+```bash
 105
 1.05e+2
 1050e-1
@@ -15786,7 +15785,7 @@ double quotation marks. For example:
 
 <div class="example">
 
-``` example
+```bash
 "parrot"
 ```
 
@@ -15805,7 +15804,7 @@ by ending the line with a backslash. For example in C:
 
 <div class="example">
 
-``` example
+```bash
 #include <stdio.h>
 
 int main()
@@ -15829,7 +15828,7 @@ if you try to do so. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { print "hello, 
 > world" }'
 -| gawk: cmd. line:1: BEGIN { print "hello,
@@ -15853,7 +15852,7 @@ elide the backslash and newline, as in C:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { print "hello, \
 > world" }'
 -| hello, world
@@ -15872,7 +15871,7 @@ intact, as part of the string:
 
 <div class="example">
 
-``` example
+```bash
 $ nawk 'BEGIN { print "hello, \
 > world" }'
 -| hello, 
@@ -15934,7 +15933,7 @@ This example shows the difference:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { printf "%d, %d, %d\n", 011, 11, 0x11 }'
 -| 9, 11, 17
 ```
@@ -15965,7 +15964,7 @@ octal constants. For example, `gawk` treats ‘`018`’ as decimal 18:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { print "021 is", 021 ; print 018 }'
 -| 021 is 17
 -| 18
@@ -16095,7 +16094,7 @@ that the following two code segments:
 
 <div class="example">
 
-``` example
+```bash
 if ($0 ~ /barfly/ || $0 ~ /camelot/)
     print "found"
 ```
@@ -16106,7 +16105,7 @@ and:
 
 <div class="example">
 
-``` example
+```bash
 if (/barfly/ || /camelot/)
     print "found"
 ```
@@ -16119,7 +16118,7 @@ author probably intended:
 
 <div class="example">
 
-``` example
+```bash
 # Note that /foo/ is on the left of the ~
 if (/foo/ ~ $1) print "found foo"
 ```
@@ -16141,7 +16140,7 @@ this rule is that the assignment statement:
 
 <div class="example">
 
-``` example
+```bash
 matches = /foo/
 ```
 
@@ -16170,7 +16169,7 @@ Functions](#User_002ddefined)). For example:
 
 <div class="example">
 
-``` example
+```bash
 function mysub(pat, repl, str, global)
 {
     if (global)
@@ -16181,10 +16180,10 @@ function mysub(pat, repl, str, global)
 }
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
 {
     …
     text = "hi! hi yourself!"
@@ -16235,7 +16234,7 @@ number or a string:
 
 <div class="example">
 
-``` example
+```bash
 num = 42        Numeric variable
 str = "hi"      String variable
 re = /foo/      Wrong! re is the result of $0 ~ /foo/
@@ -16255,7 +16254,7 @@ almost like a regular regexp constant, except that it is preceded by an
 
 <div class="example">
 
-``` example
+```bash
 re = @/foo/     Regexp variable
 ```
 
@@ -16289,7 +16288,7 @@ variable on the command line, like so:
 
 <div class="example">
 
-``` example
+```bash
 gawk -v pattern='@/something(interesting)+/' …
 ```
 
@@ -16320,7 +16319,7 @@ have something like this:
 
 <div class="example">
 
-``` example
+```bash
 re = don't panic/
 sub(/don't/, "do", re)
 print typeof(re), re
@@ -16446,7 +16445,7 @@ has the following form:
 
 <div class="example">
 
-``` example
+```bash
 variable=text
 ```
 
@@ -16460,7 +16459,7 @@ option, as in the following:
 
 <div class="example">
 
-``` example
+```bash
 -v variable=text
 ```
 
@@ -16476,7 +16475,7 @@ preceding input file argument. For example:
 
 <div class="example">
 
-``` example
+```bash
 awk '{ print $n }' n=4 inventory-shipped n=2 mail-list
 ```
 
@@ -16491,7 +16490,7 @@ printed in lines from `mail-list`:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ print $n }' n=4 inventory-shipped n=2 mail-list
 -| 15
 -| 24
@@ -16521,7 +16520,7 @@ assign variables of this type using the following syntax:
 
 <div class="example">
 
-``` example
+```bash
 gawk -v 're1=@/foo|bar/' '…' /path/to/file1 're2=@/baz|quux/' /path/to/file2
 ```
 
@@ -16589,7 +16588,7 @@ converted to strings. Consider the following:
 
 <div class="example">
 
-``` example
+```bash
 two = 2; three = 3
 print (two three) + 4
 ```
@@ -16638,7 +16637,7 @@ value of `CONVFMT` may be. Given the following code fragment:
 
 <div class="example">
 
-``` example
+```bash
 CONVFMT = "%2.2f"
 a = 12
 b = a ""
@@ -16720,7 +16719,7 @@ system:
 
 <div class="example">
 
-``` example
+```bash
 $ export POSIXLY_CORRECT=1                        Force POSIX behavior
 $ gawk 'BEGIN { printf "%g\n", 3.1415927 }'
 -| 3.14159
@@ -16841,7 +16840,7 @@ class):
 
 <div class="example">
 
-``` example
+```bash
 Pat   100 97 58
 Sandy  84 72 93
 Chris  72 92 89
@@ -16854,7 +16853,7 @@ scores:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ sum = $2 + $3 + $4 ; avg = sum / 3
 >        print $1, avg }' grades
 -| Pat 85
@@ -16927,7 +16926,7 @@ The following relation always holds:
 
 <div class="example">
 
-``` example
+```bash
 b * int(a / b) + (a % b) == a
 ```
 
@@ -16938,7 +16937,7 @@ One possibly undesirable effect of this definition of remainder is that
 
 <div class="example">
 
-``` example
+```bash
 -17 % 8 = -1
 ```
 
@@ -16999,7 +16998,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ print "Field number one: " $1 }' mail-list
 -| Field number one: Amelia
 -| Field number one: Anthony
@@ -17013,7 +17012,7 @@ together. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ print "Field number one:" $1 }' mail-list
 -| Field number one:Amelia
 -| Field number one:Anthony
@@ -17031,7 +17030,7 @@ expect that the following code fragment concatenates `file` and `name`:
 
 <div class="example">
 
-``` example
+```bash
 file = "file"
 name = "name"
 print "something meaningful" > file name
@@ -17048,7 +17047,7 @@ use the following:
 
 <div class="example">
 
-``` example
+```bash
 print "something meaningful" > (file name)
 ```
 
@@ -17066,7 +17065,7 @@ concatenation is undefined in the `awk` language. Consider this example:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     a = "don't"
     print (a " " (a = "panic"))
@@ -17084,7 +17083,7 @@ often counter-intuitive. Consider this example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { print -12 " " -24 }'
 -| -12-24
 ```
@@ -17098,7 +17097,7 @@ result, write the program this way:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { print -12 " " (-24) }'
 -| -12 -24
 ```
@@ -17153,7 +17152,7 @@ into a variable. For example, let’s assign the value one to the variable
 
 <div class="example">
 
-``` example
+```bash
 z = 1
 ```
 
@@ -17167,7 +17166,7 @@ stores the value `"this food is good"` in the variable `message`:
 
 <div class="example">
 
-``` example
+```bash
 thing = "food"
 predicate = "good"
 message = "this " thing " is " predicate
@@ -17208,12 +17207,12 @@ numeric value at first, and a string value later on:
 
 <div class="example">
 
-``` example
+```bash
 foo = 1
 print foo
 ```
 
-``` example
+```bash
 foo = "bar"
 print foo
 ```
@@ -17228,7 +17227,7 @@ zero. After executing the following code, the value of `foo` is five:
 
 <div class="example">
 
-``` example
+```bash
 foo = "a string"
 foo = foo + 5
 ```
@@ -17246,7 +17245,7 @@ such as:
 
 <div class="example">
 
-``` example
+```bash
 x = y = z = 5
 ```
 
@@ -17274,7 +17273,7 @@ value of `foo`:
 
 <div class="example">
 
-``` example
+```bash
 foo += 5
 ```
 
@@ -17284,7 +17283,7 @@ This is equivalent to the following:
 
 <div class="example">
 
-``` example
+```bash
 foo = foo + 5
 ```
 
@@ -17300,7 +17299,7 @@ expression. For example:
 
 <div class="example">
 
-``` example
+```bash
 # Thanks to Pat Rankin for this example
 BEGIN  {
     foo[rand()] += 5
@@ -17308,10 +17307,10 @@ BEGIN  {
        print x, foo[x]
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
     bar[rand()] = bar[rand()] + 5
     for (x in bar)
        print x, bar[x]
@@ -17335,7 +17334,7 @@ first, the lefthand or the righthand. Consider this example:
 
 <div class="example">
 
-``` example
+```bash
 i = 1
 a[i += 2] = i + 1
 ```
@@ -17639,7 +17638,7 @@ times:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
    if (3.1415927)
        print "A strange truth value"
@@ -17736,7 +17735,7 @@ Type Information](#Type-Functions)) to show `a`’s type:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { print (a == "" && a == 0 ?
 > "a is untyped" : "a has a type!") ; print typeof(a) }'
 -| a is untyped
@@ -17750,7 +17749,7 @@ numeric constant, or from another scalar with numeric type:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { a = 42 ; print typeof(a)
 > b = a ; print typeof(b) }'
 number
@@ -17764,7 +17763,7 @@ as from a string constant, or from another scalar with string type:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { a = "forty two" ; print typeof(a)
 > b = a ; print typeof(b) }'
 string
@@ -17779,7 +17778,7 @@ What should the following command produce as output?
 
 <div class="example">
 
-``` example
+```bash
 echo hello | awk '{ printf("%s %s < 42\n", $1,
                            ($1 < 42 ? "is" : "is not")) }'
 ```
@@ -17792,7 +17791,7 @@ two string values `"hello"` and `"42"`. Here’s the result:
 
 <div class="example">
 
-``` example
+```bash
 $ echo hello | awk '{ printf("%s %s < 42\n", $1,
 >                            ($1 < 42 ? "is" : "is not")) }'
 -| hello is not < 42
@@ -17807,7 +17806,7 @@ and `awk` really ought to treat it as such. And indeed, it does:
 
 <div class="example">
 
-``` example
+```bash
 $ echo 37 | awk '{ printf("%s %s < 42\n", $1,
 >                         ($1 < 42 ? "is" : "is not")) }'
 -| 37 is < 42
@@ -17847,7 +17846,7 @@ has numeric type, even though it is later used in a string operation:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
      a = 12.345
      b = a " is a cute number"
@@ -17898,7 +17897,7 @@ and ‘`0`’ otherwise:
 
 <div class="example">
 
-``` example
+```bash
 $ echo ' +3.14' | awk '{ print($0 == " +3.14") }'    True
 -| 1
 $ echo ' +3.14' | awk '{ print($0 == "+3.14") }'     False
@@ -17924,7 +17923,7 @@ You can see the type of an input field (or other user input) using
 
 <div class="example">
 
-``` example
+```bash
 $ echo hello 37 | gawk '{ print typeof($1), typeof($2) }'
 -| string strnum
 ```
@@ -18018,7 +18017,7 @@ but the program does not do what is intended:
 
 <div class="example">
 
-``` example
+```bash
 if (a = b)   # oops! should be a == b
    …
 else
@@ -18058,7 +18057,7 @@ In this example:
 
 <div class="example">
 
-``` example
+```bash
 $ echo 1e2 3 | awk '{ print ($1 < $2) ? "true" : "false" }'
 -| false
 ```
@@ -18078,7 +18077,7 @@ different. For example:
 
 <div class="example">
 
-``` example
+```bash
 x == "foo"
 ```
 
@@ -18089,7 +18088,7 @@ By contrast:
 
 <div class="example">
 
-``` example
+```bash
 x ~ /foo/
 ```
 
@@ -18118,7 +18117,7 @@ expression:
 
 <div class="example">
 
-``` example
+```bash
 $0 ~ /regexp/
 ```
 
@@ -18165,7 +18164,7 @@ an `en_US.UTF-8` locale:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { printf("ABC < abc = %s\n",
 >                     ("ABC" < "abc" ? "TRUE" : "FALSE")) }'
 -| ABC < abc = TRUE
@@ -18188,7 +18187,7 @@ comparison based on locales is still required for `<`, `<=`, `>`, and
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > a <= b && a >= b
 > ```
 >
@@ -18251,7 +18250,7 @@ following statement prints the current input record if it contains both
 
 <div class="example">
 
-``` example
+```bash
 if ($0 ~ /edu/ && $0 ~ /li/) print
 ```
 
@@ -18272,7 +18271,7 @@ the following statement prints all records in the input that contain
 
 <div class="example">
 
-``` example
+```bash
 if ($0 ~ /edu/ || $0 ~ /li/) print
 ```
 
@@ -18291,7 +18290,7 @@ is not defined:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN { if (! ("HOME" in ENVIRON))
             print "no home!" }
 ```
@@ -18333,7 +18332,7 @@ program is one way to print lines in between special bracketing lines:
 
 <div class="example">
 
-``` example
+```bash
 $1 == "START"   { interested = ! interested; next }
 interested      { print }
 $1 == "END"     { interested = ! interested; next }
@@ -18354,7 +18353,7 @@ in the negative:
 
 <div class="example">
 
-``` example
+```bash
 if (! some condition || some other condition) {
     … do whatever processing …
 }
@@ -18398,7 +18397,7 @@ same as in the C language, as shown here:
 
 <div class="example">
 
-``` example
+```bash
 selector ? if-true-exp : if-false-exp
 ```
 
@@ -18413,7 +18412,7 @@ following expression produces the absolute value of `x`:
 
 <div class="example">
 
-``` example
+```bash
 x >= 0 ? x : -x
 ```
 
@@ -18429,7 +18428,7 @@ conditional expression examines element `i` of either array `a` or array
 
 <div class="example">
 
-``` example
+```bash
 x == y ? a[i++] : b[i++]
 ```
 
@@ -18500,7 +18499,7 @@ examples show function calls with and without arguments:
 
 <div class="example">
 
-``` example
+```bash
 sqrt(x^2 + y^2)        one argument
 atan2(y, x)            two arguments
 rand()                 no arguments
@@ -18524,7 +18523,7 @@ which to take the square root:
 
 <div class="example">
 
-``` example
+```bash
 sqrt(argument)
 ```
 
@@ -18555,7 +18554,7 @@ of each one:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '{ print "The square root of", $1, "is", sqrt($1) }'
 1
 -| The square root of 1 is 1
@@ -18576,7 +18575,7 @@ Functions](#String-Functions)) changes the variables `RSTART` and
 
 <div class="example">
 
-``` example
+```bash
 {
     if (match($1, $2))
         print RSTART, RLENGTH
@@ -18591,7 +18590,7 @@ Here is a sample run:
 
 <div class="example">
 
-``` example
+```bash
 $ awk -f matchit.awk
 aaccdd  c+
 -| 3 2
@@ -19058,7 +19057,7 @@ matches when the input record matches the regexp. For example:
 
 <div class="example">
 
-``` example
+```bash
 /foo|bar|baz/  { buzzwords++ }
 END            { print buzzwords, "buzzwords seen" }
 ```
@@ -19117,7 +19116,7 @@ id="index-exclamation-point-_0028_0021_0029-11"></span>
 
 <div class="example">
 
-``` example
+```bash
 $ awk '$1 == "li" { print $2 }' mail-list
 ```
 
@@ -19129,7 +19128,7 @@ which accepts any record with a first field that contains ‘`li`’:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '$1 ~ /li/ { print $2 }' mail-list
 -| 555-5553
 -| 555-6699
@@ -19155,7 +19154,7 @@ match. For example, the following command prints all the records in
 
 <div class="example">
 
-``` example
+```bash
 $ awk '/edu/ && /li/' mail-list
 -| Samuel       555-3430     samuel.lanceolis@shu.edu        A
 ```
@@ -19167,7 +19166,7 @@ The following command prints all records in `mail-list` that contain
 
 <div class="example">
 
-``` example
+```bash
 $ awk '/edu/ || /li/' mail-list
 -| Amelia       555-5553     amelia.zodiacusque@gmail.com    F
 -| Broderick    555-0542     broderick.aliquotiens@yahoo.com R
@@ -19184,7 +19183,7 @@ contain the string ‘`li`’:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '! /li/' mail-list
 -| Anthony      555-3412     anthony.asserturo@hotmail.com   A
 -| Becky        555-7685     becky.algebrarum@gmail.com      A
@@ -19193,7 +19192,7 @@ $ awk '! /li/' mail-list
 -| Fabius       555-1234     fabius.undevicesimus@ucb.edu    F
 ```
 
-``` example
+```bash
 -| Martin       555-6480     martin.codicibus@hotmail.com    A
 -| Jean-Paul    555-2127     jeanpaul.campanorum@nyu.edu     R
 ```
@@ -19248,7 +19247,7 @@ following:
 
 <div class="example">
 
-``` example
+```bash
 awk '$1 == "on", $1 == "off"' myfile
 ```
 
@@ -19285,7 +19284,7 @@ like this:
 
 <div class="example">
 
-``` example
+```bash
 /^%$/,/^%$/    { next }
                { print }
 ```
@@ -19301,7 +19300,7 @@ following manner, using a flag:
 
 <div class="example">
 
-``` example
+```bash
 /^%$/     { skip = ! skip; next }
 skip == 1 { next } # skip lines with `skip' set
 ```
@@ -19314,7 +19313,7 @@ attempts to combine a range pattern with another, simpler test:
 
 <div class="example">
 
-``` example
+```bash
 echo Yes | awk '/1/,/2/ || /Yes/'
 ```
 
@@ -19326,7 +19325,7 @@ worked around; range patterns do not combine with other patterns:
 
 <div class="example">
 
-``` example
+```bash
 $ echo Yes | gawk '(/1/,/2/) || /Yes/'
 error→ gawk: cmd. line:1: (/1/,/2/) || /Yes/
 error→ gawk: cmd. line:1:           ^ syntax error
@@ -19402,7 +19401,7 @@ is read. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk '
 > BEGIN { print "Analysis of \"li\"" }
 > /li/  { ++n }
@@ -19646,7 +19645,7 @@ input record. For example, the program:
 
 <div class="example">
 
-``` example
+```bash
 awk '{ print $1 }' mail-list
 ```
 
@@ -19690,7 +19689,7 @@ following program:
 
 <div class="example">
 
-``` example
+```bash
 printf "Enter search pattern: "
 read pattern
 awk "/$pattern/ "'{ nmatches++ }
@@ -19718,7 +19717,7 @@ previous example using this technique:
 
 <div class="example">
 
-``` example
+```bash
 printf "Enter search pattern: "
 read pattern
 awk -v pat="$pattern" '$0 ~ pat { nmatches++ }
@@ -19792,7 +19791,7 @@ braces as well. An omitted action is equivalent to ‘`{ print $0 }`’:
 
 <div class="example">
 
-``` example
+```bash
 /foo/  { }     match foo, do nothing — empty action
 /foo/          match foo, print the record — omitted action
 ```
@@ -19934,7 +19933,7 @@ null string; otherwise, the condition is true. Refer to the following:
 
 <div class="example">
 
-``` example
+```bash
 if (x % 2 == 0)
     print "x is even"
 else
@@ -19953,7 +19952,7 @@ illustrate this, the previous example can be rewritten as:
 
 <div class="example">
 
-``` example
+```bash
 if (x % 2 == 0) print "x is even"; else
         print "x is odd"
 ```
@@ -19995,7 +19994,7 @@ as a condition is true. For example:
 
 <div class="example">
 
-``` example
+```bash
 while (condition)
   body
 ```
@@ -20017,7 +20016,7 @@ line:
 
 <div class="example">
 
-``` example
+```bash
 awk '
 {
     i = 1
@@ -20073,7 +20072,7 @@ loop executes the `body` once and then repeats the `body` as long as the
 
 <div class="example">
 
-``` example
+```bash
 do
   body
 while (condition)
@@ -20087,7 +20086,7 @@ true). Contrast this with the corresponding `while` statement:
 
 <div class="example">
 
-``` example
+```bash
 while (condition)
     body
 ```
@@ -20099,7 +20098,7 @@ is false to begin with. The following is an example of a `do` statement:
 
 <div class="example">
 
-``` example
+```bash
 {
     i = 1
     do {
@@ -20142,7 +20141,7 @@ loop. The general form of the `for` statement looks like this:
 
 <div class="example">
 
-``` example
+```bash
 for (initialization; condition; increment)
   body
 ```
@@ -20160,7 +20159,7 @@ the desired number of iterations. For example:
 
 <div class="example">
 
-``` example
+```bash
 awk '
 {
     for (i = 1; i <= 3; i++)
@@ -20180,7 +20179,7 @@ loop, like so:
 
 <div class="example">
 
-``` example
+```bash
 for (i = 0, j = length(a); i < j; i++, j--) …   C/C++, not awk!
 ```
 
@@ -20200,7 +20199,7 @@ between 1 and 100:
 
 <div class="example">
 
-``` example
+```bash
 for (i = 1; i <= 100; i *= 2)
     print i
 ```
@@ -20218,7 +20217,7 @@ shown here:
 
 <div class="example">
 
-``` example
+```bash
 initialization
 while (condition) {
   body
@@ -20248,7 +20247,7 @@ all the indices of an array:
 
 <div class="example">
 
-``` example
+```bash
 for (i in array)
     do something with array[i]
 ```
@@ -20300,7 +20299,7 @@ expression. The general form of the `switch` statement looks like this:
 
 <div class="example">
 
-``` example
+```bash
 switch (expression) {
 case value or regular expression:
     case-body
@@ -20318,7 +20317,7 @@ the end of the `switch` statement itself. For example:
 
 <div class="example">
 
-``` example
+```bash
 while ((c = getopt(ARGC, ARGV, "aksx")) != -1) {
     switch (c) {
     case "a":
@@ -20382,7 +20381,7 @@ of any integer, and also identifies prime numbers:
 
 <div class="example">
 
-``` example
+```bash
 # find smallest divisor of num
 {
     num = $1
@@ -20392,7 +20391,7 @@ of any integer, and also identifies prime numbers:
     }
 ```
 
-``` example
+```bash
     if (num % divisor == 0)
         printf "Smallest divisor of %d is %d\n", num, divisor
     else
@@ -20414,7 +20413,7 @@ The following program illustrates how the `condition` of a `for` or
 
 <div class="example">
 
-``` example
+```bash
 # find smallest divisor of num
 {
     num = $1
@@ -20482,7 +20481,7 @@ illustrates this fact:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
      for (x = 0; x <= 20; x++) {
          if (x == 5)
@@ -20502,7 +20501,7 @@ previous example with the following `while` loop:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
      x = 0
      while (x <= 20) {
@@ -20581,7 +20580,7 @@ beginning, in the following manner:
 
 <div class="example">
 
-``` example
+```bash
 NF != 4 {
     printf("%s:%d: skipped: NF != 4\n", FILENAME, FNR) > "/dev/stderr"
     next
@@ -20767,7 +20766,7 @@ statement with a nonzero argument, as shown in the following example:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     if (("date" | getline date_now) <= 0) {
         print "Can't get system date" > "/dev/stderr"
@@ -20775,7 +20774,7 @@ BEGIN {
     }
 ```
 
-``` example
+```bash
     print "current date is", date_now
     close("date")
 }
@@ -20946,7 +20945,7 @@ You can set the value of `FS` on the command line using the `-F` option:
 
 <div class="example">
 
-``` example
+```bash
 awk -F, 'program' input-files
 ```
 
@@ -21137,7 +21136,7 @@ following example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN {
 >         for (i = 0; i < ARGC; i++)
 >             print ARGV[i]
@@ -21327,7 +21326,7 @@ may be used:
 
 <div class="example">
 
-``` example
+```bash
 gawk '
 BEGIN {
         for (i = 0; i < length(PROCINFO["argv"]); i++)
@@ -21577,7 +21576,7 @@ a variable:
 
 <div class="example">
 
-``` example
+```bash
 foo = 5
 SYMTAB["foo"] = 4
 print foo    # prints 4
@@ -21595,7 +21594,7 @@ was not a predefined identifier:
 
 <div class="example">
 
-``` example
+```bash
 SYMTAB["xxx"] = 5
 print SYMTAB["xxx"]
 ```
@@ -21613,7 +21612,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 # Indirect multiply of any variable by amount, return result
 
 function multiply(variable, amount)
@@ -21628,7 +21627,7 @@ You would use it like this:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     answer = 10.5
     multiply("answer", 4)
@@ -21642,7 +21641,7 @@ When run, this produces:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f answer.awk
 -| The answer is 42
 ```
@@ -21719,7 +21718,7 @@ the following program describing the information contained in `ARGC` and
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN {
 >        for (i = 0; i < ARGC; i++)
 >            print ARGV[i]
@@ -21742,7 +21741,7 @@ array. Given the following program in a file named `showargs.awk`:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     printf "A=%d, B=%d\n", A, B
     for (i = 0; i < ARGC; i++)
@@ -21757,7 +21756,7 @@ Running it produces the following:
 
 <div class="example">
 
-``` example
+```bash
 $ awk -v A=1 -f showargs.awk B=2 /dev/null
 -| A=1, B=0
 -|        ARGV[0] = awk
@@ -21798,7 +21797,7 @@ manner:
 
 <div class="example">
 
-``` example
+```bash
 awk -f myprog.awk -- -v -q file1 file2 …
 ```
 
@@ -21809,7 +21808,7 @@ remove, the previously mentioned command-line options:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     for (i = 1; i < ARGC; i++) {
         if (ARGV[i] == "-v")
@@ -21840,7 +21839,7 @@ be:
 
 <div class="example">
 
-``` example
+```bash
 gawk -f myprog.awk -q -v file1 file2 …
 ```
 
@@ -22166,7 +22165,7 @@ The principal way to use an array is to refer to one of its elements. An
 
 <div class="example">
 
-``` example
+```bash
 array[index-expression]
 ```
 
@@ -22201,7 +22200,7 @@ id="index-arrays-7"></span>
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > # Check if "foo" exists in a:         Incorrect!
 > if (a["foo"] != "") …
 > ```
@@ -22219,7 +22218,7 @@ use the following expression:
 
 <div class="example">
 
-``` example
+```bash
 indx in array
 ```
 
@@ -22236,7 +22235,7 @@ whether the array `frequencies` contains the index ‘`2`’:
 
 <div class="example">
 
-``` example
+```bash
 if (2 in frequencies)
     print "Subscript 2 is present."
 ```
@@ -22250,7 +22249,7 @@ except to scan all the elements. Also, this *does not* create
 
 <div class="example">
 
-``` example
+```bash
 if (frequencies[2] != "")
     print "Subscript 2 is present."
 ```
@@ -22285,7 +22284,7 @@ Array elements can be assigned values just like `awk` variables:
 
 <div class="example">
 
-``` example
+```bash
 array[index-expression] = value
 ```
 
@@ -22328,7 +22327,7 @@ number:
 
 <div class="example">
 
-``` example
+```bash
 {
     if ($1 > max)
         max = $1
@@ -22351,7 +22350,7 @@ input:
 
 <div class="example">
 
-``` example
+```bash
 5  I am the Five man
 2  Who are you?  The new number two!
 4  . . . And four on the floor
@@ -22365,7 +22364,7 @@ Its output is:
 
 <div class="example">
 
-``` example
+```bash
 1  Who is number one?
 2  Who are you?  The new number two!
 3  I three you.
@@ -22381,7 +22380,7 @@ easy improvement to the program’s `END` rule, as follows:
 
 <div class="example">
 
-``` example
+```bash
 END {
     for (x = 1; x <= max; x++)
         if (x in arr)
@@ -22425,7 +22424,7 @@ a special kind of `for` statement for scanning an array:
 
 <div class="example">
 
-``` example
+```bash
 for (var in array)
     body
 ```
@@ -22450,7 +22449,7 @@ information on the built-in function `length()`.
 
 <div class="example">
 
-``` example
+```bash
 # Record a 1 for each word that is used at least once
 {
     for (i = 1; i <= NF; i++)
@@ -22458,10 +22457,10 @@ information on the built-in function `length()`.
 }
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
 # Find number of distinct words more than 10 characters long
 END {
     for (x in used) {
@@ -22497,7 +22496,7 @@ all `awk` versions do so. Consider this program, named `loopcheck.awk`:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     a["here"] = "here"
     a["is"] = "is"
@@ -22517,7 +22516,7 @@ Here is what happens when run with `gawk` (and `mawk`):
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f loopcheck.awk
 -| here
 -| loop
@@ -22531,7 +22530,7 @@ Contrast this to BWK `awk`:
 
 <div class="example">
 
-``` example
+```bash
 $ nawk -f loopcheck.awk
 -| loop
 -| here
@@ -22669,7 +22668,7 @@ the loop. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk '
 > BEGIN {
 >    a[4] = 4
@@ -22708,7 +22707,7 @@ traversal:
     the value:
     <div class="example">
 
-    ``` example
+    ```bash
     …
     if ("sorted_in" in PROCINFO) {
         save_sorted = PROCINFO["sorted_in"]
@@ -22764,7 +22763,7 @@ program accesses elements of an array. For example:
 
 <div class="example">
 
-``` example
+```bash
 xyz = 12.153
 data[xyz] = 1
 CONVFMT = "%2.2f"
@@ -22796,7 +22795,7 @@ be. So the usual case of the following works:
 
 <div class="example">
 
-``` example
+```bash
 for (i = 1; i <= maxsub; i++)
     do something with array[i]
 ```
@@ -22846,7 +22845,7 @@ look like this:
 
 <div class="example">
 
-``` example
+```bash
 $ echo 'line 1
 > line 2
 > line 3' | awk '{ l[lines] = $0; ++lines }
@@ -22875,7 +22874,7 @@ of the program works correctly:
 
 <div class="example">
 
-``` example
+```bash
 { l[lines++] = $0 }
 END {
     for (i = lines - 1; i >= 0; i--)
@@ -22927,7 +22926,7 @@ To remove an individual element of an array, use the `delete` statement:
 
 <div class="example">
 
-``` example
+```bash
 delete array[index-expression]
 ```
 
@@ -22940,7 +22939,7 @@ elements in an array:
 
 <div class="example">
 
-``` example
+```bash
 for (i in frequencies)
     delete frequencies[i]
 ```
@@ -22954,7 +22953,7 @@ the presence of that element returns zero (i.e., false):
 
 <div class="example">
 
-``` example
+```bash
 delete foo[4]
 if (4 in foo)
     print "This will never be printed"
@@ -22969,7 +22968,7 @@ assigning it a null value (the empty string, `""`). For example:
 
 <div class="example">
 
-``` example
+```bash
 foo[4] = ""
 if (4 in foo)
   print "This is printed, even though foo[4] is empty"
@@ -22994,7 +22993,7 @@ leaving off the subscript in the `delete` statement, as follows:
 
 <div class="example">
 
-``` example
+```bash
 delete array
 ```
 
@@ -23022,7 +23021,7 @@ out an array:<a href="#FOOT43" id="DOCF43"><sup>43</sup></a>
 
 <div class="example">
 
-``` example
+```bash
 split("", array)
 ```
 
@@ -23042,7 +23041,7 @@ split out, the function simply clears the array and then returns.
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > a[1] = 3
 > delete a
 > a = 3
@@ -23120,7 +23119,7 @@ commas, as the left operand:
 
 <div class="example">
 
-``` example
+```bash
 if ((subscript1, subscript2, …) in array)
     …
 ```
@@ -23133,7 +23132,7 @@ result. It assumes that all lines have the same number of elements:
 
 <div class="example">
 
-``` example
+```bash
 {
      if (max_nf < NF)
           max_nf = NF
@@ -23157,7 +23156,7 @@ When given the input:
 
 <div class="example">
 
-``` example
+```bash
 1 2 3 4 5 6
 2 3 4 5 6 1
 3 4 5 6 1 2
@@ -23170,7 +23169,7 @@ the program produces the following output:
 
 <div class="example">
 
-``` example
+```bash
 4 3 2 1
 5 4 3 2
 6 5 4 3
@@ -23216,7 +23215,7 @@ the following manner:
 
 <div class="example">
 
-``` example
+```bash
 for (combined in array) {
     split(combined, separate, SUBSEP)
     …
@@ -23239,7 +23238,7 @@ is called as follows:
 
 <div class="example">
 
-``` example
+```bash
 split("1\034foo", separate, "\034")
 ```
 
@@ -23278,7 +23277,7 @@ subarray at index `1` of the main array `a`:
 
 <div class="example">
 
-``` example
+```bash
 a[1][1] = 1
 a[1][2] = 2
 ```
@@ -23294,7 +23293,7 @@ the following is valid in `gawk`:
 
 <div class="example">
 
-``` example
+```bash
 a[1][3][1, "name"] = "barney"
 ```
 
@@ -23309,7 +23308,7 @@ array and not a scalar:
 
 <div class="example">
 
-``` example
+```bash
 a[4] = "An element in a jagged array"
 ```
 
@@ -23325,7 +23324,7 @@ at that index:
 
 <div class="example">
 
-``` example
+```bash
 delete a[4]
 a[4][5][6][7] = "An element in a four-dimensional array"
 ```
@@ -23338,7 +23337,7 @@ entire subarray or subarray of subarrays:
 
 <div class="example">
 
-``` example
+```bash
 delete a[4][5]
 a[4][5] = "An element in subarray a[4]"
 ```
@@ -23355,7 +23354,7 @@ the number of elements in the main array `a` and its subarrays:
 
 <div class="example">
 
-``` example
+```bash
 print length(a), length(a[1]), length(a[1][3])
 ```
 
@@ -23365,7 +23364,7 @@ This results in the following output for our main array `a`:
 
 <div class="example">
 
-``` example
+```bash
 2, 3, 1
 ```
 
@@ -23386,7 +23385,7 @@ not necessarily of the same length), you could use the following code:
 
 <div class="example">
 
-``` example
+```bash
 for (i in array)
     for (j in array[i])
         print array[i][j]
@@ -23400,7 +23399,7 @@ itself an array:
 
 <div class="example">
 
-``` example
+```bash
 for (i in array) {
     if (isarray(array[i])) {
         for (j in array[i]) {
@@ -23420,7 +23419,7 @@ following code prints the elements of our main array `a`:
 
 <div class="example">
 
-``` example
+```bash
 for (i in a) {
     for (j in a[i]) {
         if (j == 3) {
@@ -23428,7 +23427,7 @@ for (i in a) {
                 print a[i][j][k]
 ```
 
-``` example
+```bash
         } else
             print a[i][j]
     }
@@ -23448,7 +23447,7 @@ the following example:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { split("a b c d", b[1]); print b[1][1] }'
 error→ gawk: cmd. line:1: fatal: split: second argument is not an array
 ```
@@ -23460,7 +23459,7 @@ creating an arbitrary index:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { b[1][1] = ""; split("a b c d", b[1]); print b[1][1] }'
 -| a
 ```
@@ -23641,7 +23640,7 @@ example, in the following code fragment:
 
 <div class="example">
 
-``` example
+```bash
 i = 4
 j = sqrt(i++)
 ```
@@ -23660,7 +23659,7 @@ evaluated from left to right or from right to left. For example:
 
 <div class="example">
 
-``` example
+```bash
 i = 5
 j = atan2(++i, i *= 2)
 ```
@@ -23751,7 +23750,7 @@ than `n`:
 
 <div class="example">
 
-``` example
+```bash
 function randint(n)
 {
     return int(n * rand())
@@ -23770,7 +23769,7 @@ input record:
 
 <div class="example">
 
-``` example
+```bash
 # Function to roll a simulated die.
 function roll(n) { return 1 + int(rand() * n) }
 
@@ -23927,7 +23926,7 @@ For example, if the contents of `a` are as follows:
 
 <div class="example">
 
-``` example
+```bash
 a["last"] = "de"
 a["first"] = "sac"
 a["middle"] = "cul"
@@ -23939,7 +23938,7 @@ A call to `asort()`:
 
 <div class="example">
 
-``` example
+```bash
 asort(a)
 ```
 
@@ -23949,7 +23948,7 @@ results in the following contents of `a`:
 
 <div class="example">
 
-``` example
+```bash
 a[1] = "cul"
 a[2] = "de"
 a[3] = "sac"
@@ -23964,7 +23963,7 @@ example, starting with the same initial set of indices and values in
 
 <div class="example">
 
-``` example
+```bash
 a[1] = "first"
 a[2] = "last"
 a[3] = "middle"
@@ -24008,7 +24007,7 @@ where `N` is a digit from 1 to 9. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk '
 > BEGIN {
 >      a = "abc def"
@@ -24029,7 +24028,7 @@ control which match of the regexp should be changed:
 
 <div class="example">
 
-``` example
+```bash
 $ echo a b c a b c |
 > gawk '{ print gensub(/a/, "AA", 2) }'
 -| a b c AA b c
@@ -24060,7 +24059,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
 { gsub(/Britain/, "United Kingdom"); print }
 ```
 
@@ -24085,7 +24084,7 @@ the string `in`. Consider the following example:
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN { print index("peanut", "an") }'
 -| 3
 ```
@@ -24132,7 +24131,7 @@ the variable without a type. (d.c.) Consider:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { print length(x) ; x[1] = 1 }'
 -| 0
 error→ gawk: fatal: attempt to use scalar `x' as array
@@ -24197,7 +24196,7 @@ For example:
 
 <div class="example">
 
-``` example
+```bash
 {
     if ($1 == "FIND")
         regex = $2
@@ -24218,7 +24217,7 @@ word on that line. Therefore, if given:
 
 <div class="example">
 
-``` example
+```bash
 FIND ru+n
 My program runs
 but not very quickly
@@ -24234,7 +24233,7 @@ Melvin was here.
 
 <div class="example">
 
-``` example
+```bash
 Match of ru+n found at 12 in My program runs
 Match of Melvin found at 1 in Melvin was here.
 ```
@@ -24251,7 +24250,7 @@ parenthesized subexpression. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ echo foooobazbarrrrr |
 > gawk '{ match($0, /(fo+).+(bar*)/, arr)
 >         print arr[1], arr[2] }'
@@ -24265,7 +24264,7 @@ start index and length of each matched subexpression:
 
 <div class="example">
 
-``` example
+```bash
 $ echo foooobazbarrrrr |
 > gawk '{ match($0, /(fo+).+(bar*)/, arr)
 >           print arr[1], arr[2]
@@ -24335,7 +24334,7 @@ input lines are split into fields. For example:
 
 <div class="example">
 
-``` example
+```bash
 split("cul-de-sac", a, "-", seps)
 ```
 
@@ -24347,7 +24346,7 @@ array `a` as follows:
 
 <div class="example">
 
-``` example
+```bash
 a[1] = "cul"
 a[2] = "de"
 a[3] = "sac"
@@ -24359,7 +24358,7 @@ and sets the contents of the array `seps` as follows:
 
 <div class="example">
 
-``` example
+```bash
 seps[1] = "-"
 seps[2] = "-"
 ```
@@ -24418,7 +24417,7 @@ Fancier Printing](#Printf)). For example:
 
 <div class="example">
 
-``` example
+```bash
 pival = sprintf("pi = %.2f (approx.)", 22/7)
 ```
 
@@ -24437,7 +24436,7 @@ leading ‘`0`’, `strtonum()` assumes that `str` is an octal number. If
 
 <div class="example">
 
-``` example
+```bash
 $ echo 0x11 |
 > gawk '{ printf "%d\n", strtonum($1) }'
 -| 17
@@ -24478,7 +24477,7 @@ there. If this argument is omitted, then the default is to use and alter
 
 <div class="example">
 
-``` example
+```bash
 str = "water, water, everywhere"
 sub(/at/, "ith", str)
 ```
@@ -24495,7 +24494,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 { sub(/candidate/, "& and his wife"); print }
 ```
 
@@ -24506,7 +24505,7 @@ changes the first occurrence of ‘`candidate`’ to
 
 <div class="example">
 
-``` example
+```bash
 $ awk 'BEGIN {
 >         str = "daabaaa"
 >         sub(/a+/, "C&C", str)
@@ -24530,7 +24529,7 @@ replacement. For example, the following shows how to replace the first
 
 <div class="example">
 
-``` example
+```bash
 { sub(/\|/, "\\&"); print }
 ```
 
@@ -24550,7 +24549,7 @@ it. Such versions of `awk` accept expressions like the following:
 
 <div class="example">
 
-``` example
+```bash
 sub(/USA/, "United States", "the USA and Canada")
 ```
 
@@ -24597,7 +24596,7 @@ following example:
 
 <div class="example">
 
-``` example
+```bash
 string = "abcdef"
 # try to get "abCDEf", won't work
 substr(string, 3, 3) = "CDE"
@@ -24610,7 +24609,7 @@ or `gsub()`:
 
 <div class="example">
 
-``` example
+```bash
 gsub(/xyz/, "pdq", substr($0, 5, 20))  # WRONG
 ```
 
@@ -24626,7 +24625,7 @@ with string concatenation, in the following manner:
 
 <div class="example">
 
-``` example
+```bash
 string = "abcdef"
 …
 string = substr(string, 1, 2) "CDE" substr(string, 6)
@@ -25083,7 +25082,7 @@ program:
 
 <div class="example">
 
-``` example
+```bash
 END {
      system("date | mail -s 'awk run done' root")
 }
@@ -25100,7 +25099,7 @@ efficient to simply print them down a pipeline to the shell:
 
 <div class="example">
 
-``` example
+```bash
 while (more stuff to do)
     print command | "/bin/sh"
 close("/bin/sh")
@@ -25525,7 +25524,7 @@ format specifiers in the string. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ date '+Today is %A, %B %d, %Y.'
 -| Today is Monday, September 22, 2014.
 ```
@@ -25538,7 +25537,7 @@ if the time zone is set to UTC:
 
 <div class="example">
 
-``` example
+```bash
 #! /bin/sh
 #
 # date --- approximate the POSIX 'date' command
@@ -25711,7 +25710,7 @@ id="index-testbits_002eawk-program"></span>
 
 <div class="example">
 
-``` example
+```bash
 # bits2str --- turn an integer into readable ones and zeros
 
 function bits2str(bits,        data, mask)
@@ -25730,7 +25729,7 @@ function bits2str(bits,        data, mask)
 }
 ```
 
-``` example
+```bash
 
 BEGIN {
     printf "123 = %s\n", bits2str(123)
@@ -25751,7 +25750,7 @@ This program produces the following output when run:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f testbits.awk
 -| 123 = 01111011
 -| 0123 = 01010011
@@ -25908,7 +25907,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     # creates a[1] but it has no assigned value
     a[1]
@@ -25925,7 +25924,7 @@ same program! For example:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     print "initially, typeof(v) = ", typeof(v)
 
@@ -25973,7 +25972,7 @@ are automatically forced to be scalars. Consider:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { print typeof(x) }'
 -| untyped
 $ gawk 'BEGIN { print typeof(x["foo"]) }'
@@ -26238,7 +26237,7 @@ implications. If `gawk` is in POSIX-compatibility mode (see section
 
 <div class="example">
 
-``` example
+```bash
 func foo() { a = sqrt($1) ; print a }
 ```
 
@@ -26283,7 +26282,7 @@ takes a number and prints it in a specific format:
 
 <div class="example">
 
-``` example
+```bash
 function myprint(num)
 {
      printf "%6.3g\n", num
@@ -26296,7 +26295,7 @@ To illustrate, here is an `awk` rule that uses our `myprint()` function:
 
 <div class="example">
 
-``` example
+```bash
 $3 > 0     { myprint($3) }
 ```
 
@@ -26308,7 +26307,7 @@ following input:
 
 <div class="example">
 
-``` example
+```bash
  1.2   3.4    5.6   7.8
  9.10 11.12 -13.14 15.16
 17.18 19.20  21.22 23.24
@@ -26320,7 +26319,7 @@ this program, using our function to format the results, prints:
 
 <div class="example">
 
-``` example
+```bash
    5.6
   21.2
 ```
@@ -26332,7 +26331,7 @@ extra whitespace signifies the start of the local variable list):
 
 <div class="example">
 
-``` example
+```bash
 function delarray(a,    i)
 {
     for (i in a)
@@ -26361,7 +26360,7 @@ id="index-user_002ddefined-3"></span>
 
 <div class="example">
 
-``` example
+```bash
 function rev(str)
 {
     if (str == "")
@@ -26378,7 +26377,7 @@ way:
 
 <div class="example">
 
-``` example
+```bash
 $ echo "Don't Panic!" |
 > gawk -e '{ print rev($0) }' -f rev.awk
 -| !cinaP t'noD
@@ -26396,7 +26395,7 @@ id="index-user_002ddefined-4"></span>
 
 <div class="example">
 
-``` example
+```bash
 # ctime.awk
 #
 # awk version of C ctime(3) function
@@ -26480,7 +26479,7 @@ concatenation):
 
 <div class="example">
 
-``` example
+```bash
 foo(x y, "lose", 4 * z)
 ```
 
@@ -26530,7 +26529,7 @@ and `bar()`:
 
 <div class="example">
 
-``` example
+```bash
 function bar()
 {
     for (i = 0; i < 3; i++)
@@ -26561,7 +26560,7 @@ instance:
 
 <div class="example">
 
-``` example
+```bash
 top's i=10
 foo's i=1
 bar's i=0
@@ -26579,7 +26578,7 @@ is a local variable, not an argument):
 
 <div class="example">
 
-``` example
+```bash
 function bar(    i)
 {
     for (i = 0; i < 3; i++)
@@ -26608,7 +26607,7 @@ Running the corrected script produces the following:
 
 <div class="example">
 
-``` example
+```bash
 top's i=10
 foo's i=1
 bar's i=0
@@ -26627,14 +26626,14 @@ create new arrays. Consider this example:
 
 <div class="example">
 
-``` example
+```bash
 function some_func(p1,      a)
 {
     if (p1++ > 3)
         return
 ```
 
-``` example
+```bash
 
     a[p1] = p1
 
@@ -26658,7 +26657,7 @@ When run, this program produces the following output:
 
 <div class="example">
 
-``` example
+```bash
 At level 4, index 3 is not found in a
 At level 4, index 4 is found in a
 
@@ -26710,7 +26709,7 @@ example, if you write the following code:
 
 <div class="example">
 
-``` example
+```bash
 foo = "bar"
 z = myfunc(foo)
 ```
@@ -26725,7 +26724,7 @@ variables, this has no effect on any other variables. Thus, if
 
 <div class="example">
 
-``` example
+```bash
 function myfunc(str)
 {
    print str
@@ -26757,7 +26756,7 @@ function *are* visible outside that function.
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > function changeit(array, ind, nvalue)
 > {
 >      array[ind] = nvalue
@@ -26804,7 +26803,7 @@ actually tries to call the function. For example:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     if (0)
         foo()
@@ -26839,7 +26838,7 @@ with, like so:
 
 <div class="example">
 
-``` example
+```bash
 function foo(p1, p2)
 {
     …
@@ -26927,7 +26926,7 @@ value for the largest number among the elements of an array:
 
 <div class="example">
 
-``` example
+```bash
 function maxelt(vec,   i, ret)
 {
      for (i in vec) {
@@ -26954,7 +26953,7 @@ calls `maxelt()`, and then reports the maximum number in that array:
 
 <div class="example">
 
-``` example
+```bash
 function maxelt(vec,   i, ret)
 {
      for (i in vec) {
@@ -26965,7 +26964,7 @@ function maxelt(vec,   i, ret)
 }
 ```
 
-``` example
+```bash
 # Load all fields of each record into nums.
 {
      for(i = 1; i <= NF; i++)
@@ -26973,7 +26972,7 @@ function maxelt(vec,   i, ret)
 }
 ```
 
-``` example
+```bash
 
 END {
      print maxelt(nums)
@@ -26986,7 +26985,7 @@ Given the following input:
 
 <div class="example">
 
-``` example
+```bash
  1 5 23 8 16
 44 3 5 2 8 26
 256 291 1396 2962 100
@@ -27023,7 +27022,7 @@ Here is an annotated sample program:
 
 <div class="example">
 
-``` example
+```bash
 function foo(a)
 {
     a[1] = 1   # parameter is an array
@@ -27094,7 +27093,7 @@ Here is the initial file:
 
 <div class="example">
 
-``` example
+```bash
 Biology_101 sum average data: 87.0 92.4 78.5 94.9
 Chemistry_305 sum average data: 75.2 98.3 94.7 88.2
 English_401 sum average data: 100.0 95.6 87.1 93.4
@@ -27106,7 +27105,7 @@ To process the data, you might write initially:
 
 <div class="example">
 
-``` example
+```bash
 {
     class = $1
     for (i = 2; $i != "data:"; i++) {
@@ -27136,7 +27135,7 @@ a closing parenthesis, with the addition of a leading ‘`@`’ character:
 
 <div class="example">
 
-``` example
+```bash
 the_func = "sum"
 result = @the_func()   # calls the sum() function
 ```
@@ -27148,7 +27147,7 @@ indirect function calls:
 
 <div class="example">
 
-``` example
+```bash
 # indirectcall.awk --- Demonstrate indirect function calls
 
 # average --- return the average of the values in fields $first - $last
@@ -27182,7 +27181,7 @@ Otherwise, they perform the expected computations and are not unusual:
 
 <div class="example">
 
-``` example
+```bash
 # For each record, print the class name and the requested statistics
 {
     class_name = $1
@@ -27222,7 +27221,7 @@ Here is the result of running the program:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f indirectcall.awk class_data1
 -| Biology 101:
 -|     sum: <352.8>
@@ -27253,7 +27252,7 @@ We can do something similar using `gawk`, like this:
 
 <div class="example">
 
-``` example
+```bash
 # quicksort.awk --- Quicksort algorithm, with user-supplied
 #                   comparison function
 
@@ -27297,7 +27296,7 @@ The first thing to do is write some comparison functions:
 
 <div class="example">
 
-``` example
+```bash
 # num_lt --- do a numeric less than comparison
 
 function num_lt(left, right)
@@ -27306,7 +27305,7 @@ function num_lt(left, right)
 }
 ```
 
-``` example
+```bash
 
 # num_ge --- do a numeric greater than or equal to comparison
 
@@ -27330,7 +27329,7 @@ the results as a single string:
 
 <div class="example">
 
-``` example
+```bash
 # do_sort --- sort the data according to `compare'
 #             and return it as a string
 
@@ -27359,7 +27358,7 @@ names of the two comparison functions:
 
 <div class="example">
 
-``` example
+```bash
 # sort --- sort the data in ascending order and return it as a string
 
 function sort(first, last)
@@ -27368,10 +27367,10 @@ function sort(first, last)
 }
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
 # rsort --- sort the data in descending order and return it as a string
 
 function rsort(first, last)
@@ -27386,7 +27385,7 @@ Here is an extended version of the data file:
 
 <div class="example">
 
-``` example
+```bash
 Biology_101 sum average sort rsort data: 87.0 92.4 78.5 94.9
 Chemistry_305 sum average sort rsort data: 75.2 98.3 94.7 88.2
 English_401 sum average sort rsort data: 100.0 95.6 87.1 93.4
@@ -27398,7 +27397,7 @@ Finally, here are the results when the enhanced program is run:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f quicksort.awk -f indirectcall.awk class_data2
 -| Biology 101:
 -|     sum: <352.8>
@@ -27447,7 +27446,7 @@ example, in the following case:
 
 <div class="example">
 
-``` example
+```bash
 for (i = 1; i <= n; i++)
     @the_func()
 ```
@@ -27610,7 +27609,7 @@ pretty straightforward:
 
     <div class="example">
 
-    ``` example
+    ```bash
     # ignore case
     { $0 = tolower($0) }
     ```
@@ -27716,7 +27715,7 @@ leading to bugs that are very difficult to track down:
 
 <div class="example">
 
-``` example
+```bash
 function lib_func(x, y,    l1, l2)
 {
     …
@@ -27809,7 +27808,7 @@ function provides an implementation for other versions of `awk`:
 
 <div class="example">
 
-``` example
+```bash
 # mystrtonum --- convert string to number
 
 function mystrtonum(str,        ret, n, i, k, c)
@@ -27926,7 +27925,7 @@ program. In C, using `assert()` looks this:
 
 <div class="example">
 
-``` example
+```bash
 #include <assert.h>
 
 int myfunc(int a, double b)
@@ -27942,7 +27941,7 @@ If the assertion fails, the program prints a message similar to this:
 
 <div class="example">
 
-``` example
+```bash
 prog.c:5: assertion failed: a <= 5 && b >= 17.1
 ```
 
@@ -27958,7 +27957,7 @@ condition that is being tested. Following is the function:
 
 <div class="example">
 
-``` example
+```bash
 # assert --- assert that a condition is true. Otherwise, exit.
 
 function assert(condition, string)
@@ -27972,7 +27971,7 @@ function assert(condition, string)
 }
 ```
 
-``` example
+```bash
 END {
     if (_assert_exit)
         exit 1
@@ -27998,7 +27997,7 @@ program in the following way:
 
 <div class="example">
 
-``` example
+```bash
 function myfunc(a, b)
 {
      assert(a <= 5 && b >= 17.1, "a <= 5 && b >= 17.1")
@@ -28012,7 +28011,7 @@ If the assertion fails, you see a message similar to the following:
 
 <div class="example">
 
-``` example
+```bash
 mydata:1357: assertion failed: a <= 5 && b >= 17.1
 ```
 
@@ -28077,7 +28076,7 @@ id="index-user_002ddefined-6"></span>
 
 <div class="example">
 
-``` example
+```bash
 # round.awk --- do normal rounding
 
 function round(x,   ival, aval, fraction)
@@ -28106,7 +28105,7 @@ function round(x,   ival, aval, fraction)
 }
 ```
 
-``` example
+```bash
 # test harness
 # { print $0, round($0) }
 ```
@@ -28148,7 +28147,7 @@ id="index-cliff_005frand_0028_0029-user_002ddefined-function"></span>
 
 <div class="example">
 
-``` example
+```bash
 # cliff_rand.awk --- generate Cliff random numbers
 
 BEGIN { _cliff_seed = 0.1 }
@@ -28213,7 +28212,7 @@ id="index-_005ford_005finit_0028_0029-user_002ddefined-function"></span>
 
 <div class="example">
 
-``` example
+```bash
 # ord.awk --- do ord and chr
 
 # Global identifiers:
@@ -28266,7 +28265,7 @@ older systems, but they are not really worth worrying about:
 
 <div class="example">
 
-``` example
+```bash
 function ord(str,    c)
 {
     # only first character is of interest
@@ -28343,7 +28342,7 @@ id="index-user_002ddefined-11"></span>
 
 <div class="example">
 
-``` example
+```bash
 # join.awk --- join an array into a string
 
 function join(array, start, end, sep,    result, i)
@@ -28409,7 +28408,7 @@ id="index-getlocaltime_0028_0029-user_002ddefined-function"></span>
 
 <div class="example">
 
-``` example
+```bash
 # getlocaltime.awk --- get the time of day in a usable format
 
 # Returns a string in the format of output of date(1)
@@ -28506,7 +28505,7 @@ might be as follows:
 
 <div class="example">
 
-``` example
+```bash
 function readfile1(file,    tmp, contents)
 {
     if ((getline tmp < file) < 0)
@@ -28535,7 +28534,7 @@ the entire contents of the named file in one shot:
 
 <div class="example">
 
-``` example
+```bash
 # readfile.awk --- read an entire file at once
 
 function readfile(file,     tmp, save_rs)
@@ -28564,7 +28563,7 @@ Thus, calling code may use something like:
 
 <div class="example">
 
-``` example
+```bash
 contents = readfile("/some/path")
 if (length(contents) == 0)
     # file was empty …
@@ -28603,7 +28602,7 @@ frequently:
 
 <div class="example">
 
-``` example
+```bash
 #! /bin/sh
 
 awkp='
@@ -28619,7 +28618,7 @@ For example, a program of his named `flac-edit` has this form:
 
 <div class="example">
 
-``` example
+```bash
 $ flac-edit -song="Whoope! That's Great" file.flac
 ```
 
@@ -28630,7 +28629,7 @@ It generates the following output, which is to be piped to the shell
 
 <div class="example">
 
-``` example
+```bash
 chmod +w file.flac
 metaflac --remove-tag=TITLE file.flac
 LANG=en_US.88591 metaflac --set-tag=TITLE='Whoope! That'"'"'s Great' file.flac
@@ -28639,13 +28638,13 @@ chmod -w file.flac
 
 </div>
 
-Note the need for shell quoting. The function `shell_quote()` does it.
+Note the need for shell quoting. The function `ash_quote()` does it.
 `SINGLE` is the one-character string `"'"` and `QSINGLE` is the
 three-character string `"\"'\""`:
 
 <div class="example">
 
-``` example
+```bash
 # shell_quote --- quote an argument for passing to the shell
 
 function shell_quote(s,             # parameter
@@ -28696,7 +28695,7 @@ user input by using the `split()` function:
 
 <div class="example">
 
-``` example
+```bash
 # isnumeric --- check whether a value is numeric
 
 function isnumeric(x,  f)
@@ -28802,7 +28801,7 @@ solving the problem in only nine(!) lines of code, it does so
 
 <div class="example">
 
-``` example
+```bash
 # transfile.awk
 #
 # Give the user a hook for filename transitions
@@ -28855,7 +28854,7 @@ solves the problem:
 
 <div class="example">
 
-``` example
+```bash
 # ftrans.awk --- handle datafile transitions
 #
 # user supplies beginfile() and endfile() functions
@@ -28943,7 +28942,7 @@ with it from the top. For lack of a better name, we’ll call the function
 
 <div class="example">
 
-``` example
+```bash
 # rewind.awk --- rewind the current file and start over
 
 function rewind(    i)
@@ -28978,7 +28977,7 @@ infinite recursion if you don’t pay attention. Here is an example use:
 
 <div class="example">
 
-``` example
+```bash
 $ cat data
 -| a
 -| b
@@ -29002,7 +29001,7 @@ $ gawk -f rewind.awk -f test.awk data
 -| data 3 c
 ```
 
-``` example
+```bash
 -| data 4 d
 -| data 5 e
 ```
@@ -29042,7 +29041,7 @@ prepending the following program to your `awk` program:
 
 <div class="example">
 
-``` example
+```bash
 # readable.awk --- library file to skip over unreadable files
 
 BEGIN {
@@ -29109,7 +29108,7 @@ provide. The arguments passed are the file name and the position in
 
 <div class="example">
 
-``` example
+```bash
 # zerofile.awk --- library file to process empty input files
 
 BEGIN { Argind = 0 }
@@ -29178,7 +29177,7 @@ with a library file does the trick:
 
 <div class="example">
 
-``` example
+```bash
 # noassign.awk --- library file to avoid the need for a
 # special option that disables command-line assignments
 
@@ -29201,7 +29200,7 @@ You then run your program this way:
 
 <div class="example">
 
-``` example
+```bash
 awk -v No_command_assign=1 -f noassign.awk -f yourprog.awk *
 ```
 
@@ -29274,7 +29273,7 @@ following are valid ways of invoking the program:
 
 <div class="example">
 
-``` example
+```bash
 prog -a -b foo -c data1 data2 data3
 prog -ac -bfoo -- data1 data2 data3
 prog -acbfoo data1 data2 data3
@@ -29309,7 +29308,7 @@ arguments for `awk`:
 
 <div class="example">
 
-``` example
+```bash
 int
 main(int argc, char *argv[])
 {
@@ -29369,7 +29368,7 @@ The discussion that follows walks through the code a bit at a time:
 
 <div class="example">
 
-``` example
+```bash
 # getopt.awk --- Do C library getopt(3) function in awk
 #                Also supports long options.
 
@@ -29405,21 +29404,21 @@ string of options (the `options` parameter). If both `options` and
 
 <div class="example">
 
-``` example
+```bash
 function getopt(argc, argv, options, longopts,    thisopt, i, j)
 {
     if (length(options) == 0 && length(longopts) == 0)
         return -1                # no options given
 ```
 
-``` example
+```bash
     if (argv[Optind] == "--") {  # all done
         Optind++
         _opti = 0
         return -1
 ```
 
-``` example
+```bash
     } else if (argv[Optind] !~ /^-[^:[:space:]]/) {
         _opti = 0
         return -1
@@ -29443,7 +29442,7 @@ dashes, e.g., ‘`--filename`’). If it is a short option, we continue on:
 
 <div class="example">
 
-``` example
+```bash
     if (argv[Optind] !~ /^--/) {        # if this is a short option
         if (_opti == 0)
             _opti = 2
@@ -29492,7 +29491,7 @@ invalid option letter actually is. Continuing on:
 
 <div class="example">
 
-``` example
+```bash
         if (substr(options, i + 1, 1) == ":") {
             # get option argument
             if (length(substr(argv[Optind], _opti + 1)) > 0)
@@ -29516,7 +29515,7 @@ in the current command-line argument. Continuing:
 
 <div class="example">
 
-``` example
+```bash
         if (_opti == 0 || _opti >= length(argv[Optind])) {
             Optind++
             _opti = 0
@@ -29539,7 +29538,7 @@ option, we take a different branch:
 
 <div class="example">
 
-``` example
+```bash
     } else {
         j = index(argv[Optind], "=")
         if (j > 0)
@@ -29558,7 +29557,7 @@ specification of long options allows an argument to an option
 
 <div class="example">
 
-``` example
+```bash
         i = match(longopts, "(^|,)" thisopt "($|[,:])")
         if (i == 0) {
             if (Opterr)
@@ -29586,7 +29585,7 @@ message and then return `"?"`. Continuing on:
 
 <div class="example">
 
-``` example
+```bash
         if (substr(longopts, i+1+length(thisopt), 1) == ":") {
             if (j > 0)
                 Optarg = substr(argv[Optind], j + 1)
@@ -29605,7 +29604,7 @@ option string, or as the next argument on the command line).
 
 <div class="example">
 
-``` example
+```bash
         Optind++
         return thisopt
     }
@@ -29626,7 +29625,7 @@ one, because there’s no reason to look at the program name, which is in
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     Opterr = 1    # default is to diagnose
     Optind = 1    # skip ARGV[0]
@@ -29652,7 +29651,7 @@ results of some sample runs of the test program:
 
 <div class="example">
 
-``` example
+```bash
 $ awk -f getopt.awk -v _getopt_test=1 -- -a -cbARG bax -x
 -| c = <a>, Optarg = <>
 -| c = <c>, Optarg = <>
@@ -29768,7 +29767,7 @@ database:
 
 <div class="example">
 
-``` example
+```bash
 /*
  * pwcat.c
  *
@@ -29832,7 +29831,7 @@ id="index-Robbins-7"></span> <span id="index-Robbins-8"></span>
 
 <div class="example">
 
-``` example
+```bash
 $ pwcat
 -| root:x:0:1:Operator:/:/bin/sh
 -| nobody:*:65534:65534::/:
@@ -29857,7 +29856,7 @@ id="index-_005fpw_005finit_0028_0029-user_002ddefined-function"></span>
 
 <div class="example">
 
-``` example
+```bash
 # passwd.awk --- access password file information
 
 BEGIN {
@@ -29948,7 +29947,7 @@ element with the null string as its value:
 
 <div class="example">
 
-``` example
+```bash
 function getpwnam(name)
 {
     _pw_init()
@@ -29970,7 +29969,7 @@ Otherwise, it returns the null string:
 
 <div class="example">
 
-``` example
+```bash
 function getpwuid(uid)
 {
     _pw_init()
@@ -29993,7 +29992,7 @@ at a time. It uses `_pw_count` to track its current position in the
 
 <div class="example">
 
-``` example
+```bash
 function getpwent()
 {
     _pw_init()
@@ -30016,7 +30015,7 @@ calls to `getpwent()` start over again:
 
 <div class="example">
 
-``` example
+```bash
 function endpwent()
 {
     _pw_count = 0
@@ -30092,7 +30091,7 @@ have a small C program that generates the group database as its output.
 
 <div class="example">
 
-``` example
+```bash
 /*
  * grcat.c
  *
@@ -30114,13 +30113,13 @@ main(int argc, char **argv)
             printf("%s", g->gr_mem[i]);
 ```
 
-``` example
+```bash
             if (g->gr_mem[i+1] != NULL)
                 putchar(',');
         }
 ```
 
-``` example
+```bash
         putchar('\n');
     }
     endgrent();
@@ -30157,7 +30156,7 @@ Here is what running `grcat` might produce:
 
 <div class="example">
 
-``` example
+```bash
 $ grcat
 -| wheel:*:0:arnold
 -| nogroup:*:65534:
@@ -30180,7 +30179,7 @@ id="index-_005fgr_005finit_0028_0029-user_002ddefined-function"></span>
 
 <div class="example">
 
-``` example
+```bash
 # group.awk --- functions for dealing with the group file
 
 BEGIN {
@@ -30263,7 +30262,7 @@ number of members. A pair of such entries might look like the following:
 
 <div class="example">
 
-``` example
+```bash
 tvpeople:*:101:johnny,jay,arsenio
 tvpeople:*:101:david,conan,tom,joan
 ```
@@ -30292,7 +30291,7 @@ string as its value:
 
 <div class="example">
 
-``` example
+```bash
 function getgrnam(group)
 {
     _gr_init()
@@ -30313,7 +30312,7 @@ looks up the information associated with that group ID:
 
 <div class="example">
 
-``` example
+```bash
 function getgrgid(gid)
 {
     _gr_init()
@@ -30335,7 +30334,7 @@ username and returns the list of groups that have the user as a member:
 
 <div class="example">
 
-``` example
+```bash
 function getgruser(user)
 {
     _gr_init()
@@ -30357,7 +30356,7 @@ time. It uses `_gr_count` to track its position in the list:
 
 <div class="example">
 
-``` example
+```bash
 function getgrent()
 {
     _gr_init()
@@ -30365,7 +30364,7 @@ function getgrent()
         return _gr_bycount[_gr_count]
 ```
 
-``` example
+```bash
     return ""
 }
 ```
@@ -30383,7 +30382,7 @@ The `endgrent()` function resets `_gr_count` to zero so that
 
 <div class="example">
 
-``` example
+```bash
 function endgrent()
 {
     _gr_count = 0
@@ -30438,7 +30437,7 @@ id="index-walk_005farray_0028_0029-user_002ddefined-function"></span>
 
 <div class="example">
 
-``` example
+```bash
 function walk_array(arr, name,      i)
 {
     for (i in arr) {
@@ -30460,7 +30459,7 @@ main program to demonstrate:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     a[1] = 1
     a[2][1] = 21
@@ -30479,7 +30478,7 @@ When run, the program produces the following output:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f walk_array.awk
 -| a[1] = 1
 -| a[2][1] = 21
@@ -30498,7 +30497,7 @@ function looks like this:
 
 <div class="example">
 
-``` example
+```bash
 function process_array(arr, name, process, do_arrays,   i, new_name)
 {
     for (i in arr) {
@@ -30537,7 +30536,7 @@ results as does the earlier version of `walk_array()`:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     a[1] = 1
     a[2][1] = 21
@@ -30700,7 +30699,7 @@ To run a given program, you would typically do something like this:
 
 <div class="example">
 
-``` example
+```bash
 awk -f program -- options files
 ```
 
@@ -30716,7 +30715,7 @@ instead run your program directly:
 
 <div class="example">
 
-``` example
+```bash
 cut.awk -c1-8 myfiles > results
 ```
 
@@ -30726,7 +30725,7 @@ If your `awk` is not `gawk`, you may instead need to use this:
 
 <div class="example">
 
-``` example
+```bash
 cut.awk -- -c1-8 myfiles > results
 ```
 
@@ -30812,7 +30811,7 @@ pipeline generates a sorted, unique list of the logged-on users:
 
 <div class="example">
 
-``` example
+```bash
 who | cut -c1-8 | sort | uniq
 ```
 
@@ -30854,7 +30853,7 @@ supplied:
 
 <div class="example">
 
-``` example
+```bash
 # cut.awk --- implement cut in awk
 
 # Options:
@@ -30867,7 +30866,7 @@ supplied:
 # Requires getopt() and join() library functions
 ```
 
-``` example
+```bash
 function usage()
 {
     print("usage: cut [-f list] [-d c] [-s] [files...]") > "/dev/stderr"
@@ -30892,7 +30891,7 @@ output field separator is set to the null string:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     FS = "\t"    # default
     OFS = FS
@@ -30950,7 +30949,7 @@ or characters:
 
 <div class="example">
 
-``` example
+```bash
     if (by_fields && by_chars)
         usage()
 
@@ -30958,14 +30957,14 @@ or characters:
         by_fields = 1    # default
 ```
 
-``` example
+```bash
     if (fieldlist == "") {
         print "cut: needs list for -c or -f" > "/dev/stderr"
         exit 1
     }
 ```
 
-``` example
+```bash
 
     if (by_fields)
         set_fieldlist()
@@ -30987,7 +30986,7 @@ splitting:
 
 <div class="example">
 
-``` example
+```bash
 function set_fieldlist(        n, m, i, j, k, f, g)
 {
     n = split(fieldlist, f, ",")
@@ -30997,7 +30996,7 @@ function set_fieldlist(        n, m, i, j, k, f, g)
             m = split(f[i], g, "-")
 ```
 
-``` example
+```bash
             if (m != 2 || g[1] >= g[2]) {
                 printf("cut: bad field list: %s\n",
                                   f[i]) > "/dev/stderr"
@@ -31005,7 +31004,7 @@ function set_fieldlist(        n, m, i, j, k, f, g)
             }
 ```
 
-``` example
+```bash
             for (k = g[1]; k <= g[2]; k++)
                 flist[j++] = k
         } else
@@ -31035,7 +31034,7 @@ print, and `t` tracks the complete field list, including filler fields:
 
 <div class="example">
 
-``` example
+```bash
 function set_charlist(    field, i, j, f, g, n, m, t,
                           filler, last, len)
 {
@@ -31057,12 +31056,12 @@ function set_charlist(    field, i, j, f, g, n, m, t,
                 filler = 0
 ```
 
-``` example
+```bash
             if (filler)
                 t[field++] = filler
 ```
 
-``` example
+```bash
             t[field++] = len  # length of field
             last = g[2]
             flist[j++] = field - 1
@@ -31100,7 +31099,7 @@ between the fields:
 
 <div class="example">
 
-``` example
+```bash
 {
     if (by_fields && suppress && index($0, fs) == 0)
         next
@@ -31229,7 +31228,7 @@ Variables](#Built_002din-Variables)):
 
 <div class="example">
 
-``` example
+```bash
 # egrep.awk --- simulate egrep in awk
 #
 # Options:
@@ -31290,7 +31289,7 @@ in the output:
 
 <div class="example">
 
-``` example
+```bash
     if (pattern == "")
         pattern = ARGV[Optind++]
 
@@ -31320,7 +31319,7 @@ on to the next file. Otherwise `gawk` would exit with an error:
 
 <div class="example">
 
-``` example
+```bash
 BEGINFILE {
     fcount = 0
     if (ERRNO && no_errors)
@@ -31341,7 +31340,7 @@ total number of lines that matched the pattern:
 
 <div class="example">
 
-``` example
+```bash
 ENDFILE {
     if (! no_print && count_only) {
         if (do_filenames)
@@ -31351,7 +31350,7 @@ ENDFILE {
     }
 ```
 
-``` example
+```bash
     total += fcount
 }
 ```
@@ -31385,7 +31384,7 @@ id="index-exclamation-point-_0028_0021_0029-12"></span>
 
 <div class="example">
 
-``` example
+```bash
 {
     matches = match($0, pattern)
     if (matches && full_line && (RSTART != 1 || RLENGTH != length()))
@@ -31426,7 +31425,7 @@ are no matches, the exit status is one; otherwise, it is zero:
 
 <div class="example">
 
-``` example
+```bash
 END {
     exit (total == 0)
 }
@@ -31439,7 +31438,7 @@ options, and then exits:
 
 <div class="example">
 
-``` example
+```bash
 function usage()
 {
     print("Usage:\tegrep [-cilnqsvx] [-e pat] [files ...]") > "/dev/stderr"
@@ -31482,7 +31481,7 @@ user and group names. The output might look like this:
 
 <div class="example">
 
-``` example
+```bash
 $ id
 -| uid=1000(arnold) gid=1000(arnold) groups=1000(arnold),4(adm),7(lp),27(sudo)
 ```
@@ -31517,7 +31516,7 @@ and then a `usage()` function:
 
 <div class="example">
 
-``` example
+```bash
 # id.awk --- implement id in awk
 #
 # Requires user and group library functions and getopt
@@ -31533,7 +31532,7 @@ and then a `usage()` function:
 #   -u Output only effective user id, as a number
 ```
 
-``` example
+```bash
 function usage()
 {
     printf("Usage:\n" \
@@ -31553,7 +31552,7 @@ various flag variables according to the options given:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     # parse args
     while ((c = getopt(ARGC, ARGV, "Ggnru")) != -1) {
@@ -31580,7 +31579,7 @@ more than one user name on the command line:
 
 <div class="example">
 
-``` example
+```bash
     if (groupset_only && real_ids_only)
         usage()
     else if (ARGC - Optind > 1)
@@ -31597,7 +31596,7 @@ user and group IDs:
 
 <div class="example">
 
-``` example
+```bash
     if (ARGC - Optind == 0) {
         # gather info for current user
         uid = PROCINFO["uid"]
@@ -31635,7 +31634,7 @@ numbers. In either case, when done we exit:
 
 <div class="example">
 
-``` example
+```bash
     if (groupset_only) {
         if (names_not_groups) {
             for (i = 1; i in groupset; i++) {
@@ -31666,7 +31665,7 @@ decide whether to print names or numbers. Here too, when done, we exit:
 
 <div class="example">
 
-``` example
+```bash
     else if (egid_only) {
         id = real_ids_only ? gid : egid
         if (names_not_groups) {
@@ -31691,7 +31690,7 @@ combined with `-r` and `-n`:
 
 <div class="example">
 
-``` example
+```bash
     else if (euid_only) {
         id = real_ids_only ? uid : euid
         if (names_not_groups) {
@@ -31715,7 +31714,7 @@ user ID:
 
 <div class="example">
 
-``` example
+```bash
     printf("uid=%d", uid)
     pw = getpwuid(uid)
     print_first_field(pw)
@@ -31729,7 +31728,7 @@ Printing the effective user ID is next:
 
 <div class="example">
 
-``` example
+```bash
     if (euid != uid && ! real_ids_only) {
         printf(" euid=%d", euid)
         pw = getpwuid(euid)
@@ -31743,7 +31742,7 @@ Similar logic applies to the real and effective group IDs:
 
 <div class="example">
 
-``` example
+```bash
     printf(" gid=%d", gid)
     pw = getgrgid(gid)
     print_first_field(pw)
@@ -31761,7 +31760,7 @@ Finally, we print the group set and the terminating newline:
 
 <div class="example">
 
-``` example
+```bash
     for (i = 1; i in groupset; i++) {
         if (i == 1)
             printf(" groups=")
@@ -31785,7 +31784,7 @@ separated by ‘`:`’ characters:
 
 <div class="example">
 
-``` example
+```bash
 function get_first_field(str,  a)
 {
     if (str != "") {
@@ -31802,7 +31801,7 @@ name surrounded by parentheses:
 
 <div class="example">
 
-``` example
+```bash
 function print_first_field(str)
 {
     first = get_first_field(str)
@@ -31824,7 +31823,7 @@ exist:
 
 <div class="example">
 
-``` example
+```bash
 function fill_info_for_user(user,   
                             pwent, fields, groupnames, grent, groups, i)
 {
@@ -31848,7 +31847,7 @@ will work as expected:
 
 <div class="example">
 
-``` example
+```bash
     groupnames = getgruser(user)
     split(groupnames, groups, " ")
     for (i = 1; i in groups; i++) {
@@ -31937,7 +31936,7 @@ the function’s lines short so that they look nice on the page:
 
 <div class="example">
 
-``` example
+```bash
 # split.awk --- do split in awk
 #
 # Requires getopt() library function.
@@ -31960,7 +31959,7 @@ output file:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     # Set defaults:
     Suffix_length = 2
@@ -31985,7 +31984,7 @@ with an uppercase letter:
 
 <div class="example">
 
-``` example
+```bash
 function parse_arguments(   i, c, l, modifier)
 {
     while ((c = getopt(ARGC, ARGV, "a:b:l:")) != -1) {
@@ -32074,7 +32073,7 @@ Physically, the steps in the function occur in the order 3, 1, 2:
 
 <div class="example">
 
-``` example
+```bash
 function compute_suffix(    i, result, letters)
 {
     # Logical step 3
@@ -32109,7 +32108,7 @@ The `Suffix_ind` array and `Reached_last` are initialized by
 
 <div class="example">
 
-``` example
+```bash
 function init_suffix_data(  i)
 {
     for (i = 1; i <= Suffix_length; i++)
@@ -32127,7 +32126,7 @@ in the array are equal to 26:
 
 <div class="example">
 
-``` example
+```bash
 function on_last_file(  i, on_last)
 {
     on_last = 1
@@ -32153,7 +32152,7 @@ switch to a new one:
 
 <div class="example">
 
-``` example
+```bash
 Line_count > 0 {
     if (++tcount > Line_count) {
         close(Output)
@@ -32175,7 +32174,7 @@ The logic here does all that:
 
 <div class="example">
 
-``` example
+```bash
 Byte_count > 0 {
     # `+ 1' is for the final newline
     if (tcount + length($0) + 1 > Byte_count) { # would overflow
@@ -32206,7 +32205,7 @@ Finally, the `END` rule cleans up by closing the last output file:
 
 <div class="example">
 
-``` example
+```bash
 END {
     close(Output)
 }
@@ -32268,7 +32267,7 @@ by setting `ARGV[1]` to `"-"` and `ARGC` to two:
 
 <div class="example">
 
-``` example
+```bash
 # tee.awk --- tee in awk
 #
 # Copy standard input to all named output files.
@@ -32302,7 +32301,7 @@ the standard output:
 
 <div class="example">
 
-``` example
+```bash
 {
     # moving the if outside the loop makes it run faster
     if (append)
@@ -32321,13 +32320,13 @@ It is also possible to write the loop this way:
 
 <div class="example">
 
-``` example
+```bash
 for (i in copy)
     if (append)
         print >> copy[i]
 ```
 
-``` example
+```bash
     else
         print > copy[i]
 ```
@@ -32345,7 +32344,7 @@ Finally, the `END` rule cleans up by closing all the output files:
 
 <div class="example">
 
-``` example
+```bash
 END {
     for (i in copy)
         close(copy[i])
@@ -32433,13 +32432,13 @@ the options and their meanings in comments:
 
 <div class="example">
 
-``` example
+```bash
 # uniq.awk --- do uniq in awk
 #
 # Requires getopt() and join() library functions
 ```
 
-``` example
+```bash
 
 function usage()
 {
@@ -32464,7 +32463,7 @@ options:
 
 <div class="example">
 
-``` example
+```bash
 # As of 2020, '+' can be used as the option character in addition to '-'
 # Previously allowed use of -N to skip fields and +N to skip
 # characters is no longer allowed, and not supported by this version.
@@ -32492,7 +32491,7 @@ standard output, `/dev/stdout`:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     count = 1
     outputfile = "/dev/stdout"
@@ -32545,14 +32544,14 @@ characters in `clast` and `cline`. The two strings are then compared and
 
 <div class="example">
 
-``` example
+```bash
 function are_equal(    n, m, clast, cline, alast, aline)
 {
     if (fcount == 0 && charcount == 0)
         return (last == $0)
 ```
 
-``` example
+```bash
 
     if (fcount > 0) {
         n = split(last, alast)
@@ -32569,7 +32568,7 @@ function are_equal(    n, m, clast, cline, alast, aline)
     }
 ```
 
-``` example
+```bash
 
     return (clast == cline)
 }
@@ -32598,7 +32597,7 @@ of input data:
 
 <div class="example">
 
-``` example
+```bash
 NR == 1 {
     last = $0
     next
@@ -32634,7 +32633,7 @@ END {
         printf("%4d %s\n", count, last) > outputfile
 ```
 
-``` example
+```bash
     else if ((repeated_only && count > 1) ||
             (non_repeated_only && count == 1))
         print last > outputfile
@@ -32831,7 +32830,7 @@ line:
 
 <div class="example">
 
-``` example
+```bash
 # wc.awk --- count lines, words, characters, bytes
 
 # Options:
@@ -32879,7 +32878,7 @@ name in `fname`:
 
 <div class="example">
 
-``` example
+```bash
 function beginfile(file)
 {
     lines = words = chars = bytes = 0
@@ -32896,7 +32895,7 @@ numbers for the following data file:
 
 <div class="example">
 
-``` example
+```bash
 function endfile(file)
 {
     tlines += lines
@@ -32907,12 +32906,12 @@ function endfile(file)
         printf "\t%d", lines
 ```
 
-``` example
+```bash
     if (do_words)
         printf "\t%d", words
 ```
 
-``` example
+```bash
     if (do_chars)
         printf "\t%d", chars
     if (do_bytes)
@@ -32934,7 +32933,7 @@ this line:
 
 <div class="example">
 
-``` example
+```bash
 # do per line
 {
     chars += length($0) + 1    # get newline
@@ -32950,7 +32949,7 @@ Finally, the `END` rule simply prints the totals for all the files:
 
 <div class="example">
 
-``` example
+```bash
 END {
     if (print_total) {
         if (do_lines)
@@ -33056,7 +33055,7 @@ word, comparing it to the previous one:
 
 <div class="example">
 
-``` example
+```bash
 # dupword.awk --- find duplicate words in text
 {
     $0 = tolower($0)
@@ -33148,7 +33147,7 @@ program:
 
 <div class="example">
 
-``` example
+```bash
 # alarm.awk --- set an alarm
 #
 # Requires getlocaltime() library function
@@ -33188,12 +33187,12 @@ BEGIN {
         delay = 180    # 3 minutes
 ```
 
-``` example
+```bash
     if (count == 0)
         count = 5
 ```
 
-``` example
+```bash
     if (message == "")
         message = sprintf("\aIt is now %s!\a", ARGV[1])
     else if (index(message, "\a") == 0)
@@ -33210,7 +33209,7 @@ two is how long to wait before setting off the alarm:
 
 <div class="example">
 
-``` example
+```bash
     # split up alarm time
     split(ARGV[1], atime, ":")
     hour = atime[1] + 0    # force numeric
@@ -33254,7 +33253,7 @@ seconds. If the exit status is not zero, the program assumes that
 
 <div class="example">
 
-``` example
+```bash
     # zzzzzz..... go away if interrupted
     if (system(sprintf("sleep %d", naptime)) != 0)
         exit 1
@@ -33303,7 +33302,7 @@ processing:
 
 <div class="example">
 
-``` example
+```bash
 generate data | tr 'A-Z' 'a-z' | process data …
 ```
 
@@ -33357,7 +33356,7 @@ Finally, the processing rule simply calls `translate()` for each record:
 
 <div class="example">
 
-``` example
+```bash
 # translate.awk --- do tr-like stuff
 # Bugs: does not handle things like tr A-Z a-z; it has
 # to be spelled out. However, if `to' is shorter than `from',
@@ -33392,14 +33391,14 @@ function translate(from, to)
 BEGIN {
 ```
 
-``` example
+```bash
     if (ARGC < 3) {
         print "usage: translate from to" > "/dev/stderr"
         exit
     }
 ```
 
-``` example
+```bash
     FROM = ARGV[1]
     TO = ARGV[2]
     ARGC = 2
@@ -33485,7 +33484,7 @@ like this:
 
 <div class="example">
 
-``` example
+```bash
 line 1          line 6
 line 2          line 7
 line 3          line 8
@@ -33512,7 +33511,7 @@ have been an even multiple of 20 labels in the data:
 
 <div class="example">
 
-``` example
+```bash
 # labels.awk --- print mailing labels
 
 # Each label is 5 lines of data that may have blank lines.
@@ -33600,7 +33599,7 @@ At first glance, a program like this would seem to do the job:
 
 <div class="example">
 
-``` example
+```bash
 # wordfreq-first-try.awk --- print list of word frequencies
 
 {
@@ -33609,7 +33608,7 @@ At first glance, a program like this would seem to do the job:
 }
 ```
 
-``` example
+```bash
 END {
     for (word in freq)
         printf "%s\t%d\n", word, freq[word]
@@ -33651,7 +33650,7 @@ script. Here is the new version of the program:
 
 <div class="example">
 
-``` example
+```bash
 # wordfreq.awk --- print list of word frequencies
 
 {
@@ -33679,7 +33678,7 @@ that the data is in `file1`, the following pipeline:
 
 <div class="example">
 
-``` example
+```bash
 awk -f wordfreq.awk file1 | sort -k 2nr
 ```
 
@@ -33703,7 +33702,7 @@ The `sort` could even be done from within the program, by changing the
 
 <div class="example">
 
-``` example
+```bash
 END {
     sort = "sort -k 2nr"
     for (word in freq)
@@ -33765,22 +33764,22 @@ id="index-histsort_002eawk-program"></span>
 
 <div class="example">
 
-``` example
+```bash
 # histsort.awk --- compact a shell history file
 # Thanks to Byron Rakitzis for the general idea
 ```
 
-``` example
+```bash
 {
     if (data[$0]++ == 0)
         lines[++count] = $0
 }
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
 END {
     for (i = 1; i <= count; i++)
         print lines[i]
@@ -33795,7 +33794,7 @@ information. For example, using the following `print` statement in the
 
 <div class="example">
 
-``` example
+```bash
 print data[lines[i]], lines[i]
 ```
 
@@ -33808,7 +33807,7 @@ removing duplicates from unsorted text:
 
 <div class="example">
 
-``` example
+```bash
 awk '{ if (! seen[$0]++) print }'
 ```
 
@@ -33819,7 +33818,7 @@ obscure:
 
 <div class="example">
 
-``` example
+```bash
 awk '! seen[$0]++'
 ```
 
@@ -33903,7 +33902,7 @@ something like this:
 
 <div class="example">
 
-``` example
+```bash
 …
 This program has a @code{BEGIN} rule
 that prints a nice message:
@@ -33937,7 +33936,7 @@ with a zero exit status, signifying OK:
 
 <div class="example">
 
-``` example
+```bash
 # extract.awk --- extract files and run programs from Texinfo files
 
 BEGIN    { IGNORECASE = 1 }
@@ -33995,7 +33994,7 @@ line. That line is then printed to the output file:
 
 <div class="example">
 
-``` example
+```bash
 /^@c(omment)?[ \t]+file/ {
     if (NF != 3) {
         e = ("extract: " FILENAME ":" FNR ": badly formed `file' line")
@@ -34033,7 +34032,7 @@ line. That line is then printed to the output file:
         }
 ```
 
-``` example
+```bash
         print join(a, 1, n, SUBSEP) > curfile
     }
 }
@@ -34059,7 +34058,7 @@ all the open files when processing is finished:
 
 <div class="example">
 
-``` example
+```bash
 END {
     close(curfile)          # close the last one
     for (f in filelist)     # close all the rest
@@ -34074,7 +34073,7 @@ message and then exits:
 
 <div class="example">
 
-``` example
+```bash
 function unexpected_eof()
 {
     printf("extract: %s:%d: unexpected EOF or error\n",
@@ -34118,7 +34117,7 @@ middle of a pipeline:
 
 <div class="example">
 
-``` example
+```bash
 command1 < orig.data | sed 's/old/new/g' | command2 > result
 ```
 
@@ -34139,7 +34138,7 @@ id="index-awksed_002eawk-program"></span>
 
 <div class="example">
 
-``` example
+```bash
 # awksed.awk --- do s/foo/bar/g using just print
 #    Thanks to Michael Brennan for the idea
 
@@ -34150,14 +34149,14 @@ function usage()
 }
 ```
 
-``` example
+```bash
 BEGIN {
     # validate arguments
     if (ARGC < 3)
         usage()
 ```
 
-``` example
+```bash
 
     RS = ARGV[1]
     ORS = ARGV[2]
@@ -34167,7 +34166,7 @@ BEGIN {
 }
 ```
 
-``` example
+```bash
 # look ma, no hands!
 {
     if (RT == "")
@@ -34247,7 +34246,7 @@ It would be nice to be able to write programs in the following manner:
 
 <div class="example">
 
-``` example
+```bash
 # library functions
 @include getopt.awk
 @include join.awk
@@ -34353,7 +34352,7 @@ The program is as follows:
 
 <div class="example">
 
-``` example
+```bash
 #! /bin/sh
 # igawk --- like gawk but do @include processing
 
@@ -34459,7 +34458,7 @@ read, it is closed and the file name is returned:
 
 <div class="example">
 
-``` example
+```bash
 expand_prog='
 
 function pathto(file,    i, t, junk)
@@ -34474,7 +34473,7 @@ function pathto(file,    i, t, junk)
         t = (pathlist[i] "/" file)
 ```
 
-``` example
+```bash
         if ((getline junk < t) > 0) {
             # found it
             close(t)
@@ -34482,7 +34481,7 @@ function pathto(file,    i, t, junk)
         }
 ```
 
-``` example
+```bash
     }
     return ""
 }
@@ -34497,7 +34496,7 @@ which represents the current directory:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     path = ENVIRON["AWKPATH"]
     ndirs = split(path, pathlist, ":")
@@ -34528,7 +34527,7 @@ the program is done:
 
 <div class="example">
 
-``` example
+```bash
     stackptr = 0
     input[stackptr] = ARGV[1] # ARGV[1] is first file
 
@@ -34590,7 +34589,7 @@ the original options and command-line arguments that the user supplied:
 
 <div class="example">
 
-``` example
+```bash
 eval gawk $opts -- '"$processed_program"' '"$@"'
 ```
 
@@ -34666,7 +34665,7 @@ the same signature and array sorting to print the words in sorted order:
 
 <div class="example">
 
-``` example
+```bash
 # anagram.awk --- An implementation of the anagram-finding algorithm
 #                 from Jon Bentley's "Programming Pearls," 2nd edition.
 #                 Addison Wesley, 2000, ISBN 0-201-65788-0.
@@ -34684,7 +34683,7 @@ dimension is the word itself:
 
 <div class="example">
 
-``` example
+```bash
 {
     key = word2key($1)  # Build signature
     data[key][$1] = $1  # Store word with signature
@@ -34699,7 +34698,7 @@ back together:
 
 <div class="example">
 
-``` example
+```bash
 # word2key --- split word apart into letters, sort, and join back together
 
 function word2key(word,     a, i, n, result)
@@ -34722,7 +34721,7 @@ otherwise the anagrams would appear in arbitrary order:
 
 <div class="example">
 
-``` example
+```bash
 END {
     sort = "sort"
     for (key in data) {
@@ -34746,7 +34745,7 @@ Here is some partial output when the program is run:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f anagram.awk /usr/share/dict/words | grep '^b'
 …
 babbled blabbed
@@ -34799,7 +34798,7 @@ Here is the program:
 
 <div class="example">
 
-``` example
+```bash
 awk 'BEGIN{O="~"~"~";o="=="=="==";o+=+o;x=O""O;while(X++<=x+o+o)c=c"%c";
 printf c,(x-O)*(x-O),x*(x-o)-o,x*(x-O)+x-O-o,+x*(x-O)-x+o,X*(o*o+O)+x-O,
 X*(X-x)-o*o,(x+X)*o*o+o,x*(X-x)-O-O,x-O+(O+o+X+x)*(o+O),X*X-X*(x-O)-x+O,
@@ -34922,7 +34921,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Index" rel="index" title="In
     Simple Stream Editor](#Simple-Sed)) with the more straightforward:
     <div class="example">
 
-    ``` example
+    ```bash
     BEGIN {
         pat = ARGV[1]
         repl = ARGV[2]
@@ -35072,7 +35071,7 @@ nondecimal values in your input data:
 
 <div class="example">
 
-``` example
+```bash
 $ echo 0123 123 0x123 |
 > gawk --non-decimal-data '{ printf "%d, %d, %d\n", $1, $2, $3 }'
 -| 83, 123, 291
@@ -35085,7 +35084,7 @@ data as numeric:
 
 <div class="example">
 
-``` example
+```bash
 $ echo 0123 123 0x123 | gawk '{ print $1, $2, $3 }'
 -| 0123 123 0x123
 ```
@@ -35099,7 +35098,7 @@ a field to force it to be treated as a number. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ echo 0123 123 0x123 | gawk --non-decimal-data '
 > { print $1, $2, $3
 >   print $1 + 0, $2 + 0, $3 + 0 }'
@@ -35200,7 +35199,7 @@ function should be defined with at least four arguments:
 
 <div class="example">
 
-``` example
+```bash
 function comp_func(i1, v1, i2, v2)
 {
     compare elements 1 and 2 in some fashion
@@ -35232,7 +35231,7 @@ order of the indices:
 
 <div class="example">
 
-``` example
+```bash
 function cmp_num_idx(i1, v1, i2, v2)
 {
      # numerical index comparison, ascending order
@@ -35247,7 +35246,7 @@ element values rather than by indices:
 
 <div class="example">
 
-``` example
+```bash
 function cmp_str_val(i1, v1, i2, v2)
 {
     # string value comparison, ascending order
@@ -35267,7 +35266,7 @@ traversal:
 
 <div class="example">
 
-``` example
+```bash
 function cmp_num_str_val(i1, v1, i2, v2,   n1, n2)
 {
      # numbers before string value comparison, ascending order
@@ -35288,7 +35287,7 @@ the previous functions:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     data["one"] = 10
     data["two"] = 20
@@ -35315,7 +35314,7 @@ Here are the results when the program is run:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f compdemo.awk
 -| Sort function: cmp_num_idx      Sort by numeric index
 -|     data[two] = 20
@@ -35347,7 +35346,7 @@ specific field position and can be used for this purpose:
 
 <div class="example">
 
-``` example
+```bash
 # passwd-sort.awk --- simple program to sort by field position
 # field position is specified by the global variable POS
 
@@ -35363,12 +35362,12 @@ function cmp_field(i1, v1, i2, v2)
 }
 ```
 
-``` example
+```bash
 END {
     PROCINFO["sorted_in"] = "cmp_field"
 ```
 
-``` example
+```bash
     if (POS < 1 || POS > NF)
         POS = 1
 
@@ -35389,7 +35388,7 @@ program produces the following output:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -v POS=1 -F: -f sort.awk /etc/passwd
 -| adm:x:3:4:adm:/var/adm:/sbin/nologin
 -| apache:x:48:48:Apache:/var/www:/sbin/nologin
@@ -35407,7 +35406,7 @@ data:
 
 <div class="example">
 
-``` example
+```bash
 function cmp_randomize(i1, v1, i2, v2)
 {
     # random order (caution: this may never terminate!)
@@ -35432,7 +35431,7 @@ equal:
 
 <div class="example">
 
-``` example
+```bash
 function cmp_numeric(i1, v1, i2, v2)
 {
     # numerical value (and index) comparison, descending order
@@ -35440,7 +35439,7 @@ function cmp_numeric(i1, v1, i2, v2)
 }
 ```
 
-``` example
+```bash
 function cmp_string(i1, v1, i2, v2)
 {
     # string value (and index) comparison, descending order
@@ -35515,7 +35514,7 @@ arrays. For example:
 
 <div class="example">
 
-``` example
+```bash
 populate the array data
 n = asort(data)
 for (i = 1; i <= n; i++)
@@ -35541,7 +35540,7 @@ original indices are irrevocably lost*. As this isn’t always desirable,
 
 <div class="example">
 
-``` example
+```bash
 populate the array source
 n = asort(source, dest)
 for (i = 1; i <= n; i++)
@@ -35562,7 +35561,7 @@ result array:
 
 <div class="example">
 
-``` example
+```bash
 { source[$0] = some_func($0) }
 
 END {
@@ -35631,7 +35630,7 @@ values to lowercase in order to compare them ignoring case.
 
 <div class="example">
 
-``` example
+```bash
 # case_fold_compare --- compare as strings, ignoring case
 
 function case_fold_compare(i1, v1, i2, v2,    l, r)
@@ -35639,7 +35638,7 @@ function case_fold_compare(i1, v1, i2, v2,    l, r)
     l = tolower(v1)
 ```
 
-``` example
+```bash
     r = tolower(v2)
 
     if (l < r)
@@ -35657,7 +35656,7 @@ And here is the test program for it:
 
 <div class="example">
 
-``` example
+```bash
 # Test program
 
 BEGIN {
@@ -35684,7 +35683,7 @@ When run, we get the following:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f case_fold_compare.awk
 -| A a B b c C D d e E F f g G H h i I J j k K l L M m
 -| n N O o p P Q q r R S s t T u U V v w W X x y Y z Z
@@ -35720,7 +35719,7 @@ temporary files:
 
 <div class="example">
 
-``` example
+```bash
 # Write the data for processing
 tempfile = ("mydata." PROCINFO["pid"])
 while (not done with data)
@@ -35756,7 +35755,7 @@ operator (borrowed from the Korn shell,
 
 <div class="example">
 
-``` example
+```bash
 do {
     print data |& "subprogram"
     "subprogram" |& getline results
@@ -35811,7 +35810,7 @@ the `"to"` end of the pipe, and then start reading sorted data via
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     command = "LC_ALL=C sort"
     n = split("abcdefghijklmnopqrstuvwxyz", a, "")
@@ -35865,7 +35864,7 @@ basis, by setting a special element in the `PROCINFO` array (see section
 
 <div class="example">
 
-``` example
+```bash
 command = "sort -nr"           # command, save in convenience variable
 PROCINFO[command, "pty"] = 1   # update PROCINFO
 print … |& command           # start two-way pipe
@@ -35904,7 +35903,7 @@ do it. Here’s an exceedingly simple program written for that purpose:
 
 <div class="example">
 
-``` example
+```bash
 $ cat add.c
 #include <stdio.h> 
 
@@ -35926,7 +35925,7 @@ by passing them to the coprocess:
 
 <div class="example">
 
-``` example
+```bash
 $ echo 1 2 |
 > gawk -v cmd=./add '{ print |& cmd; cmd |& getline x; print x }'
 ```
@@ -35940,7 +35939,7 @@ Now try instead:
 
 <div class="example">
 
-``` example
+```bash
 $ echo 1 2 |
 > gawk -v cmd=add 'BEGIN { PROCINFO[cmd, "pty"] = 1 }
 >                  { print |& cmd; cmd |& getline x; print x }'
@@ -36050,7 +36049,7 @@ Consider the following very simple example:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     Service = "/inet/tcp/0/localhost/daytime"
     Service |& getline
@@ -36112,7 +36111,7 @@ change the name of the file where `gawk` will write the profile:
 
 <div class="example">
 
-``` example
+```bash
 gawk --profile=myprog.prof -f myprog.awk data1 data2
 ```
 
@@ -36127,7 +36126,7 @@ the `awk` program:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN { print "First BEGIN rule" }
 
 END { print "First END rule" }
@@ -36161,7 +36160,7 @@ Following is the input data:
 
 <div class="example">
 
-``` example
+```bash
 foo
 bar
 baz
@@ -36180,7 +36179,7 @@ id="index-END-pattern-9"></span>
 
 <div class="example">
 
-``` example
+```bash
     # gawk profile, created Mon Sep 29 05:16:21 2014
 
     # BEGIN rule(s)
@@ -36294,7 +36293,7 @@ representation. Also, things such as:
 
 <div class="example">
 
-``` example
+```bash
 /foo/
 ```
 
@@ -36304,7 +36303,7 @@ come out as:
 
 <div class="example">
 
-``` example
+```bash
 /foo/   {
     print
 }
@@ -36327,7 +36326,7 @@ the background:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk --profile -f myprog &
 [1] 13992
 ```
@@ -36344,7 +36343,7 @@ The shell prints a job number and process ID number; in this case,
 
 <div class="example">
 
-``` example
+```bash
 $ kill -USR1 13992
 ```
 
@@ -36359,7 +36358,7 @@ includes a trace of any active functions:
 
 <div class="example">
 
-``` example
+```bash
 # Function Call Stack:
 
 #   3. baz
@@ -36732,7 +36731,7 @@ accomplished by wrapping each string in a call to `gettext()`:
 
 <div class="example">
 
-``` example
+```bash
 printf("%s", gettext("Don't Panic!\n"));
 ```
 
@@ -36750,7 +36749,7 @@ over and over again is both painful and ugly to look at, use the macro
 
 <div class="example">
 
-``` example
+```bash
 /* In the standard header file: */
 #define _(str) gettext(str)
 
@@ -36959,7 +36958,7 @@ To use these facilities in your `awk` program, follow these steps:
     Options](#Options)):
     <div class="example">
 
-    ``` example
+    ```bash
     BEGIN {
         TEXTDOMAIN = "guide"
         …
@@ -36976,7 +36975,7 @@ To use these facilities in your `awk` program, follow these steps:
     For example:
     <div class="example">
 
-    ``` example
+    ```bash
     print _"hello, world"
     x = _"you goofed"
     printf(_"Number of users is %d\n", nusers)
@@ -36990,7 +36989,7 @@ To use these facilities in your `awk` program, follow these steps:
 
     <div class="example">
 
-    ``` example
+    ```bash
     if (groggy)
         message = dcgettext("%d customers disturbing me\n", "adminprog")
     else
@@ -37009,7 +37008,7 @@ To use these facilities in your `awk` program, follow these steps:
 
     <div class="example">
 
-    ``` example
+    ```bash
     if (groggy)
         message = dcngettext("%d customer disturbing me\n",
                              "%d customers disturbing me\n",
@@ -37030,7 +37029,7 @@ To use these facilities in your `awk` program, follow these steps:
     `bindtextdomain()` built-in function:
     <div class="example">
 
-    ``` example
+    ```bash
     BEGIN {
        TEXTDOMAIN = "guide"   # our text domain
        if (Testing) {
@@ -37123,7 +37122,7 @@ create the initial `.pot` file:
 
 <div class="example">
 
-``` example
+```bash
 gawk --gen-pot -f guide.awk > guide.pot
 ```
 
@@ -37173,7 +37172,7 @@ following:<a href="#FOOT91" id="DOCF91"><sup>91</sup></a>
 
 <div class="example">
 
-``` example
+```bash
 printf(_"String `%s' has %d characters\n",
           string, length(string)))
 ```
@@ -37184,7 +37183,7 @@ A possible German translation for this might be:
 
 <div class="example">
 
-``` example
+```bash
 "%d Zeichen lang ist die Zeichenkette `%s'\n"
 ```
 
@@ -37200,7 +37199,7 @@ optional element, which we call a *positional specifier*. For example:
 
 <div class="example">
 
-``` example
+```bash
 "%2$d Zeichen lang ist die Zeichenkette `%1$s'\n"
 ```
 
@@ -37214,7 +37213,7 @@ second:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN {
 >     string = "Don\47t Panic"
 >     printf "%2$d characters live in \"%1$s\"\n",
@@ -37233,7 +37232,7 @@ precision capability:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN {
 >    printf("%*.*s\n", 10, 20, "hello")
 >    printf("%3$*2$.*1$s\n", 20, 10, "hello")
@@ -37257,7 +37256,7 @@ with positional specifiers in the same string:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { printf "%d %3$s\n", 1, 2, "hi" }'
 error→ gawk: cmd. line:1: fatal: must use `count$' on all formats or none
 ```
@@ -37301,7 +37300,7 @@ them to other versions of `awk`. Consider this program:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     TEXTDOMAIN = "guide"
     if (Test_Guide)   # set with -v
@@ -37334,7 +37333,7 @@ actually almost portable, requiring very little change:
     id="index-dcngettext_0028_0029-function-_0028gawk_0029-2"></span>
     <div class="example">
 
-    ``` example
+    ```bash
     function bindtextdomain(dir, domain)
     {
         return dir
@@ -37390,7 +37389,7 @@ source:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     TEXTDOMAIN = "guide"
     bindtextdomain(".")  # for testing
@@ -37406,7 +37405,7 @@ Run ‘`gawk --gen-pot`’ to create the `.pot` file:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk --gen-pot -f guide.awk > guide.pot
 ```
 
@@ -37416,7 +37415,7 @@ This produces:
 
 <div class="example">
 
-``` example
+```bash
 #: guide.awk:4
 msgid "Don't Panic"
 msgstr ""
@@ -37441,7 +37440,7 @@ hypothetical dialect of English, called
 
 <div class="example">
 
-``` example
+```bash
 $ cp guide.pot guide-mellow.po
 Add translations to guide-mellow.po …
 ```
@@ -37452,7 +37451,7 @@ Following are the translations:
 
 <div class="example">
 
-``` example
+```bash
 #: guide.awk:4
 msgid "Don't Panic"
 msgstr "Hey man, relax!"
@@ -37494,7 +37493,7 @@ check the value of `$LANGUAGE`:
 
 <div class="example">
 
-``` example
+```bash
 $ echo $LANGUAGE
 -| en_US.UTF-8
 ```
@@ -37505,7 +37504,7 @@ We next make the directories:
 
 <div class="example">
 
-``` example
+```bash
 $ mkdir en_US.UTF-8 en_US.UTF-8/LC_MESSAGES
 ```
 
@@ -37526,7 +37525,7 @@ machine-readable `.mo` file. By default, `msgfmt` creates a file named
 
 <div class="example">
 
-``` example
+```bash
 $ msgfmt guide-mellow.po -o en_US.UTF-8/LC_MESSAGES/guide.mo
 ```
 
@@ -37536,7 +37535,7 @@ Finally, we run the program to test it:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f guide.awk
 -| Hey man, relax!
 -| Like, the scoop is 42
@@ -37552,7 +37551,7 @@ can run `guide.awk` unchanged as follows:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk --posix -f guide.awk -f libintl.awk
 -| Don't Panic
 -| The Answer Is 42
@@ -37924,7 +37923,7 @@ debugger like this:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -D -f getopt.awk -f join.awk -f uniq.awk -1 inputfile
 ```
 
@@ -37945,7 +37944,7 @@ files, compiles them internally, and then gives us a prompt:
 
 <div class="example">
 
-``` example
+```bash
 gawk>
 ```
 
@@ -37979,7 +37978,7 @@ lines which should be identical when skipping the first field, such as:
 
 <div class="example">
 
-``` example
+```bash
 awk is a wonderful program!
 gawk is a wonderful program!
 ```
@@ -37991,7 +37990,7 @@ as being numbered in a zero-based fashion, so instead of the lines:
 
 <div class="example">
 
-``` example
+```bash
 clast = join(alast, fcount+1, n)
 cline = join(aline, fcount+1, m)
 ```
@@ -38002,7 +38001,7 @@ we wrote:
 
 <div class="example">
 
-``` example
+```bash
 clast = join(alast, fcount, n)
 cline = join(aline, fcount, m)
 ```
@@ -38021,7 +38020,7 @@ set the breakpoint, use the `b` (breakpoint) command:
 
 <div class="example">
 
-``` example
+```bash
 gawk> b are_equal
 -| Breakpoint 1 set at file `awklib/eg/prog/uniq.awk', line 63
 ```
@@ -38036,7 +38035,7 @@ breakpoint for the first time:
 
 <div class="example">
 
-``` example
+```bash
 gawk> r
 -| Starting program:
 -| Stopping in Rule ...
@@ -38058,7 +38057,7 @@ id="index-debugger-11"></span> <span id="index-debugger-12"></span>
 
 <div class="example">
 
-``` example
+```bash
 gawk> bt
 -| #0  are_equal(n, m, clast, cline, alast, aline)
          at `awklib/eg/prog/uniq.awk':68
@@ -38083,7 +38082,7 @@ id="index-debugger-14"></span>
 
 <div class="example">
 
-``` example
+```bash
 gawk> p n
 -| n = untyped variable
 ```
@@ -38098,7 +38097,7 @@ A more useful variable to display might be the current record:
 
 <div class="example">
 
-``` example
+```bash
 gawk> p $0
 -| $0 = "gawk is a wonderful program!"
 ```
@@ -38110,7 +38109,7 @@ test input. Let’s look at `NR`:
 
 <div class="example">
 
-``` example
+```bash
 gawk> p NR
 -| NR = 2
 ```
@@ -38123,7 +38122,7 @@ of the file. Of course, this is because our program contains a rule for
 
 <div class="example">
 
-``` example
+```bash
 NR == 1 {
     last = $0
     next
@@ -38136,7 +38135,7 @@ OK, let’s just check that that rule worked correctly:
 
 <div class="example">
 
-``` example
+```bash
 gawk> p last
 -| last = "awk is a wonderful program!"
 ```
@@ -38154,7 +38153,7 @@ id="index-debugger-16"></span>
 
 <div class="example">
 
-``` example
+```bash
 gawk> n
 -| 66          if (fcount > 0) {
 ```
@@ -38172,7 +38171,7 @@ records:
 
 <div class="example">
 
-``` example
+```bash
 gawk> n
 -| 67              n = split(last, alast)
 gawk> n
@@ -38186,7 +38185,7 @@ into, so we try to look:
 
 <div class="example">
 
-``` example
+```bash
 gawk> p n m alast aline
 -| n = 5
 -| m = untyped variable
@@ -38211,7 +38210,7 @@ The first choice would be to use subscripts:
 
 <div class="example">
 
-``` example
+```bash
 gawk> p alast[0]
 -| "0" not in array `alast'
 ```
@@ -38222,7 +38221,7 @@ Oops!
 
 <div class="example">
 
-``` example
+```bash
 gawk> p alast[1]
 -| alast["1"] = "awk"
 ```
@@ -38237,7 +38236,7 @@ mentioned):
 
 <div class="example">
 
-``` example
+```bash
 gawk> p @alast
 -| alast["1"] = "awk"
 -| alast["2"] = "is"
@@ -38252,7 +38251,7 @@ It looks like we got this far OK. Let’s take another step or two:
 
 <div class="example">
 
-``` example
+```bash
 gawk> n
 -| 69              clast = join(alast, fcount, n)
 gawk> n
@@ -38268,7 +38267,7 @@ zero, this would work. Let’s look at what we’ve got:
 
 <div class="example">
 
-``` example
+```bash
 gawk> p cline clast
 -| cline = "gawk is a wonderful program!"
 -| clast = "awk is a wonderful program!"
@@ -38284,7 +38283,7 @@ We get out of the debugger:
 
 <div class="example">
 
-``` example
+```bash
 gawk> q
 -| The program is running. Exit anyway (y/n)? y
 ```
@@ -38295,7 +38294,7 @@ Then we get into an editor:
 
 <div class="example">
 
-``` example
+```bash
 clast = join(alast, fcount+1, n)
 cline = join(aline, fcount+1, m)
 ```
@@ -38569,7 +38568,7 @@ implicit `end`), and subsequent commands are ignored. For example:
 
 <div class="example">
 
-``` example
+```bash
 gawk> commands
 > silent
 > printf "A silent breakpoint; i = %d\n", i
@@ -38729,7 +38728,7 @@ variable added to the list is identified by a unique number:
 
 <div class="example">
 
-``` example
+```bash
 gawk> display x
 -| 10: x = 1
 ```
@@ -38780,7 +38779,7 @@ by constants:
 
 <div class="example">
 
-``` example
+```bash
 gawk> print $3
 ```
 
@@ -38794,7 +38793,7 @@ symbol:
 
 <div class="example">
 
-``` example
+```bash
 gawk> print @a
 ```
 
@@ -39165,14 +39164,14 @@ Different](#Signature-Program)) demonstrates:
 
 <div class="example">
 
-``` example
+```bash
 gawk> dump
 -|        # BEGIN
 -|
 -| [  1:0xfcd340] Op_rule           : [in_rule = BEGIN] [source_file = brini.awk]
 ```
 
-``` example
+```bash
 -| [  1:0xfcc240] Op_push_i         : "~" [MALLOC|STRING|STRCUR]
 -| [  1:0xfcc2a0] Op_push_i         : "~" [MALLOC|STRING|STRCUR]
 -| [  1:0xfcc280] Op_match          :
@@ -39214,7 +39213,7 @@ gawk> dump
 -| [      :0xfcd150] Op_after_beginfile  :
 ```
 
-``` example
+```bash
 -| [      :0xfcc160] Op_no_op            :
 -| [      :0xfcc1a0] Op_after_endfile    :
 gawk>
@@ -39415,7 +39414,7 @@ some limitations. A few that it’s worth being aware of are:
     with the `-f` option. This might look like this:
     <div class="example">
 
-    ``` example
+    ```bash
     cat << \EOF > /tmp/script.$$
     …                                  Your program here
     EOF
@@ -39662,7 +39661,7 @@ the top level of your program:
 
 <div class="example">
 
-``` example
+```bash
 @namespace "passwd"
 
 BEGIN { … }
@@ -39749,7 +39748,7 @@ follows.
     Thus, the following produces a syntax error:
     <div class="example">
 
-    ``` example
+    ```bash
     @namespace "example"
 
     function gsub(str, pat, result) { … }
@@ -39769,7 +39768,7 @@ follows.
 
     <div class="example">
 
-    ``` example
+    ```bash
     BEGIN {
         print "in awk namespace, systime() =", systime()
     }
@@ -39792,7 +39791,7 @@ follows.
 
     <div class="example">
 
-    ``` example
+    ```bash
     $ gawk -f systime.awk
     -| in awk namespace, systime() = 1500488503
     -| in testing namespace, systime() = 1500488503
@@ -39839,7 +39838,7 @@ prefix. For example:
 
 <div class="example">
 
-``` example
+```bash
 @namespace "awk"          This is the default namespace
 
 BEGIN {
@@ -39891,7 +39890,7 @@ namespace.
 
 <div class="example">
 
-``` example
+```bash
 # ns_passwd.awk --- access password file information
 
 @namespace "passwd"
@@ -39969,7 +39968,7 @@ identifiers are sought for in the `awk` namespace:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     while ((p = getpwent()) != "")
         print p
@@ -39982,7 +39981,7 @@ Here’s what happens when it’s run:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f ns_passwd.awk -f testpasswd.awk
 -| root:x:0:0:root:/root:/bin/bash
 -| daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -40443,7 +40442,7 @@ arithmetic on numbers. You can see if MPFR support is available like so:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk --version
 -| GNU Awk 4.1.2, API: 1.1 (GNU MPFR 3.1.0-p3, GNU MP 5.0.2)
 -| Copyright (C) 1989, 1991-2015 Free Software Foundation.
@@ -40579,7 +40578,7 @@ following example:
 
 <div class="example">
 
-``` example
+```bash
 x = 0.875             # 1/2 + 1/4 + 1/8
 y = 0.425
 ```
@@ -40597,7 +40596,7 @@ to it:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { x = 0.875; y = 0.425
 >               printf("%0.17g, %0.17g\n", x, y) }'
 -| 0.875, 0.42499999999999999
@@ -40638,7 +40637,7 @@ like you would expect:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN { print (0.1 + 12.2 == 12.3) }'
 -| 0
 ```
@@ -40652,7 +40651,7 @@ Code to do this looks something like the following:
 
 <div class="example">
 
-``` example
+```bash
 delta = 0.00001                 # for example
 difference = abs(a - b)         # subtract the two values
 if (difference < delta)
@@ -40697,7 +40696,7 @@ representations:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     x = 1.0 / sqrt(3.0)
     n = 6
@@ -40716,7 +40715,7 @@ the loop to terminate prematurely after attempting to divide by zero:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f pi.awk
 -| 3.215390309173475
 -| 3.159659942097510
@@ -40736,7 +40735,7 @@ representations yield an unexpected result:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN {
 >   for (d = 1.1; d <= 1.5; d += 0.1)    # loop five times (?)
 >       i++
@@ -40781,7 +40780,7 @@ increasing the precision; 56 bits in this case does the job:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -M -v PREC=56 'BEGIN { print (0.1 + 12.2 == 12.3) }'
 -| 1
 ```
@@ -40794,7 +40793,7 @@ is better? Here is what happens if we use an even larger value of
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -M -v PREC=201 'BEGIN { print (0.1 + 12.2 == 12.3) }'
 -| 0
 ```
@@ -40824,7 +40823,7 @@ In the example in [Errors Accumulate](#Errors-accumulate):
 
 <div class="example">
 
-``` example
+```bash
 $ gawk 'BEGIN {
 >   for (d = 1.1; d <= 1.5; d += 0.1)    # loop five times (?)
 >       i++
@@ -40867,7 +40866,7 @@ following simple algebraic transformation:
 
 <div class="example">
 
-``` example
+```bash
 (sqrt(x * x + 1) - 1) / x ≡ x / (sqrt(x * x + 1) + 1)
 ```
 
@@ -40878,7 +40877,7 @@ iterations:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -f pi2.awk
 -| 3.215390309173473
 -| 3.159659942097501
@@ -40946,7 +40945,7 @@ arithmetic operations:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -M -v PREC=100 'BEGIN { x = 1.0e-400; print x + 0
 >   PREC = "double"; print x + 0 }'
 -| 1e-400
@@ -40971,7 +40970,7 @@ $ gawk -M -v PREC=100 'BEGIN { x = 1.0e-400; print x + 0
 >
 > <div class="example">
 >
-> ``` example
+> ```bash
 > $ gawk -M 'BEGIN { PREC = 113; printf("%0.25f\n", 0.1) }'
 > -| 0.1000000000000000055511151
 > $ gawk -M -v PREC=113 'BEGIN { printf("%0.25f\n", 0.1) }'
@@ -41051,7 +41050,7 @@ example:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     x = -4.5
     for (i = 1; i < 10; i++) {
@@ -41068,7 +41067,7 @@ system:<a href="#FOOT99" id="DOCF99"><sup>99</sup></a>
 
 <div class="example">
 
-``` example
+```bash
 -3.5 => -4
 -2.5 => -2
 -1.5 => -2
@@ -41172,7 +41171,7 @@ double-precision floating-point values:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -M 'BEGIN {
 >   x = 5^4^3^2
 >   print "number of digits =", length(x)
@@ -41197,7 +41196,7 @@ recurrence:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -M 'BEGIN {
 >   s = 2.0
 >   for (i = 1; i <= 7; i++)
@@ -41228,7 +41227,7 @@ like this:
 
 <div class="example">
 
-``` example
+```bash
 gawk -M 'BEGIN { n = 13; print (n + 0.0) % 2.0 }'
 ```
 
@@ -41239,7 +41238,7 @@ floating-point value to begin with:
 
 <div class="example">
 
-``` example
+```bash
 gawk -M 'BEGIN { n = 13.0; print n % 2.0 }'
 ```
 
@@ -41250,7 +41249,7 @@ following:
 
 <div class="example">
 
-``` example
+```bash
 gawk -M 'BEGIN { n = 13; print n % 2 }'
 ```
 
@@ -41291,7 +41290,7 @@ do so with the following function, contributed by Andrew Schorr:
 
 <div class="example">
 
-``` example
+```bash
 # adequate_math_precision --- return true if we have enough bits
 
 function adequate_math_precision(n)
@@ -41307,7 +41306,7 @@ arbitrary-precision arithmetic is available:
 
 <div class="example">
 
-``` example
+```bash
 BEGIN {
     # How many bits of mantissa precision are required
     # for this program to function properly?
@@ -41407,7 +41406,7 @@ and infinity values. The solution implemented in `gawk` is as follows:
     They are also a little surprising:
     <div class="example">
 
-    ``` example
+    ```bash
     $ echo nanny | gawk --posix '{ print $1 + 0 }'
     -| nan
     $ echo 0xDeadBeef | gawk --posix '{ print $1 + 0 }'
@@ -41425,7 +41424,7 @@ and infinity values. The solution implemented in `gawk` is as follows:
 
     <div class="example">
 
-    ``` example
+    ```bash
     $ echo nanny | gawk '{ print $1 + 0 }'
     -| 0
     $ echo +nan | gawk '{ print $1 + 0 }'
@@ -41632,7 +41631,7 @@ symbol exists in the global scope. Something like this is enough:
 
 <div class="example">
 
-``` example
+```bash
 int plugin_is_GPL_compatible;
 ```
 
@@ -42275,7 +42274,7 @@ For example, you might allocate a string value like so:
 
 <div class="example">
 
-``` example
+```bash
 awk_value_t result;
 char *message;
 const char greet[] = "Don't Panic!";
@@ -42449,7 +42448,7 @@ MPFR and GMP values are different from string values, where you can
 
 <div class="example">
 
-``` example
+```bash
 char *p = gawk_malloc(42);      p “owns” the memory
 char *q = p;
 p = NULL;                       now q “owns” it
@@ -42465,7 +42464,7 @@ extension should look like this:
 
 <div class="example">
 
-``` example
+```bash
 mpz_t part1, part2, answer;             declare local values
 
 mpz_set_si(part1, 21);                  do some computations
@@ -42543,7 +42542,7 @@ Extension functions are described by the following record:
 
 <div class="example">
 
-``` example
+```bash
 typedef struct awk_ext_func {
     const char *name;
     awk_value_t *(*const function)(int num_actual_args,
@@ -42786,7 +42785,7 @@ Your extension should package these functions inside an
 
 <div class="example">
 
-``` example
+```bash
 typedef struct awk_input_parser {
     const char *name;   /* name of parser */
     awk_bool_t (*can_take_file)(const awk_input_buf_t *iobuf);
@@ -42824,7 +42823,7 @@ An `awk_input_buf_t` looks like this:
 
 <div class="example">
 
-``` example
+```bash
 typedef struct awk_input {
     const char *name;       /* filename */
     int fd;                 /* file descriptor */
@@ -42998,7 +42997,7 @@ structure, which looks like this:
 
 <div class="example">
 
-``` example
+```bash
 typedef struct {
         awk_bool_t     use_chars; /* false ==> use bytes */
         size_t         nf;        /* number of fields in record (NF) */
@@ -43069,7 +43068,7 @@ The output wrapper is very similar to the input parser structure:
 
 <div class="example">
 
-``` example
+```bash
 typedef struct awk_output_wrapper {
     const char *name;   /* name of the wrapper */
     awk_bool_t (*can_take_file)(const awk_output_buf_t *outbuf);
@@ -43106,7 +43105,7 @@ The `awk_output_buf_t` structure looks like this:
 
 <div class="example">
 
-``` example
+```bash
 typedef struct awk_output_buf {
     const char *name;   /* name of output file */
     const char *mode;   /* mode argument to fopen */
@@ -43201,7 +43200,7 @@ A two-way processor is represented by the following structure:
 
 <div class="example">
 
-``` example
+```bash
 typedef struct awk_two_way_processor {
     const char *name;   /* name of the two-way processor */
     awk_bool_t (*can_take_two_way)(const char *name);
@@ -43579,7 +43578,7 @@ variable based on the result of that evaluation, like so:
 
 <div class="example">
 
-``` example
+```bash
 /*  do_magic --- do something really great */
 
 static awk_value_t *
@@ -43619,7 +43618,7 @@ usual. Then get a scalar cookie for the variable using `sym_lookup()`:
 
 <div class="example">
 
-``` example
+```bash
 static awk_scalar_t magic_var_cookie;    /* cookie for MAGIC_VAR */
 
 static void
@@ -43628,7 +43627,7 @@ my_extension_init()
     awk_value_t value;
 ```
 
-``` example
+```bash
 
     /* install initial value */
     sym_update("MAGIC_VAR", make_number(42.0, & value));
@@ -43650,7 +43649,7 @@ this:
 
 <div class="example">
 
-``` example
+```bash
 /*  do_magic --- do something really great */
 
 static awk_value_t *
@@ -43727,7 +43726,7 @@ cookie:
 
 <div class="example">
 
-``` example
+```bash
 static awk_value_cookie_t answer_cookie;  /* static value cookie */
 
 static void
@@ -43753,7 +43752,7 @@ variables:
 
 <div class="example">
 
-``` example
+```bash
 static awk_value_t *
 do_magic(int nargs, awk_value_t *result)
 {
@@ -44040,7 +44039,7 @@ We walk through that part of the code one step at a time. First, the
 
 <div class="example">
 
-``` example
+```bash
 @load "testext"
 BEGIN {
     n = split("blacky rusty sophie raincloud lucky", pets)
@@ -44072,7 +44071,7 @@ number of arguments:
 
 <div class="example">
 
-``` example
+```bash
 static awk_value_t *
 dump_array_and_delete(int nargs, awk_value_t *result)
 {
@@ -44100,7 +44099,7 @@ itself. If either operation fails, print an error message and return:
 
 <div class="example">
 
-``` example
+```bash
     /* get argument named array as flat array and print it */
     if (get_argument(0, AWK_STRING, & value)) {
         name = value.str_value.str;
@@ -44126,7 +44125,7 @@ count of elements in the array and print it:
 
 <div class="example">
 
-``` example
+```bash
     if (! get_element_count(value2.array_cookie, & count)) {
         printf("dump_array_and_delete: get_element_count failed\n");
         goto out;
@@ -44144,7 +44143,7 @@ count just retrieved:
 
 <div class="example">
 
-``` example
+```bash
     if (! flatten_array_typed(value2.array_cookie, & flat_array,
                               AWK_STRING, AWK_UNDEFINED)) {
         printf("dump_array_and_delete: could not flatten array\n");
@@ -44169,7 +44168,7 @@ is numbered one:
 
 <div class="example">
 
-``` example
+```bash
     if (! get_argument(1, AWK_STRING, & value3)) {
         printf("dump_array_and_delete: get_argument(1) failed\n");
         goto out;
@@ -44187,7 +44186,7 @@ flattened array, and deletes any elements that have this flag bit set:
 
 <div class="example">
 
-``` example
+```bash
     for (i = 0; i < flat_array->count; i++) {
         printf("\t%s[\"%.*s\"] = %s\n",
             name,
@@ -44215,7 +44214,7 @@ once you have called `release_flattened_array()`:
 
 <div class="example">
 
-``` example
+```bash
     if (! release_flattened_array(value2.array_cookie, flat_array)) {
         printf("dump_array_and_delete: could not release flattened array\n");
         goto out;
@@ -44229,7 +44228,7 @@ value to success, and returns:
 
 <div class="example">
 
-``` example
+```bash
     make_number(1.0, result);
 out:
     return result;
@@ -44242,7 +44241,7 @@ Here is the output from running this part of the test:
 
 <div class="example">
 
-``` example
+```bash
 pets has 5 elements
 dump_array_and_delete: sym_lookup of pets passed
 dump_array_and_delete: incoming size is 5
@@ -44305,7 +44304,7 @@ code:
 
     <div class="example">
 
-    ``` example
+    ```bash
     awk_value_t val;
     awk_array_t new_array;
 
@@ -44333,7 +44332,7 @@ symbol table:
 
 <div class="example">
 
-``` example
+```bash
 /* create_new_array --- create a named array */
 
 static void
@@ -44361,7 +44360,7 @@ The second step is to install two regular values into `new_array`:
 
 <div class="example">
 
-``` example
+```bash
     (void) make_const_string("hello", 5, & index);
     (void) make_const_string("world", 5, & value);
     if (! set_array_element(a_cookie, & index, & value)) {
@@ -44383,7 +44382,7 @@ The third step is to create the subarray and install it:
 
 <div class="example">
 
-``` example
+```bash
     (void) make_const_string("subarray", 8, & index);
     subarray = create_array();
     value.val_type = AWK_ARRAY;
@@ -44401,7 +44400,7 @@ The final step is to populate the subarray with its own element:
 
 <div class="example">
 
-``` example
+```bash
     (void) make_const_string("foo", 3, & index);
     (void) make_const_string("bar", 3, & value);
     if (! set_array_element(subarray, & index, & value)) {
@@ -44418,7 +44417,7 @@ array:
 
 <div class="example">
 
-``` example
+```bash
 @load "subarray"
 
 function dumparray(name, array,     i)
@@ -44441,7 +44440,7 @@ Here is the result of running the script:
 
 <div class="example">
 
-``` example
+```bash
 $ AWKLIBPATH=$PWD gawk -f subarray.awk
 -| new_array["subarray"]["foo"] = bar
 -| new_array["hello"] = world
@@ -44635,7 +44634,7 @@ Typically, a check like this is enough:
 
 <div class="example">
 
-``` example
+```bash
 if (   api->major_version != GAWK_API_MAJOR_VERSION
     || api->minor_version < GAWK_API_MINOR_VERSION) {
         fprintf(stderr, "foo_extension: version mismatch with gawk!\n");
@@ -44785,14 +44784,14 @@ here. The boilerplate needed is also provided in comments in the
 
 <div class="example">
 
-``` example
+```bash
 /* Boilerplate code: */
 int plugin_is_GPL_compatible;
 
 static gawk_api_t *const api;
 ```
 
-``` example
+```bash
 static awk_ext_id_t ext_id;
 static const char *ext_version = NULL; /* or … = "some string" */
 
@@ -45032,7 +45031,7 @@ directory to change to:
 
 <div class="example">
 
-``` example
+```bash
 @load "filefuncs"
 …
 newdir = "/home/arnold/funstuff"
@@ -45057,7 +45056,7 @@ appropriate information:
 
 <div class="example">
 
-``` example
+```bash
 file = "/home/arnold/.profile"
 ret = stat(file, fdata)
 if (ret < 0) {
@@ -45192,7 +45191,7 @@ Code](#Extension-API-Boilerplate)):
 
 <div class="example">
 
-``` example
+```bash
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -45237,14 +45236,14 @@ is a pointer to an `awk_value_t` structure, usually named `result`:
 
 <div class="example">
 
-``` example
+```bash
 /*  do_chdir --- provide dynamically loaded chdir() function for gawk */
 
 static awk_value_t *
 do_chdir(int nargs, awk_value_t *result, struct awk_ext_func *unused)
 ```
 
-``` example
+```bash
 {
     awk_value_t newdir;
     int ret = -1;
@@ -45264,7 +45263,7 @@ If the argument is retrieved successfully, the function calls the
 
 <div class="example">
 
-``` example
+```bash
     if (get_argument(0, AWK_STRING, & newdir)) {
         ret = chdir(newdir.str_value.str);
         if (ret < 0)
@@ -45278,7 +45277,7 @@ Finally, the function returns the return value to the `awk` level:
 
 <div class="example">
 
-``` example
+```bash
     return make_number(ret, result);
 }
 ```
@@ -45291,7 +45290,7 @@ becomes ‘`-rw-r--r--`’). This is omitted here for brevity:
 
 <div class="example">
 
-``` example
+```bash
 /* format_mode --- turn a stat mode field into something readable */
 
 static char *
@@ -45308,7 +45307,7 @@ here for brevity:
 
 <div class="example">
 
-``` example
+```bash
 /* read_symlink --- read a symbolic link into an allocated buffer.
    … */
 
@@ -45326,7 +45325,7 @@ contain the result of the `stat()`:
 
 <div class="example">
 
-``` example
+```bash
 /* array_set --- set an array element */
 
 static void
@@ -45365,7 +45364,7 @@ table to map file types to strings:
 
 <div class="example">
 
-``` example
+```bash
 /* fill_stat_array --- do the work to fill an array with stat info */
 
 static int
@@ -45405,7 +45404,7 @@ elements based on values in the `struct stat`:
 
 <div class="example">
 
-``` example
+```bash
     /* empty out the array */
     clear_array(array);
 
@@ -45441,13 +45440,13 @@ and/or the type of the file. It then returns zero, for success:
 
 <div class="example">
 
-``` example
+```bash
 #ifdef HAVE_STRUCT_STAT_ST_BLKSIZE
     array_set_numeric(array, "blksize", sbuf->st_blksize);
 #endif
 ```
 
-``` example
+```bash
 
     pmode = format_mode(sbuf->st_mode);
     array_set(array, "pmode", make_const_string(pmode, strlen(pmode),
@@ -45497,7 +45496,7 @@ declarations and argument checking:
 
 <div class="example">
 
-``` example
+```bash
 /* do_stat --- provide a stat() function for gawk */
 
 static awk_value_t *
@@ -45523,7 +45522,7 @@ returns:
 
 <div class="example">
 
-``` example
+```bash
     /* file is first arg, array to hold results is second */
     if (   ! get_argument(0, AWK_STRING, & file_param)
         || ! get_argument(1, AWK_ARRAY, & array_param)) {
@@ -45545,7 +45544,7 @@ returns:
     ret = statfunc(name, & sbuf);
 ```
 
-``` example
+```bash
     if (ret < 0) {
         update_ERRNO_int(errno);
         return make_number(ret, result);
@@ -45559,7 +45558,7 @@ done, the function returns the result from `fill_stat_array()`:
 
 <div class="example">
 
-``` example
+```bash
     ret = fill_stat_array(name, array, & sbuf);
 
     return make_number(ret, result);
@@ -45578,7 +45577,7 @@ initialization function:
 
 <div class="example">
 
-``` example
+```bash
 /* init_filefuncs --- initialization routine */
 
 static awk_bool_t
@@ -45595,7 +45594,7 @@ loading each function into `gawk`:
 
 <div class="example">
 
-``` example
+```bash
 static awk_ext_func_t func_table[] = {
     { "chdir", do_chdir, 1, 1, awk_false, NULL },
     { "stat",  do_stat, 3, 2, awk_false, NULL },
@@ -45611,7 +45610,7 @@ macro in `gawkapi.h`:
 
 <div class="example">
 
-``` example
+```bash
 /* define the dl_load() function using the boilerplate macro */
 
 dl_load_func(func_table, filefuncs, "")
@@ -45651,7 +45650,7 @@ GNU/Linux shared library:
 
 <div class="example">
 
-``` example
+```bash
 $ gcc -fPIC -shared -DHAVE_CONFIG_H -c -O -g -Iidir filefuncs.c
 $ gcc -o filefuncs.so -shared filefuncs.o
 ```
@@ -45662,7 +45661,7 @@ Once the library exists, it is loaded by using the `@load` keyword:
 
 <div class="example">
 
-``` example
+```bash
 # file testff.awk
 @load "filefuncs"
 
@@ -45700,7 +45699,7 @@ and run the program:
 
 <div class="example">
 
-``` example
+```bash
 $ AWKLIBPATH=$PWD gawk -f testff.awk
 -| /tmp
 -| Info for testff.awk
@@ -46017,7 +46016,7 @@ Here is an example:
 
 <div class="example">
 
-``` example
+```bash
 @load "fnmatch"
 …
 flags = or(FNM["PERIOD"], FNM["NOESCAPE"])
@@ -46081,7 +46080,7 @@ Here is an example:
 
 <div class="example">
 
-``` example
+```bash
 @load "fork"
 …
 if ((pid = fork()) == 0)
@@ -46123,7 +46122,7 @@ the `inplace` namespace (see section [Namespaces in
 
 <div class="example">
 
-``` example
+```bash
 # inplace --- load and invoke the inplace extension.
 
 @load "inplace"
@@ -46147,19 +46146,19 @@ the `inplace` namespace (see section [Namespaces in
 @namespace "inplace"
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
 BEGIN {
     enable = 1         # enabled by default
 }
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
 BEGINFILE {
     sfx = (suffix ? suffix : awk::INPLACE_SUFFIX)
     if (filename != "")
@@ -46171,10 +46170,10 @@ BEGINFILE {
 }
 ```
 
-``` example
+```bash
 ```
 
-``` example
+```bash
 END {
     if (filename != "")
         end(filename, (suffix ? suffix : awk::INPLACE_SUFFIX))
@@ -46208,7 +46207,7 @@ Here are some simple examples:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -i inplace '{ gsub(/foo/, "bar") }; { print }' file1 file2 file3
 ```
 
@@ -46218,7 +46217,7 @@ To keep a backup copy of the original files, try this:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -i inplace -v inplace::suffix=.bak '{ gsub(/foo/, "bar") }
 > { print }' file1 file2 file3
 ```
@@ -46275,7 +46274,7 @@ same name. Here is an example:
 
 <div class="example">
 
-``` example
+```bash
 @load "ordchr"
 …
 printf("The numeric value of 'A' is %d\n", ord("A"))
@@ -46312,7 +46311,7 @@ is as follows:
 
 <div class="example">
 
-``` example
+```bash
 @load "readdir"
 ```
 
@@ -46369,7 +46368,7 @@ Here is an example:
 
 <div class="example">
 
-``` example
+```bash
 @load "readdir"
 …
 BEGIN { FS = "/" }
@@ -46408,7 +46407,7 @@ Here is an example:
 
 <div class="example">
 
-``` example
+```bash
 @load "revoutput"
 
 BEGIN {
@@ -46451,7 +46450,7 @@ to use it:
 
 <div class="example">
 
-``` example
+```bash
 @load "revtwoway"
 
 BEGIN {
@@ -46529,7 +46528,7 @@ Here is an example:
 
 <div class="example">
 
-``` example
+```bash
 @load "rwarray"
 …
 ret = writea("arraydump.bin", array)
@@ -46582,7 +46581,7 @@ Here is an example:
 
 <div class="example">
 
-``` example
+```bash
 @load "readfile"
 …
 contents = readfile("/path/to/file");
@@ -46728,7 +46727,7 @@ command is as follows:
 
 <div class="example">
 
-``` example
+```bash
 git clone git://git.code.sf.net/p/gawkextlib/code gawkextlib-code
 ```
 
@@ -46755,7 +46754,7 @@ First, build and install `gawk`:
 
 <div class="example">
 
-``` example
+```bash
 cd .../path/to/gawk/code
 ./configure --prefix=/tmp/newgawk     Install in /tmp/newgawk for now
 make && make check                    Build and check that all is OK
@@ -47841,7 +47840,7 @@ uppercase characters:
 
 <div class="example">
 
-``` example
+```bash
 $ echo something1234abc | gawk-3.1.8 '{ sub("[A-Z]*$", ""); print }'
 -| something1234a
 ```
@@ -48189,7 +48188,7 @@ There are two ways to get GNU software:
     like the following:
     <div class="example">
 
-    ``` example
+    ```bash
     wget https://ftp.gnu.org/gnu/gawk/gawk-5.1.1.tar.gz
     ```
 
@@ -48236,7 +48235,7 @@ following pipeline to produce the `gawk` distribution:
 
 <div class="example">
 
-``` example
+```bash
 gzip -d -c gawk-5.1.1.tar.gz | tar -xvpf -
 ```
 
@@ -48247,7 +48246,7 @@ you:
 
 <div class="example">
 
-``` example
+```bash
 tar -xvpzf gawk-5.1.1.tar.gz
 ```
 
@@ -48567,7 +48566,7 @@ To configure `gawk`, simply run `configure`:
 
 <div class="example">
 
-``` example
+```bash
 sh ./configure
 ```
 
@@ -48584,7 +48583,7 @@ the command line, such as `CC` and `CFLAGS`, when running `configure`:
 
 <div class="example">
 
-``` example
+```bash
 CC=cc CFLAGS=-g sh ./configure
 ```
 
@@ -48596,7 +48595,7 @@ After you have run `configure` and possibly edited the `Makefile`, type:
 
 <div class="example">
 
-``` example
+```bash
 make
 ```
 
@@ -48899,7 +48898,7 @@ here are the steps:
 
 <div class="example">
 
-``` example
+```bash
 git clone https://git.savannah.gnu.org/r/gawk.git
 cd gawk
 ./bootstrap.sh && ./configure && make && make check
@@ -48948,7 +48947,7 @@ PDF versions of the documentation:
 
 <div class="example">
 
-``` example
+```bash
 cd doc
 make pdf
 ```
@@ -48965,7 +48964,7 @@ make the HTML version of the manuals with:
 
 <div class="example">
 
-``` example
+```bash
 cd doc
 make html
 ```
@@ -49198,7 +49197,7 @@ MS-DOS-style end-of-line:
 
 <div class="example">
 
-``` example
+```bash
 gawk -v BINMODE=2 -v ORS="\r\n" …
 ```
 
@@ -49208,7 +49207,7 @@ or:
 
 <div class="example">
 
-``` example
+```bash
 gawk -v BINMODE=w -f binmode2.awk …
 ```
 
@@ -49220,7 +49219,7 @@ on reads, but does not affect the mode on standard input:
 
 <div class="example">
 
-``` example
+```bash
 gawk -v RS="\r\n" -e "BEGIN { BINMODE = 1 }" …
 ```
 
@@ -49230,7 +49229,7 @@ or:
 
 <div class="example">
 
-``` example
+```bash
 gawk -f binmode1.awk …
 ```
 
@@ -49267,7 +49266,7 @@ Cygwin is the same as for a Unix system:
 
 <div class="example">
 
-``` example
+```bash
 tar -xvpzf gawk-5.1.1.tar.gz
 cd gawk-5.1.1
 ./configure
@@ -49385,7 +49384,7 @@ directory, use either:
 
 <div class="example">
 
-``` example
+```bash
 $ @[.vms]vmsbuild.com
 ```
 
@@ -49395,7 +49394,7 @@ or:
 
 <div class="example">
 
-``` example
+```bash
 $ MMS/DESCRIPTION=[.vms]descrip.mms gawk
 ```
 
@@ -49405,7 +49404,7 @@ or:
 
 <div class="example">
 
-``` example
+```bash
 $ MMK/DESCRIPTION=[.vms]descrip.mms gawk
 ```
 
@@ -49452,7 +49451,7 @@ the following commands:
 
 <div class="example">
 
-``` example
+```bash
 $ MMS/DESCRIPTION=[.vms]descrip.mms extensions
 ```
 
@@ -49462,7 +49461,7 @@ or:
 
 <div class="example">
 
-``` example
+```bash
 $ MMK/DESCRIPTION=[.vms]descrip.mms extensions
 ```
 
@@ -49481,7 +49480,7 @@ For Alpha and Itanium:
 
 <div class="example">
 
-``` example
+```bash
 /name=(as_is,short)
 /float=ieee/ieee_mode=denorm_results
 ```
@@ -49492,7 +49491,7 @@ For VAX:
 
 <div class="example">
 
-``` example
+```bash
 /name=(as_is,short)
 ```
 
@@ -49503,7 +49502,7 @@ header file is included, as follows:
 
 <div class="example">
 
-``` example
+```bash
 #if (__CRTL_VER >= 70200000) && !defined (__VAX)
 #define _LARGEFILE 1
 #endif
@@ -49550,7 +49549,7 @@ symbol whose value begins with a dollar sign. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ GAWK :== $disk1:[gnubin]gawk
 ```
 
@@ -49573,7 +49572,7 @@ For just the current process you can use:
 
 <div class="example">
 
-``` example
+```bash
 $ set command gnv$gnu:[vms_bin]gawk_verb.cld
 ```
 
@@ -49588,7 +49587,7 @@ Optionally, the `gawk.hlp` entry can be loaded into a VMS help library:
 
 <div class="example">
 
-``` example
+```bash
 $ LIBRARY/HELP sys$help:helplib [.vms]gawk.hlp
 ```
 
@@ -49600,7 +49599,7 @@ command:
 
 <div class="example">
 
-``` example
+```bash
 $ HELP GAWK
 ```
 
@@ -49647,7 +49646,7 @@ Here are a couple of trivial tests:
 
 <div class="example">
 
-``` example
+```bash
 $ gawk -- "BEGIN {print ""Hello, World!""}"
 $ gawk -"W" version
 ! could also be -"W version" or "-W version"
@@ -49683,7 +49682,7 @@ To extract the actual `gawk` exit code from the VMS status, use:
 
 <div class="example">
 
-``` example
+```bash
 unix_status = (vms_status .and. %x7f8) / 8
 ```
 
@@ -49736,7 +49735,7 @@ command.
 
 <div class="example">
 
-``` example
+```bash
 $ sort = "@device:[dir]vms_gawk_sort.com"
 ```
 
@@ -49758,7 +49757,7 @@ the data redirected from `gawk` will be read when the command file ends.
 
 <div class="example">
 
-``` example
+```bash
 $!'f$verify(0,0)'
 $ sort := sort
 $ define/user sys$input sys$command:
@@ -50100,7 +50099,7 @@ follow:
 
     <div class="example">
 
-    ``` example
+    ```bash
     $ tar -xpzvf gawk-X.Y.Z.tar.gz
     -| …                                Output omitted
     $ cd gawk-X.Y.Z
@@ -50117,7 +50116,7 @@ follow:
 4.  Compile the program by running the `make` command:
     <div class="example">
 
-    ``` example
+    ```bash
     $ make
     -| …                                Output omitted
     ```
@@ -50137,7 +50136,7 @@ follow:
 
     <div class="example">
 
-    ``` example
+    ```bash
     $ ./gawk -f realprogram.awk realdata > /dev/null
     ```
 
@@ -50220,7 +50219,7 @@ unsubscribing. For example:
 
 <div class="example">
 
-``` example
+```bash
 $ echo help | mailx -s request help-gawk-request@gnu.org
 $ echo subscribe | mailx -s request help-gawk-request@gnu.org
 $ echo unsubscribe | mailx -s request help-gawk-request@gnu.org
@@ -50322,7 +50321,7 @@ GitHub:
 
 <div class="example">
 
-``` example
+```bash
 git clone git://github.com/onetrueawk/awk bwkawk
 ```
 
@@ -50570,7 +50569,7 @@ title="Table of contents">Contents</a>\]\[<a href="#Index" rel="index" title="In
 
     <div class="example">
 
-    ``` example
+    ```bash
     wget https://ftp.gnu.org/gnu/gawk/gawk-5.1.1.tar.gz
     tar -xvpzf gawk-5.1.1.tar.gz
     cd gawk-5.1.1
@@ -50740,7 +50739,7 @@ doesn’t have it. Once you have done so, use the command:
 
 <div class="example">
 
-``` example
+```bash
 git clone git://git.savannah.gnu.org/gawk.git
 ```
 
@@ -50752,7 +50751,7 @@ the repository using:
 
 <div class="example">
 
-``` example
+```bash
 git clone https://git.savannah.gnu.org/r/gawk.git
 ```
 
@@ -51073,7 +51072,7 @@ the right order such that
 
 <div class="example">
 
-``` example
+```bash
 # The canonical incantation for building GNU software:
 ./bootstrap.sh && ./configure && make
 ```
@@ -51125,7 +51124,7 @@ What are some of the consequences and/or actions to take?
 
     <div class="example">
 
-    ``` example
+    ```bash
     wget https://ftp.gnu.org/gnu/package/package-x.y.z.tar.gz
     tar -xpzvf package-x.y.z.tar.gz
     cd package-x.y.z
@@ -51159,7 +51158,7 @@ named `branchname`, use:
 
 <div class="example">
 
-``` example
+```bash
 wget https://git.savannah.gnu.org/cgit/gawk.git/snapshot/gawk-branchname.tar.gz
 ```
 
@@ -53313,7 +53312,7 @@ the exclusion of warranty; and each file should have at least the
 
 <div class="example">
 
-``` example
+```bash
 one line to give the program's name and a brief idea of what it does.
 Copyright (C) year name of author
 
@@ -53340,7 +53339,7 @@ like this when it starts in an interactive mode:
 
 <div class="example">
 
-``` example
+```bash
 program Copyright (C) year name of author
 This program comes with ABSOLUTELY NO WARRANTY; for details type ‘show w’.
 This is free software, and you are welcome to redistribute it
@@ -53837,7 +53836,7 @@ notices just after the title page:
 
 <div class="example">
 
-``` example
+```bash
   Copyright (C)  year  your name.
   Permission is granted to copy, distribute and/or modify this document
   under the terms of the GNU Free Documentation License, Version 1.3
@@ -53854,7 +53853,7 @@ replace the “with…Texts.” line with this:
 
 <div class="example">
 
-``` example
+```bash
     with the Invariant Sections being list their titles, with
     the Front-Cover Texts being list, and with the Back-Cover Texts
     being list.

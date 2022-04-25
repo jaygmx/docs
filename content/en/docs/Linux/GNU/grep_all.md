@@ -13,7 +13,6 @@ description: >-
 <div class="header">
 
 Next: <a href="#Introduction" accesskey="n" rel="next">Introduction</a>,
-Up: <a href="/manual" accesskey="u" rel="up">(dir)</a>  
 \[<a href="#SEC_Contents" rel="contents"
 title="Table of contents">Contents</a>\]\[<a href="#Index" rel="index" title="Index">Index</a>\]
 
@@ -156,7 +155,7 @@ The general synopsis of the `grep` command line is
 
 <div class="example">
 
-``` example
+```bash
 grep [option...] [patterns] [file...]
 ```
 
@@ -438,7 +437,7 @@ example, the following shell script makes use of it:
 
 <div class="example">
 
-``` example
+```bash
 while grep -m 1 'PATTERN'
 do
   echo xxxx
@@ -452,7 +451,7 @@ file:
 
 <div class="example">
 
-``` example
+```bash
 # This probably will not work.
 cat FILE |
 while grep -m 1 'PATTERN'
@@ -568,7 +567,7 @@ contents before searching; e.g.:
 
 <div class="example">
 
-``` example
+```bash
 gzip -cd foo.gz | grep --label=foo -H 'some pattern'
 ```
 
@@ -1185,7 +1184,7 @@ script `$HOME/bin/grep` containing the following:
 
 <div class="example">
 
-``` example
+```bash
 #! /bin/sh
 export PATH=/usr/bin
 exec grep --color=auto --devices=skip "$@"
@@ -1938,7 +1937,7 @@ Here is an example command that invokes GNU `grep`:
 
 <div class="example">
 
-``` example
+```bash
 grep -i 'hello.*world' menu.h main.c
 ```
 
@@ -1962,7 +1961,7 @@ happens to be of the form ‘`*g*.h`’.
 
 <div class="example">
 
-``` example
+```bash
 grep -n -- 'f.*\.c$' *g*.h /dev/null
 ```
 
@@ -1983,7 +1982,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep -l 'main' test-*.c
     ```
 
@@ -1996,7 +1995,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep -r 'hello' /home/gigi
     ```
 
@@ -2009,7 +2008,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     find /home/gigi -name '*.c' ! -type d \
       -exec grep -H 'hello' '{}' +
     ```
@@ -2020,7 +2019,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep -H 'hello' /home/gigi/*.c
     ```
 
@@ -2032,7 +2031,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep -r --include='*.c' 'hello' /home/gigi
     ```
 
@@ -2042,7 +2041,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep -- '--cut here--' *
     ```
 
@@ -2058,7 +2057,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep -e '--cut here--' ./*
     ```
 
@@ -2068,7 +2067,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep -w 'hello' test*.log
     ```
 
@@ -2080,7 +2079,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep 'hello\>' test*.log
     ```
 
@@ -2093,7 +2092,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep -C 2 'hello' test*.log
     ```
 
@@ -2107,7 +2106,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep 'eli' /etc/passwd /dev/null
     ```
 
@@ -2117,7 +2116,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     /etc/passwd:eli:x:2098:1000:Eli Smith:/home/eli:/bin/bash
     ```
 
@@ -2127,7 +2126,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep -H 'eli' /etc/passwd
     ```
 
@@ -2137,7 +2136,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     ps -ef | grep '[c]ron'
     ```
 
@@ -2170,7 +2169,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     grep 'paul' /etc/motd | grep 'franc,ois'
     ```
 
@@ -2196,7 +2195,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     cat /etc/passwd | grep 'alain' - /etc/motd
     ```
 
@@ -2206,7 +2205,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     echo 'ba' | grep -E '(a)\1|b\1'
     ```
 
@@ -2230,7 +2229,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     printf 'foo\nbar\n' | grep -z -q 'foo[[:space:]]\+bar'
     ```
 
@@ -2248,7 +2247,7 @@ Here are some common questions and answers about `grep` usage.
 
     <div class="example">
 
-    ``` example
+    ```bash
     global/regular expression/print
     g/re/p
     ```

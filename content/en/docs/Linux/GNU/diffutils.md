@@ -13,7 +13,6 @@ description: >-
 <div class="header">
 
 Next: <a href="#Overview" accesskey="n" rel="next">Overview</a>, Up:
-<a href="/manual" accesskey="u" rel="up">(dir)</a>  
 \[<a href="#SEC_Contents" rel="contents"
 title="Table of contents">Contents</a>\]\[<a href="#Index" rel="index" title="Index">Index</a>\]
 
@@ -569,7 +568,7 @@ command ‘`diff F G`’ produces this output:
 
 <div class="example">
 
-``` example
+```bash
 1,2d0
 < a
 < b
@@ -585,7 +584,7 @@ output:
 
 <div class="example">
 
-``` example
+```bash
 1c1
 < a
 ---
@@ -645,7 +644,7 @@ to be equivalent, where ‘`$`’ denotes the line end:
 
 <div class="example">
 
-``` example
+```bash
 Here lyeth  muche rychnesse  in lytell space.   -- John Heywood$
 Here lyeth muche rychnesse in lytell space. -- John Heywood   $
 ```
@@ -662,7 +661,7 @@ and ‘`^M`’ denotes a carriage return:
 
 <div class="example">
 
-``` example
+```bash
 Here lyeth  muche  rychnesse in lytell space.--  John Heywood$
   He relyeth much erychnes  seinly tells pace.  --John Heywood   ^M$
 ```
@@ -704,7 +703,7 @@ containing
 
 <div class="example">
 
-``` example
+```bash
 1.  A point is that which has no part.
 
 2.  A line is breadthless length.
@@ -717,7 +716,7 @@ is considered identical to a file containing
 
 <div class="example">
 
-``` example
+```bash
 1.  A point is that which has no part.
 2.  A line is breadthless length.
 
@@ -1010,7 +1009,7 @@ This is the file `lao`:
 
 <div class="example">
 
-``` example
+```bash
 The Way that can be told of is not the eternal Way;
 The name that can be named is not the eternal name.
 The Nameless is the origin of Heaven and Earth;
@@ -1030,7 +1029,7 @@ This is the file `tzu`:
 
 <div class="example">
 
-``` example
+```bash
 The Nameless is the origin of Heaven and Earth;
 The named is the mother of all things.
 
@@ -1171,7 +1170,7 @@ overlap.
 
 <div class="example">
 
-``` example
+```bash
 *** lao    2002-02-21 23:30:39.942229878 -0800
 --- tzu 2002-02-21 23:30:50.442260588 -0800
 ***************
@@ -1231,7 +1230,7 @@ Notice that at most one context line is reported here.
 
 <div class="example">
 
-``` example
+```bash
 *** lao    2002-02-21 23:30:39.942229878 -0800
 --- tzu 2002-02-21 23:30:50.442260588 -0800
 ***************
@@ -1283,7 +1282,7 @@ like this:
 
 <div class="example">
 
-``` example
+```bash
 *** from-file from-file-modification-time
 --- to-file to-file-modification time
 ```
@@ -1307,7 +1306,7 @@ where the files differ. Context format hunks look like this:
 
 <div class="example">
 
-``` example
+```bash
 ***************
 *** from-file-line-numbers ****
   from-file-line
@@ -1411,7 +1410,7 @@ files):
 
 <div class="example">
 
-``` example
+```bash
 --- lao    2002-02-21 23:30:39.942229878 -0800
 +++ tzu 2002-02-21 23:30:50.442260588 -0800
 @@ -1,7 +1,6 @@
@@ -1461,7 +1460,7 @@ like this:
 
 <div class="example">
 
-``` example
+```bash
 --- from-file from-file-modification-time
 +++ to-file to-file-modification-time
 ```
@@ -1481,7 +1480,7 @@ where the files differ. Unified format hunks look like this:
 
 <div class="example">
 
-``` example
+```bash
 @@ from-file-line-numbers to-file-line-numbers @@
  line-from-either-file
  line-from-either-file…
@@ -1680,7 +1679,7 @@ Here are the first two lines of the output from
 
 <div class="example">
 
-``` example
+```bash
 *** original
 --- modified
 ```
@@ -1832,7 +1831,7 @@ the two files).
 
 <div class="example">
 
-``` example
+```bash
 The Way that can be told of is n   <
 The name that can be named is no   <
 The Nameless is the origin of He        The Nameless is the origin of He
@@ -1922,7 +1921,7 @@ the two files.
 
 <div class="example">
 
-``` example
+```bash
 1,2d0
 < The Way that can be told of is not the eternal Way;
 < The name that can be named is not the eternal name.
@@ -1966,7 +1965,7 @@ look like this:
 
 <div class="example">
 
-``` example
+```bash
 change-command
 < from-file-line
 < from-file-line…
@@ -2105,7 +2104,7 @@ Files](#Sample-diff-Input), for the complete contents of the two files):
 
 <div class="example">
 
-``` example
+```bash
 11a
 They both may be called deep and profound.
 Deeper and more profound,
@@ -2148,7 +2147,7 @@ numbers in succeeding commands. `ed` format hunks look like this:
 
 <div class="example">
 
-``` example
+```bash
 change-command
 to-file-line
 to-file-line…
@@ -2261,7 +2260,7 @@ Files](#Sample-diff-Input), for the complete contents of the two files):
 
 <div class="example">
 
-``` example
+```bash
 d1 2
 d4 1
 a4 2
@@ -2320,7 +2319,7 @@ look like this:
 
 <div class="example">
 
-``` example
+```bash
     do {
 #ifndef HAVE_WAITPID
         if ((w = wait (&s)) < 0  &&  errno != EINTR)
@@ -2375,7 +2374,7 @@ For example, the following command compares the TeX files `old` and
 
 <div class="example">
 
-``` example
+```bash
 diff \
    --old-group-format='\begin{em}
 %<\end{em}
@@ -2394,7 +2393,7 @@ formats.
 
 <div class="example">
 
-``` example
+```bash
 diff \
    --old-group-format='\begin{em}
 %<\end{em}
@@ -2418,7 +2417,7 @@ headers containing line numbers in a “plain English” style.
 
 <div class="example">
 
-``` example
+```bash
 diff \
    --unchanged-group-format='' \
    --old-group-format='-------- %dn line%(n=1?:s) deleted at %df:
@@ -2574,7 +2573,7 @@ are desired on output.
 
 <div class="example">
 
-``` example
+```bash
 diff \
    --old-line-format='-%l
 ' \
@@ -2648,7 +2647,7 @@ control over `diff` output.
 
 <div class="example">
 
-``` example
+```bash
 diff \
    --old-line-format='< %l
 ' \
@@ -2693,7 +2692,7 @@ Files](#Sample-diff-Input), for the complete contents of the two files):
 
 <div class="example">
 
-``` example
+```bash
 #ifndef TWO
 The Way that can be told of is not the eternal Way;
 The name that can be named is not the eternal name.
@@ -2758,7 +2757,7 @@ options using shell syntax:
 
 <div class="example">
 
-``` example
+```bash
 --old-group-format='#ifndef name
 %<#endif /* ! name */
 ' \
@@ -2844,7 +2843,7 @@ For example, suppose `F` and `G` are one-byte files that contain just
 
 <div class="example">
 
-``` example
+```bash
 1c1
 < f
 \ No newline at end of file
@@ -2860,7 +2859,7 @@ outputs the following without a trailing newline:
 
 <div class="example">
 
-``` example
+```bash
 d1 1
 a1 1
 g
@@ -2872,7 +2871,7 @@ g
 
 <div class="example">
 
-``` example
+```bash
 1c
 g
 .
@@ -3132,7 +3131,7 @@ for ‘`diff -lc lao tzu`’:
 
 <div class="example">
 
-``` example
+```bash
 2002-02-22 14:20                 diff -lc lao tzu                 Page 1
 ```
 
@@ -3294,7 +3293,7 @@ Files](#Sample-diff-Input)). This is the third sample file, called
 
 <div class="example">
 
-``` example
+```bash
 The Way that can be told of is not the eternal Way;
 The name that can be named is not the eternal name.
 The Nameless is the origin of Heaven and Earth;
@@ -3342,7 +3341,7 @@ the three files.
 
 <div class="example">
 
-``` example
+```bash
 ====2
 1:1,2c
 3:1,2c
@@ -3471,7 +3470,7 @@ For example, suppose `F` contains the three lines ‘`a`’, ‘`b`’, ‘`f`�
 
 <div class="example">
 
-``` example
+```bash
 ====2
 1:1c
 3:1c
@@ -3538,7 +3537,7 @@ arguments, like this:
 
 <div class="example">
 
-``` example
+```bash
 diff3 mine older yours
 ```
 
@@ -3618,7 +3617,7 @@ Output of ‘`diff3 -e lao tzu tao`’:
 
 <div class="example">
 
-``` example
+```bash
 11a
 
   -- The Way of Lao-Tzu, tr. Wing-tsit Chan
@@ -3634,7 +3633,7 @@ Output of ‘`diff3 -3 lao tzu tao`’:
 
 <div class="example">
 
-``` example
+```bash
 8c
   so we may see their result.
 .
@@ -3646,7 +3645,7 @@ Output of ‘`diff3 -x lao tzu tao`’:
 
 <div class="example">
 
-``` example
+```bash
 11a
 
   -- The Way of Lao-Tzu, tr. Wing-tsit Chan
@@ -3687,7 +3686,7 @@ is marked as follows:
 
 <div class="example">
 
-``` example
+```bash
 <<<<<<< A
 lines from A
 =======
@@ -3702,7 +3701,7 @@ follows:
 
 <div class="example">
 
-``` example
+```bash
 <<<<<<< A
 lines from A
 ||||||| B
@@ -3723,7 +3722,7 @@ not just the unmerged changes. Thus, given the sample input files (see
 
 <div class="example">
 
-``` example
+```bash
 <<<<<<< tzu
 =======
 The Way that can be told of is not the eternal Way;
@@ -3737,7 +3736,7 @@ And it outputs the three-way conflict as follows:
 
 <div class="example">
 
-``` example
+```bash
 <<<<<<< lao
 ||||||| tzu
 They both may be called deep and profound.
@@ -3762,7 +3761,7 @@ For example, for the three-way overlapping change above, the `-E` and
 
 <div class="example">
 
-``` example
+```bash
 <<<<<<< lao
 =======
 
@@ -3816,7 +3815,7 @@ output the following:
 
 <div class="example">
 
-``` example
+```bash
 <<<<<<< tzu
 =======
 The Way that can be told of is not the eternal Way;
@@ -3982,7 +3981,7 @@ The following `sdiff` options have the same meaning as for `diff`. See
 
 <div class="example">
 
-``` example
+```bash
 -a -b -d -i -t -v
 -B -E -I regexp -Z
 
@@ -4695,7 +4694,7 @@ from a message containing the patch like this:
 
 <div class="example">
 
-``` example
+```bash
 | patch -d /usr/src/emacs
 ```
 
@@ -5035,11 +5034,11 @@ output. The `word` should be one of the following:
 ‘`literal`’  
 Output names as-is.
 
-‘`shell`’  
+‘`ash`’  
 Quote names for the shell if they contain shell metacharacters or would
 cause ambiguous output.
 
-‘`shell-always`’  
+‘`ash-always`’  
 Quote names for the shell, even if they would normally not require
 quoting.
 
@@ -5053,7 +5052,7 @@ Quote as with ‘`c`’ except omit the surrounding double-quote characters.
 
 You can specify the default value of the `--quoting-style` option with
 the environment variable `QUOTING_STYLE`. If that environment variable
-is not set, the default value is ‘`shell`’, but this default may change
+is not set, the default value is ‘`ash`’, but this default may change
 in a future version of `patch`.
 
 ------------------------------------------------------------------------
@@ -5180,7 +5179,7 @@ must interoperate with traditional `patch`, or with GNU `patch` version
     in the following list, and operands are required.
     <div class="example">
 
-    ``` example
+    ```bash
     -c
     -d dir
     -D define
@@ -5273,7 +5272,7 @@ syntax:
 
 <div class="example">
 
-``` example
+```bash
 diff -Naur gcc-3.0.3 gcc-3.0.4
 ```
 
@@ -5355,7 +5354,7 @@ looks like this:
 
 <div class="example">
 
-``` example
+```bash
 diff -Naur v2.0.29/prog/README prog/README
 --- v2.0.29/prog/README 2002-03-10 23:30:39.942229878 -0800
 +++ prog/README 2002-03-17 20:49:32.442260588 -0800
@@ -5369,7 +5368,7 @@ avoid confusion, send output that looks like this instead:
 
 <div class="example">
 
-``` example
+```bash
 diff -Naur v2.0.29/prog/README v2.0.30/prog/README
 --- v2.0.29/prog/README 2002-03-10 23:30:39.942229878 -0800
 +++ v2.0.30/prog/README 2002-03-17 20:49:32.442260588 -0800
@@ -5490,7 +5489,7 @@ arguments of `cmp` are as follows:
 
 <div class="example">
 
-``` example
+```bash
 cmp options… from-file [to-file [from-skip [to-skip]]]
 ```
 
@@ -5508,7 +5507,7 @@ location of the first difference to standard output:
 
 <div class="example">
 
-``` example
+```bash
 from-file to-file differ: char byte-number, line line-number
 ```
 
@@ -5520,7 +5519,7 @@ the shorter file:
 
 <div class="example">
 
-``` example
+```bash
 cmp: EOF on shorter-file extra-info
 ```
 
@@ -5722,7 +5721,7 @@ The format for running the `diff` command is:
 
 <div class="example">
 
-``` example
+```bash
 diff options… files…
 ```
 
@@ -6130,7 +6129,7 @@ their differences. Its arguments are as follows:
 
 <div class="example">
 
-``` example
+```bash
 diff3 options… mine older yours
 ```
 
@@ -6198,7 +6197,7 @@ overlapping change looks like this:
 
 <div class="example">
 
-``` example
+```bash
 <<<<<<< mine
 lines from mine
 =======
@@ -6294,7 +6293,7 @@ Normally `patch` is invoked like this:
 
 <div class="example">
 
-``` example
+```bash
 patch <patchfile
 ```
 
@@ -6304,7 +6303,7 @@ The full format for invoking `patch` is:
 
 <div class="example">
 
-``` example
+```bash
 patch options… [origfile [patchfile]]
 ```
 
@@ -6572,7 +6571,7 @@ results. Its arguments are as follows:
 
 <div class="example">
 
-``` example
+```bash
 sdiff -o outfile options… from-file to-file
 ```
 
@@ -7082,7 +7081,7 @@ e.g.:
 
 <div class="example">
 
-``` example
+```bash
 sed 's/foo/bar/g' file1 | diff - file2
 ```
 
@@ -7629,7 +7628,7 @@ notices just after the title page:
 
 <div class="example">
 
-``` example
+```bash
   Copyright (C)  year  your name.
   Permission is granted to copy, distribute and/or modify this document
   under the terms of the GNU Free Documentation License, Version 1.3
@@ -7646,7 +7645,7 @@ replace the “with…Texts.” line with this:
 
 <div class="example">
 
-``` example
+```bash
     with the Invariant Sections being list their titles, with
     the Front-Cover Texts being list, and with the Back-Cover Texts
     being list.
